@@ -18,7 +18,9 @@
                         <option value="TFIIF">TFIIF</option>
 -->
                         <option selected value="PolII">PolII</option>
+<!--
                         <option value="PP2A">PP2A</option>
+-->
                         <option value="NPC">NPC</option>
                     </select>
                     <div style='float:right'>
