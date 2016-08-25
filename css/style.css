@@ -21,7 +21,7 @@ body {
 }
 body, input, select, textarea {
     font-family: "Lato-Regular", sans-serif;
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 300;
     line-height: 1.75em;
     color: #888;
@@ -754,8 +754,8 @@ code {
     padding: 20px;
     margin-bottom: 20px;
     margin-top: 20px;
-	padding-left: 100px;
-	padding-right: 100px;
+	padding-left: 60px;
+	padding-right: 60px;
 }
 section#top.one .fp-home {
     margin-bottom: 0px;

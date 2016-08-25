@@ -1,6 +1,6 @@
         <link rel="stylesheet" href="./css/xiNET.css">
         <script type="text/javascript" src="./crosslinkviewer.js"></script>
-       <!--libraries
+       <!--libraries -->
         <script type="text/javascript" src="../xiNET/vendor/d3.js"></script>
         <script type="text/javascript" src="../xiNET/vendor/colorbrewer.js"></script>
         <script type="text/javascript" src="../xiNET/vendor/FileSaver.js"></script>

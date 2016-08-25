@@ -24,9 +24,11 @@
                         <option value="NPC">NPC</option>
                     </select>
                     <div style='float:right'>
+<!--
                         <button class="btn btn-1 btn-1a network-control resetzoom" onclick="xlv.reset();">
                             Reset
                         </button>
+-->
                         <button class="btn btn-1 btn-1a network-control" onclick="xlv.exportSVG();">Export SVG</button>
                         <label class="btn">
                                 Legend
