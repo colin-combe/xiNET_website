@@ -85,13 +85,12 @@
 							<div class="container">
 								<h3 id="CLMS-CSV">CLMS-CSV File format</h3>
 								<div class="link-arrow">
--->
 					            <p>Download example files: <a href="./data/PolII.csv" target="_blank">Pol II</a>, <a href="./data/Herzog.csv" target="_blank">PP2A</a></p>
 <!--
 					            </div>
 -->
 					
-					<p>xiNET can display data either with or without information on the sequences of the linked peptides. The fields PepSeq1, LinkPos1, PepSeq2 and LinkPos2 are only used when peptide sequence information is being supplied.</p>
+					<p>xiNET can display data either with or without information on the sequences of the linked peptides. The fields PepPos1, PepSeq1, PepPos2 and PepSeq2 are only used when peptide sequence information is being supplied.</p>
 
 					            <table width=642 cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
 					                <col width=121>
