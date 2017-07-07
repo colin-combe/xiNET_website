@@ -12,34 +12,34 @@
 
 		<!-- Main -->
 			<div id="main">
-			
+
 				<!-- Intro -->
 					<section id="top" class="one">
 						<div class="container">
 							<h1 class="page-header">Upload Your Own Data</h1>
-							<form class="fileupload"  action="http://129.215.14.125/crosslink-viewer/php/fup.php" enctype="multipart/form-data" method="POST">
+							<form class="fileupload"  action="./fup.php" enctype="multipart/form-data" method="POST">
 							<table>
 								<tr>
-									
-										<td>	
+
+										<td>
 											<div class="cross-link-csv">
 												<label for="csvFile">Cross-link CSV file:</label>
 												<input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfile" type="file" id="csvFile"/>
 											</div> <!-- CROSS-LINK-CSV -->
 										</td>
-										<td>	
+										<td>
 											<div class="fasta-file">
 												<label for="fastaFile">FASTA file:</label>
-												<input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfasta" type="file" id="fastFile"/> 
+												<input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfasta" type="file" id="fastFile"/>
 											</div> <!-- FASTA-FILE -->
 										</td>
-										<td>	
+										<td>
 											<div class="annotation-csv-file">
 												<label for="annotFile">Annotation CSV file:</label>
 												<input style="margin: 0;padding: 0;"  class="file btn btn-1 btn-1a-inputbtn" name="upannot" type="file" id="annotFile"/>
 											</div> <!-- ANNOTATION-CSV-FILE -->
-										</td>	
-										
+										</td>
+
 								</tr>
 							  </table>
 									<div class="custom_file_upload">
@@ -47,15 +47,15 @@
 											<input class="upload" value="Upload" type="submit"/>
 									  	</div> <!-- CUSTOM_FILE_UPLOAD -->
 									</div>
-								<br>	
-								<p class="center" style="margin-bottom:-40px;top:-50px;position:relative;">You will be redirected to a unique URL for your data which you can share with others.</p>				
+								<br>
+								<p class="center" style="margin-bottom:-40px;top:-50px;position:relative;">You will be redirected to a unique URL for your data which you can share with others.</p>
 			            		</form>
-						
+
 								<h4>Getting Started</h4>
 								<a title="Click here to view larger." class="image-link" href="images/diagrams/workflow.svg"><img class="image full" src="images/diagrams/workflow.svg"></a>	<div class="external-link">
 								<p>You can view your results by uploading <a href="#crosslinkCSV">cross-link data</a> in a Comma Separated Values (CSV) file. Optionally, this can be accompanied by a <a href="http://en.wikipedia.org/wiki/FASTA_format" target="_blank">FASTA file</a> giving the protein sequences and/or a CSV file containing <a href="#annotCSV">annotations</a>. If the FASTA file is omitted then protein sequences are retrieved by looking up accession numbers via the <a href="http://www.biodas.org/wiki/Main_Page" target="_blank">Distributed Annotation System</a>. This assumes that the sequences used in the search correspond exactly with those of valid, current UniprotKB accession numbers. 	</div></p>
-						
-							
+
+
 							<div class="columnNames">
 								<h4>Column Names in CSV files</h4>
 								<ul style="list-style-type:square;">
@@ -68,14 +68,14 @@
 				            <div class="protIds" >
 								<h4>Protein Identifiers</h4>
 								<h6>If a FASTA file is provided:</h6>
-									
-								<p>	then the protein identifiers 
+
+								<p>	then the protein identifiers
 									(columns 'Protein1' and 'Protein2') must match identifiers in the
-									FASTA file. In a FASTA file, the word following the 
-									"&gt;" symbol is the identifier of the sequence, 
+									FASTA file. In a FASTA file, the word following the
+									"&gt;" symbol is the identifier of the sequence,
 									and the rest of the line is the description.</p>
 									<div class="external-link">
-								<h6>If a FASTA file is not provided:</h6> protein identifiers are  
+								<h6>If a FASTA file is not provided:</h6> protein identifiers are
 									assumed to be six character <a href="http://www.uniprot.org/manual/accession_numbers">UniprotKB</a> accession numbers. SwissProt style identifiers of the format: <code>sp|accession|name</code> are also accepted and in this case 'name' will be used for the protein labels.</div>
 								</p>
 				            </div>
@@ -89,7 +89,7 @@
 <!--
 					            </div>
 -->
-					
+
 					<p>xiNET can display data either with or without information on the sequences of the linked peptides. The fields PepPos1, PepSeq1, PepPos2 and PepSeq2 are only used when peptide sequence information is being supplied.</p>
 
 					            <table width=642 cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
@@ -140,7 +140,7 @@
 					                        <p>Sequence for peptide 1,  lowercase characters ignored.</p>
 					                    </td>
 					                </tr>
-					                
+
 					                <tr>
 					                    <td>
 					                        <p>LinkPos1</p>
@@ -153,7 +153,7 @@
 					                        link in Protein 1 if peptide position is ommitted.</p>
 					                    </td>
 					                </tr>
-					                
+
 					                <tr>
 					                    <td width=121 height=4>
 					                        <p>Protein2</p>
@@ -162,8 +162,8 @@
 					                        <p>See note</p>
 					                    </td>
 					                    <td width=390>
-					                        <p>Identifier for protein 2. 
-					This value is omitted for a linker modified peptide or an internally cross-linked peptide. 
+					                        <p>Identifier for protein 2.
+					This value is omitted for a linker modified peptide or an internally cross-linked peptide.
 					</p>
 					                    </td>
 					                </tr>
@@ -180,7 +180,7 @@
 					                </tr>
 
 
-		
+
 					                 <tr>
 					                    <td>
 					                        <p>PepSeq2</p>
@@ -204,7 +204,7 @@
 					                        link in Protein 2 if peptide position is ommitted.</p>
 					                        <p>Ommitted for linked modified peptides (mono-links).</p>
 					                    </td>
-					                </tr>              
+					                </tr>
 
 					                <tr>
 					                    <td width=121 height=4>
@@ -234,9 +234,9 @@
 							</div><!-- CONTAINER -->
 						</section>
 						<section class="one">
-							<div class="container">								
-									<h4>Ambiguous Linkage Sites</h4>								
-									<p>Ambiguous links are represented by listing the alternative linkage sites separated 
+							<div class="container">
+									<h4>Ambiguous Linkage Sites</h4>
+									<p>Ambiguous links are represented by listing the alternative linkage sites separated
 									by commas or semi-colons in the protein and position fields. For example:</p>
 									<table cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="position:relative;border:1px solid #000;background-color:#eee;">
 						            <tr >
@@ -274,12 +274,12 @@
 						</section>
 						<section class="two">
 							<div class="container">
-				
+
 							<h4>Product types</h4>
 
 							<p>The figures below show the representation of different product types.
 							These are: (a) linker modified peptides; (b) internally linked peptides; and, (c) cross-linked peptides.
-							The product type is indicated by the presence or absence of information for the second protein and second link position. 
+							The product type is indicated by the presence or absence of information for the second protein and second link position.
 							We also identify a subset of cross-linked peptides, (d), in which the peptides overlap in the protein sequence.
 						    </p>
 							<table class="productTypeFigs">
@@ -344,7 +344,7 @@
 					                    <td width=390>
 					                        <p>Identifier for protein to annotate.</p>
 					                    </td>
-					                </tr>               
+					                </tr>
 					                <tr>
 					                    <td width=121 height=4>
 					                        <p>AnnotName</p>
@@ -355,7 +355,7 @@
 					                    <td width=390>
 					                        <p>Name of annotation.</p>
 					                    </td>
-					                </tr>               
+					                </tr>
 					                <tr>
 					                    <td width=121 height=4>
 					                        <p>StartRes</p>
@@ -364,10 +364,10 @@
 					                        <p>Yes</p>
 					                    </td>
 					 <!--                   <td width=390 rowspan=2>
-					
-					                        <p>If StartResidue and EndResidue are ommitted 
-					                        then the annotation is assumed to be non-positional (i.e. a keyword): 
-					                        the circle will be colored according to it but it will not be represented on the bar.  
+
+					                        <p>If StartResidue and EndResidue are ommitted
+					                        then the annotation is assumed to be non-positional (i.e. a keyword):
+					                        the circle will be colored according to it but it will not be represented on the bar.
 											</p>
 
 					                    </td>					-->
