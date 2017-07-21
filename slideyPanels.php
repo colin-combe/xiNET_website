@@ -5,7 +5,7 @@
 </div>
 
 <div class="overlay-box" id="helpPanel">
-	<table class="overlay-table"  bordercolor="#eee" >
+	<table class="overlay-table">
 		<tr>
 			<td>Toggle the proteins between a bar and a circle</td>
 			<td>Click on protein</td>
@@ -50,7 +50,7 @@
 </div>	
 
 <div class="overlay-box" id="legendPanel">
-	<div><img src="./images/fig3_1.svg"></div>
+	<div><img src="./images/fig3_1.svg" alt="Legend"></div>
 </div>	
 
 <script type="text/javascript">

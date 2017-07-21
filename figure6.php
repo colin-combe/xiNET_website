@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="overlay-box" id="helpPanel">
-	<table class="overlay-table"  bordercolor="#eee" >
+	<table class="overlay-table">
 		<tr>
 			<td>Toggle the proteins between a bar and a circle</td>
 			<td>Click on protein</td>
@@ -60,7 +60,7 @@
 </div>	
 
 <div class="overlay-box" id="legendPanel">
-	<div><img src="./images/fig3_1.svg"></div>
+	<div><img src="./images/fig3_1.svg"  alt="Legend"></div>
 </div>	
 
 
@@ -138,15 +138,15 @@
 						-->
 						<label class="btn">
 								Legend
-								<input id="selection" onclick="toggleLegendPanel()" type="checkbox">
+								<input onclick="toggleLegendPanel()" type="checkbox">
 						</label>
 						<label class="btn">
 								Details
-								<input id="selection" onclick="toggleInfoPanel()" type="checkbox">
+								<input onclick="toggleInfoPanel()" type="checkbox">
 						</label>
 						<label class="btn">
 								Help
-								<input id="help" onclick="toggleHelpPanel()" type="checkbox">
+								<input onclick="toggleHelpPanel()" type="checkbox">
 						</label>
 				</div>
 				</h1>

@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 		<?php
 		$pageName = "Home";
@@ -36,8 +36,15 @@
 
 						</div><!-- external-link -->
 							
-						<?php include("citeBar.php");?>
-			 			</div> <!-- CONTAINER -->
+						<div class="controlsexamplespage">						
+						<p style="text-align:center;font-size:small;">
+							<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/25648531">
+							Combe, C. W., Fischer, L. &amp; Rappsilber, J. xiNET: Cross-link Network Maps With Residue Resolution. <i>Mol Cell Proteomics</i> <b>14,</b> 1137–1147 (2015).
+							</a>
+						</p>
+					</div>
+			 			
+			 	</div> <!-- CONTAINER -->
 			<div id="networkFrontPage" class="skel-panels-fixed"></div>
 		</div> <!-- MAIN -->
    	 				<script>//<![CDATA[

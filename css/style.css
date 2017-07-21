@@ -712,15 +712,16 @@ code {
 .juri:hover {
     background: url("../images/team/sprite/master.png") 0 -1000px;
 }
-#navlist {
+
+.navlist {
     position: relative;
 }
-#navlist li {
+.navlist li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-#navlist a, #navlist li {
+.navlist a, .navlist li {
     height: 200px;
     display: block;
 }

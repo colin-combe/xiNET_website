@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <?php
     $pageName = "Home";
@@ -30,7 +30,7 @@
                                         <td>
                                             <div class="fasta-file">
                                                 <label for="fastaFile">FASTA file:</label>
-                                                <input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfasta" type="file" id="fastFile"/>
+                                                <input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfasta" type="file" id="fastaFile"/>
                                             </div> <!-- FASTA-FILE -->
                                         </td>
                                         <td>
@@ -52,8 +52,20 @@
                                 </form>
 
                                 <h4>Getting Started</h4>
-                                <a title="Click here to view larger." class="image-link" href="images/diagrams/workflow.svg"><img class="image full" src="images/diagrams/workflow.svg"></a>    <div class="external-link">
-                                <p>You can view your results by uploading <a href="#crosslinkCSV">cross-link data</a> in a Comma Separated Values (CSV) file. Optionally, this can be accompanied by a <a href="http://en.wikipedia.org/wiki/FASTA_format" target="_blank">FASTA file</a> giving the protein sequences and/or a CSV file containing <a href="#annotCSV">annotations</a>. If the FASTA file is omitted then protein sequences are retrieved by looking up accession numbers via the <a href="http://www.biodas.org/wiki/Main_Page" target="_blank">Distributed Annotation System</a>. This assumes that the sequences used in the search correspond exactly with those of valid, current UniprotKB accession numbers.    </div></p>
+                                <div class="image-link">
+									<img alt="xiNET workflow" class="image full" src="images/diagrams/workflow.svg">
+								</div>    
+                               
+                                
+<!--
+                                <div class="external-link">
+-->
+									
+                                <p>You can view your results by uploading <a href="#CLMS-CSV">cross-link data</a> in a Comma Separated Values (CSV) file. Optionally, this can be accompanied by a <a href="https://en.wikipedia.org/wiki/FASTA_format" target="_blank">FASTA file</a> giving the protein sequences and/or a CSV file containing <a href="#annotCSV">annotations</a>. If the FASTA file is omitted then protein sequences are retrieved by looking up accession numbers via the UniprotKB web service. 
+<!--
+                                <a href="http://www.biodas.org/wiki/Main_Page" target="_blank">Distributed Annotation System</a>. 
+-->
+                                This assumes that the sequences used in the search correspond exactly with those of valid, current UniprotKB accession numbers. </p> 
 
 
                             <div class="columnNames">
@@ -75,57 +87,58 @@
                                     "&gt;" symbol is the identifier of the sequence,
                                     and the rest of the line is the description.</p>
                                     <div class="external-link">
-                                <h6>If a FASTA file is not provided:</h6> protein identifiers are
-                                    assumed to be six character <a href="http://www.uniprot.org/manual/accession_numbers">UniprotKB</a> accession numbers. SwissProt style identifiers of the format: <code>sp|accession|name</code> are also accepted and in this case 'name' will be used for the protein labels.</div>
-                                </p>
+                                <h6>If a FASTA file is not provided:</h6> 
+                                <p> protein identifiers are
+                                    assumed to be six character <a href="http://www.uniprot.org/help/accession_numbers">UniprotKB</a> accession numbers. SwissProt style identifiers of the format: <code>sp|accession|name</code> are also accepted and in this case 'name' will be used for the protein labels.</p>
+                             </div>
+                                
                             </div>
                         </div> <!-- CONTAINER -->
                     </section>
+                    
                         <section class="two">
                             <div class="container">
                                 <h3 id="CLMS-CSV">CLMS-CSV File format</h3>
                                 <div class="link-arrow">
-                                <p>Download example files: <a href="./data/PolII.csv" target="_blank">Pol II</a>, <a href="./data/Herzog.csv" target="_blank">PP2A</a></p>
-<!--
-                                </div>
--->
+									<p>Download example files: <a href="./data/PolII.csv" target="_blank">Pol II</a>, <a href="./data/PP2A.csv" target="_blank">PP2A</a></p>
+								</div>
 
                     <p>xiNET can display data either with or without information on the sequences of the linked peptides. The fields PepPos1, PepSeq1, PepPos2 and PepSeq2 are only used when peptide sequence information is being supplied.</p>
 
-                                <table width=642 cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
-                                    <col width=121>
-                                    <col width=88>
-                                    <col width=390>
+                                <table class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
+                                    <col>
+                                    <col>
+                                    <col>
                                     <tr>
-                                        <td width=121 height=3>
+                                        <td>
                                             <h6>COLUMN NAME</h6>
                                         </td>
-                                        <td width=88>
-                                            <h6>REQUIRED?</sh6>
+                                        <td>
+                                            <h6>REQUIRED?</h6>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <h6>NOTES</h6>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>Protein1</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>Yes</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Identifier for protein 1</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>PepPos1</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>No</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>One-based residue number for peptide 1 start position in protein 1.</p>
                                         </td>
                                     </tr>
@@ -136,7 +149,7 @@
                                         <td>
                                             <p>No</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Sequence for peptide 1,  lowercase characters ignored.</p>
                                         </td>
                                     </tr>
@@ -148,20 +161,20 @@
                                         <td>
                                             <p>If PepSeq1 is present </p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>One-based residue number for linkage site in peptide 1, or absolute position for
                                             link in Protein 1 if peptide position is ommitted.</p>
                                         </td>
                                     </tr>
 
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>Protein2</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>See note</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Identifier for protein 2.
                     This value is omitted for a linker modified peptide or an internally cross-linked peptide.
                     </p>
@@ -174,7 +187,7 @@
                                         <td>
                                             <p>No</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>One-based residue number for peptide 2 start position in protein 2.</p>
                                         </td>
                                     </tr>
@@ -188,7 +201,7 @@
                                         <td>
                                             <p>No</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Sequence for peptide 2,  lowercase characters ignored.</p>
                                         </td>
                                     </tr>
@@ -199,7 +212,7 @@
                                         <td>
                                             <p>If PepSeq2 is present </p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>One-based residue number for linkage site in peptide 2, or absolute position for
                                             link in Protein 2 if peptide position is ommitted.</p>
                                             <p>Ommitted for linked modified peptides (mono-links).</p>
@@ -207,26 +220,26 @@
                                     </tr>
 
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>Score</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>No
                                             </p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Confidence score – used by cut-off slider.</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>Id</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>No
                                             </p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Id for link</p>
                                         </td>
                                     </tr>
@@ -238,39 +251,41 @@
                                     <h4>Ambiguous Linkage Sites</h4>
                                     <p>Ambiguous links are represented by listing the alternative linkage sites separated
                                     by commas or semi-colons in the protein and position fields. For example:</p>
-                                    <table cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="position:relative;border:1px solid #000;background-color:#eee;">
+                                    <table class="hor-minimalist-a" style="position:relative;border:1px solid #000;background-color:#eee;">
                                     <tr >
 
-                                        <td width=150>
+                                        <td>
                                             <p>Protein1</p>
                                         </td>
-                                        <td width=150>
+                                        <td>
                                             <p>LinkPos1</p>
                                         </td>
-                                        <td width=150>
+                                        <td>
                                             <p>Protein2</p>
                                         </td>
-                                        <td width=124>
+                                        <td>
                                             <p>LinkPos2</p>
                                         </td>
 
                                     </tr>
                                     <tr>
-                                        <td width=150>
+                                        <td>
                                             <p>O43815; Q13033</p>
                                         </td>
-                                        <td width=150>
+                                        <td>
                                             <p>89; 105</p>
                                         </td>
-                                        <td width=150>
+                                        <td>
                                             <p>O43815; Q13033</p>
                                         </td>
-                                        <td width=124>
+                                        <td>
                                             <p>96; 112</p>
                                         </td>
                                     </tr>
                                 </table>
-                                <p>would result in these four ambiguous links being displayed:</p> from O43815, residue 89  to O43815, residue 96 <br/> from O43815, residue 89 to Q13033, residue 112<br/> from Q13033, residue 105 to O43815, residue 96 <br/>from Q13033, residue 105 to Q13033, residue 112<br/></p>
+                                <p>would result in these four ambiguous links being displayed:</p> 
+                                <p>from O43815, residue 89  to O43815, residue 96 <br/> from O43815, residue 89 to Q13033, residue 112<br/> from Q13033, residue 105 to O43815, residue 96 <br/>from Q13033, residue 105 to Q13033, residue 112<br/></p>
+                            </div>
                         </section>
                         <section class="two">
                             <div class="container">
@@ -286,83 +301,82 @@
                                 <tr>
                             <td><div class="productTypeFigLeft">
                               <h6><u>(a) Linker modified peptides</u></h6>
-                              <a title="Click to view larger." href="images/diagrams/f4a.svg"><img class="image featured full" src="images/diagrams/f4a.svg"></img></a>
+                              <a title="Click to view larger." href="images/diagrams/f4a.svg"><img alt="Linker modified peptides" class="image featured full" src="images/diagrams/f4a.svg"></a>
                               <p>&nbsp;</p>
                             </div></td>
                            <td> <div class="productTypeFigRight">
                                 <h6><u>(b) Internally linked peptides</u></h6>
-                                <a title="Click to view larger." href="images/diagrams/f4b.svg"><img class="image featured full" src="images/diagrams/f4b.svg"></img></a>
+                                <a title="Click to view larger." href="images/diagrams/f4b.svg"><img alt="Internally linked peptides" class="image featured full" src="images/diagrams/f4b.svg"></a>
                                 <p>&nbsp;</p>
                             </div></td>
                                 </tr>
                                 <tr>
                           <td>  <div class="productTypeFigLeft">
                                 <h6><u>(c) Cross-linked peptides.</u></h6>
-                                <a title="Click to view larger." href="images/diagrams/f4c.svg"><img class="image featured full" src="images/diagrams/f4c.svg"></img></a>
+                                <a title="Click to view larger." href="images/diagrams/f4c.svg"><img alt="Cross-linked peptides" class="image featured full" src="images/diagrams/f4c.svg"></a>
                                 <p>&nbsp;</p>
                             </div></td>
                           <td>  <div class="productTypeFigRight">
                                 <h6><u>(d) Homomultimers (cross-links in which peptide sequences overlap)</u></h6>
-                                <a title="Click to view larger." href="images/diagrams/f4d.svg"><img class="image featured full" src="images/diagrams/f4d.svg"></img></a>
+                                <a title="Click to view larger." href="images/diagrams/f4d.svg"><img alt="Homomultimers" class="image featured full" src="images/diagrams/f4d.svg"></a>
                                 <p>&nbsp;</p>
                             </div></td>
                                 </tr>
                                 </table>
                             </div>
                         </section>
-                        <section class="one">
+                        <section class="one" id="annotCSV">
                             <div class="container">
                                 <h3 id="Annotations">Annotations CSV File format</h3>
                                 <div class="link-arrow">
                                     <p>Download example files: <a href="./data/TFIIF_annot.csv" target="_blank">TFIIF annotations</a></p>
-<!--
                                 </div>
--->
 
-                                <table width=642 cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
-                                    <col width=121>
-                                    <col width=88>
-                                    <col width=390>
+                                <table class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
+                                    <col>
+                                    <col>
+                                    <col>
                                     <tr>
-                                        <td width=121 height=3>
+                                        <td>
                                             <h6>COLUMN NAME</h6>
                                         </td>
-                                        <td width=88>
-                                            <h6>REQUIRED?</sh6>
+                                        <td>
+                                            <h6>REQUIRED?</h6>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <h6>NOTES</h6>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>ProteinId</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>Yes</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Identifier for protein to annotate.</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>AnnotName</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>Yes</p>
                                         </td>
-                                        <td width=390>
+                                        <td>
                                             <p>Name of annotation.</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>StartRes</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>Yes</p>
                                         </td>
+                                        <td></td>
                      <!--                   <td width=390 rowspan=2>
 
                                             <p>If StartResidue and EndResidue are ommitted
@@ -373,22 +387,23 @@
                                         </td>                   -->
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>EndRes</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>Yes</p>
                                         </td>
+                                        <td></td>
 
                                     </tr>
                                     <tr>
-                                        <td width=121 height=4>
+                                        <td>
                                             <p>Color</p>
                                         </td>
-                                        <td width=88>
+                                        <td>
                                             <p>No</p>
                                         </td>
-                                        <td width=390 rows=2>
+                                        <td>
                                             <p>If omitted then a color is chosen automatically.
                                              In this case annotations with the same name are always assigned the same color.</p>
                                         </td>

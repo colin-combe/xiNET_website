@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <?php
     $pageName = "Home";
@@ -109,12 +109,8 @@
 							   <div class="box9">
 							   			<div class="controlling-features-box">
 											<h4>Controlling xiNET</h4>
-											<table class="hor-minimalist-a"  bordercolor="#eee" >
-												<!-- <thead>
-																		<td>ACTION</td>
-																		<td>ATTRIBUTE</td>
-																	</thead> -->
-							                    <tr>
+											<table class="hor-minimalist-a">
+												<tr>
 							                        <td>Toggle the proteins between a bar and a circle</td>
 							                        <td>Click on protein</td>
 							                    </tr>

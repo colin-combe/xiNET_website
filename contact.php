@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
 	    <?php
 	    $pageName = "Home";
@@ -16,15 +16,14 @@
 				<!-- Intro -->
 					<section id="top" class="one contact-section">
 						<div class="container">
-							<h1 class="page-header">Contact The Team</h1>
+							<div class="page-header">Contact The Team</div>
 							<div class="contactGroup">
 								<table>
 									<tr>
 						   		 <td><div class="contact no-hover">
-						   		 		<ul id="navlist"  class="no-hover">
-						   		 			<li class="no-hover"><a class="colin" href="mailto:colin.combe@ed.ac.uk" class="no-hover" title="Email Colin!"></a></li>
+						   		 		<ul class="navlist">
+						   		 			<li class="no-hover"><a class="colin no-hover" href="mailto:colin.combe@ed.ac.uk" title="Email Colin!"></a></li>
 						   		 		</ul>
-						   		 	</a>
 									<div class="external-link">
 						   		 	<p class="colintext">
 						   		 		<strong>Dr Colin Combe</strong>
@@ -39,11 +38,10 @@
 									</div>
 						   		 </div> <!-- CONTACT--></td>
 			               		<td> <div class="contact">
-						   		 		<ul id="navlist">
+						   		 		<ul class="no-hover navlist">
 						   		 			<li><a class="matt no-hover" href="mailto:matthew.dunn@ed.ac.uk" title="Email Matt!"></a></li>
 						   		 		</ul>
-						   		 	</a>
-									<div class="external-link">
+						   		 	<div class="external-link">
 						   		 	<p class="matttext">
 						   		 		<strong>Matthew Dunn</strong>
 						   		 		<br/><a href="mailto:matthew.dunn@ed.ac.uk">matthew.dunn@ed.ac.uk</a>
@@ -55,13 +53,14 @@
 						   		 		<br/>EH9 3JR
 						   		 	</p>
 									</div>
-						   		 </div> <!-- CONTACT --></td>
-			               	<td>	 <div class="contact">
+						   		 </div> <!-- CONTACT -->
+							</td>
+			               	<td>	 
+								<div class="contact">
 						   		 
-						   		 		<ul id="navlist">
+						   		 		<ul class="navlist">
 						   		 			<li><a class="juri no-hover" href="mailto:juri.rappsilber@ed.ac.uk" title="Email Juri!"></a></li>
 						   		 		</ul>
-						   		 	</a>
 									<div class="external-link">
 						   		 	<p class="juritext">
 						   		 		<strong>Prof Juri Rappsilber</strong>
@@ -75,7 +74,7 @@
 						   		 	</p>
 									</div>
 						   		 </div> <!-- CONTACT --></td>
-								<tr>
+								</tr>
 							</table>
 							</div><!-- CONTACTGROUP -->
 							<br>
@@ -85,7 +84,8 @@
 						<div class="container">
 							<div class="external-link">
 								<h4>Support</h4>
-								<p>xiNET can be used by <a href="./upload.php">uploading your data</a> or downloading the <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer"><i class="fa fa-github"></i>&nbsp;GitHub project</a> and using it locally. For support email <a href="mailto:colin.combe@ed.ac.uk">colin.combe@ed.ac.uk</a>. You may also use <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer/issues"> issue tracking at GitHub</a>.</p>
+								<p>xiNET can be used by <a href="./upload.php">uploading your data</a> or downloading the <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer/releases/latest"><i class="fa fa-github"></i>&nbsp;GitHub project</a> and using it locally. 
+								<br> For support email <a href="mailto:colin.combe@ed.ac.uk">colin.combe@ed.ac.uk</a>. You may also use <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer/issues"> issue tracking at GitHub</a>.</p>
 							</div>
 							<br>
 						</div>

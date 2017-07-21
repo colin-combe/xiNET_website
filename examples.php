@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
         <?php $pageName = "Examples";include("head.php");?>
         <?php include("xiNET_scripts.php");?>
@@ -12,7 +12,7 @@
         <!-- Main -->
         <div id="main">
             <div class="container">
-                <h1 class="page-header">Example:&nbsp;
+                <div class="page-header">Example:&nbsp;
                     <select class="btn btn-1 btn-1a" id="dataSets"  onchange="loadData();" >
 <!--
                         <option value="TFIIF">TFIIF</option>
@@ -32,18 +32,18 @@
                         <button class="btn btn-1 btn-1a network-control" onclick="xlv.exportSVG();">Export SVG</button>
                         <label class="btn">
                                 Legend
-                                <input id="selection" onclick="toggleLegendPanel()" type="checkbox">
+                                <input onclick="toggleLegendPanel()" type="checkbox">
                         </label>
                         <label class="btn">
                                 Details
-                                <input id="selection" onclick="toggleInfoPanel()" type="checkbox">
+                                <input onclick="toggleInfoPanel()" type="checkbox">
                         </label>
                         <label class="btn">
                                 Help
                                 <input id="help" onclick="toggleHelpPanel()" type="checkbox">
                         </label>
                     </div>
-                </h1>
+                </div>
             </div>
             <div class="long-citation" id="citation"></div>
             <div id="networkContainer"></div>
