@@ -7,14 +7,14 @@
         <?php
             //your connection string here
             // $connectionString = "host= dbname= user= password=";
-            include('./uploadsConnectionString.php');
-            $dbconn = mysql_connect($server,$user,$password) or die('Could not connect: ' . mysql_error());
-            mysql_select_db($db, $dbconn) or die("Could not select database.");
+            include('./connection.php');
+            $dbconn = mysqli_connect($server,$user,$password) or die('Could not connect: ' . mysqli_error($dbconn));
+            mysqli_select_db($dbconn, $db) or die("Could not select database.");
             $uid = $_GET["uid"];
             $query = "SELECT links, filename, layout, fasta, annot FROM upload WHERE rand = '" . $uid . "';";
-            // echo $query;
-            $result = mysql_query($query) or die('Query failed: ' . mysql_error());
-            $line = mysql_fetch_array($result);
+            //~ echo $query;
+            $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
+            $line = mysqli_fetch_array($result);
             $clmsCsv = $line['links'];
             $filename = $line['filename'];
             $layout = $line['layout'];
@@ -29,38 +29,36 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="icon" type="image/ico" href="images/logos/favicon.ico">
-        <link rel="stylesheet" href="../demo/css/reset.css" />
-        <link rel="stylesheet" href="../demo/css/noscript.css" />
-        <link rel="stylesheet" href="../demo/css/style.css" />
-        <link rel="stylesheet" href="../demo/css/noNav.css" />
-        <link rel="stylesheet" href="../demo/css/xiNET.css">
+        <link rel="stylesheet" href="demo/css/reset.css" />
+        <link rel="stylesheet" href="demo/css/noscript.css" />
+        <link rel="stylesheet" href="demo/css/style.css" />
+        <link rel="stylesheet" href="demo/css/noNav.css" />
+        <link rel="stylesheet" href="demo/css/xiNET.css">
         <!--libraries-->
-<!--
-        <script type="text/javascript" src="../vendor/d3.js"></script>
-        <script type="text/javascript" src="../vendor/colorbrewer.js"></script>
-        <script type="text/javascript" src="../vendor/FileSaver.js"></script>
-        <script type="text/javascript" src="../vendor/rgbcolor.js"></script>
--->
+        <script type="text/javascript" src="../xiNET/vendor/d3.js"></script>
+        <script type="text/javascript" src="../xiNET/vendor/colorbrewer.js"></script>
+        <script type="text/javascript" src="../xiNET/vendor/FileSaver.js"></script>
+        <script type="text/javascript" src="../xiNET/vendor/rgbcolor.js"></script>
         <!--xiNET-->
-        <script type="text/javascript" src="../crosslinkviewer.js"></script>
-        <!--
-        <script type="text/javascript" src="../src/controller/Init.js"></script>
-        <script type="text/javascript" src="../src/controller/MouseEvents.js"></script>
-        <script type="text/javascript" src="../src/controller/Layout.js"></script>
-        <script type="text/javascript" src="../src/controller/Refresh.js"></script>
-        <script type="text/javascript" src="../src/controller/ToolTips.js"></script>
-        <script type="text/javascript" src="../src/model/Match.js"></script>
-        <script type="text/javascript" src="../src/model/Link.js"></script>
-        <script type="text/javascript" src="../src/model/Protein.js"></script>
-        <script type="text/javascript" src="../src/model/Annotation.js"></script>
-        <script type="text/javascript" src="../src/model/ProteinLink.js"></script>
-        <script type="text/javascript" src="../src/model/ResidueLink.js"></script>
-        <script type="text/javascript" src="../src/controller/ExternalControls.js"></script>
-        <script type="text/javascript" src="../src/controller/Rotator.js"></script>
-        <script type="text/javascript" src="../src/controller/xiNET_Storage.js"></script>
-        <script type="text/javascript" src="../src/controller/ReadCSV.js"></script>
-        <script type="text/javascript" src="../src/controller/Fasta.js"></script>
+<!--
+        <script type="text/javascript" src="../xiNET/crosslinkviewer.js"></script>
 -->
+        <script type="text/javascript" src="../xiNET/src/controller/Init.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/MouseEvents.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/Layout.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/Refresh.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/ToolTips.js"></script>
+        <script type="text/javascript" src="../xiNET/src/model/Match.js"></script>
+        <script type="text/javascript" src="../xiNET/src/model/Link.js"></script>
+        <script type="text/javascript" src="../xiNET/src/model/Protein.js"></script>
+        <script type="text/javascript" src="../xiNET/src/model/Annotation.js"></script>
+        <script type="text/javascript" src="../xiNET/src/model/ProteinLink.js"></script>
+        <script type="text/javascript" src="../xiNET/src/model/ResidueLink.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/ExternalControls.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/Rotator.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/xiNET_Storage.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/ReadCSV.js"></script>
+        <script type="text/javascript" src="../xiNET/src/controller/Fasta.js"></script>
     </head>
     <body>
 
@@ -117,7 +115,7 @@
 </div>
 
 <div class="overlay-box" id="legendPanel">
-    <div><img src="../demo/images/fig3_1.svg"></div>
+    <div><img src="../xiNET/demo/images/fig3_1.svg"></div>
 </div>
 
 
@@ -362,6 +360,8 @@
                             d3.select('#scoreSlider').style('display', 'inline-block');
                         }
                   };
+
+			//var test = "ProteinId,AnnotName,StartRes,EndRes,Color 	\nsp|P41896|Tfg2,Dimerization domain,55,144, 0xe78ac3\nsp|P41896|Tfg2,Dimerization domain,192,226, 0xe78ac3\nsp|P41896|Tfg2,Linker,227,291, 0xfdbf6f\nsp|P41896|Tfg2,WH domain,292,354, 0xa6d854\nsp|P41896|Tfg2,Insertion,145,191, 0xcccccc\nsp|P41895|Tfg1,N-terminal domain,1,97, 0xb3cde3\nsp|P41895|Tfg1,Dimerization domain,98,167, 0xe78ac3\nsp|P41895|Tfg1,Dimerization domain,305,400, 0xe78ac3\nsp|P41895|Tfg1,Charged region,401,510, 0x1f78b4\nsp|P41895|Tfg1,WH domain,673,728, 0xa6d854\nsp|P41895|Tfg1,Insertion,168,304, 0xcccccc\n"
 
             //]]>
         </script>

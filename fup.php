@@ -2,7 +2,7 @@
 
     //your connection string here
     // $connectionString = "host= dbname= user= password=";
-    include('./uploadsConnectionString.php');
+    include('./connection.php');
 
     //if ($_FILES["upfile"]["error"] > 0) {
     //    echo "Error: " . $_FILES["upfile"]["error"] . "<br />";
@@ -24,7 +24,7 @@
         //echo $linkData;
         $fileName =  $_FILES["upfile"]["name"];
         //echo $fileName;
-
+-
         $fastaData;
         if ($_FILES['upfasta']['tmp_name']) {
             $fastaData = addslashes(file_get_contents($_FILES['upfasta']['tmp_name']));
