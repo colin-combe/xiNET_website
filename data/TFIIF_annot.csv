@@ -1,4 +1,4 @@
-ProteinId,AnnotName,StartRes,EndRes,Color 	
+ProteinId,AnnotName,StartRes,EndRes,"Color" 	
 sp|P41896|Tfg2,Dimerization domain,55,144, 0xe78ac3
 sp|P41896|Tfg2,Dimerization domain,192,226, 0xe78ac3
 sp|P41896|Tfg2,Linker,227,291, red

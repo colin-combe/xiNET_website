@@ -34,7 +34,7 @@
         if ($_FILES['upannot']['tmp_name']) {
             $annotData = addslashes(file_get_contents($_FILES['upannot']['tmp_name']));
         }
-        //echo $annotData;
+        //~ echo $annotData;
 
         $dbconn = mysql_connect($server,$user,$password) or die('Could not connect: ' . mysql_error());
         mysql_select_db($db, $dbconn) or die("Could not select database.");
