@@ -29,11 +29,11 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <link rel="icon" type="image/ico" href="images/logos/favicon.ico">
-        <link rel="stylesheet" href="demo/css/reset.css" />
-        <link rel="stylesheet" href="demo/css/noscript.css" />
-        <link rel="stylesheet" href="demo/css/style.css" />
-        <link rel="stylesheet" href="demo/css/noNav.css" />
-        <link rel="stylesheet" href="demo/css/xiNET.css">
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/noscript.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/noNav.css" />
+        <link rel="stylesheet" href="./css/xiNET.css" />
         <!--libraries-->
         <script type="text/javascript" src="../xiNET/vendor/d3.js"></script>
         <script type="text/javascript" src="../xiNET/vendor/colorbrewer.js"></script>
