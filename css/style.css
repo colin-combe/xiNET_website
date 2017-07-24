@@ -124,12 +124,16 @@ nav a {
     outline: 0;
     color: #fff;
     text-decoration: none;
+    font-size: 1em;
+}
+
+.navItem {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 300;
     text-shadow: 0 0 1px rgba(255, 255, 255, .3);
-    font-size: 1em;
 }
+
 nav a:focus, nav a:hover {
     outline: 0;
 }
@@ -199,6 +203,7 @@ article, section {
     float: left;
     top: 0;
     text-decoration: none;
+    margin-right:20px;
 }
 .image {
     display: inline-block;
