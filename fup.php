@@ -41,7 +41,7 @@
          $query = "INSERT INTO upload (rand, links, fileName, fasta, annot) "
                 . "VALUES ('".$rand."','".$linkData."','".$fileName."','".$fastaData."','".$annotData."');";
         //echo $query;
-        $result = mysql_query($query) or die('Query failed: ' . mysql_error());
+        $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
         // Free resultset
         //mysql_free_result();
         // Closing connection
