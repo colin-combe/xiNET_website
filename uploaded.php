@@ -44,7 +44,7 @@
         <script type="text/javascript" src="../xiNET/vendor/rgbcolor.js"></script>
 -->
         <!--xiNET-->
-        <script type="text/javascript" src="../xiNET/crosslinkviewer.js"></script>
+        <script type="text/javascript" src="./crosslinkviewer.js"></script>
 <!--
         <script type="text/javascript" src="../xiNET/src/controller/Init.js"></script>
         <script type="text/javascript" src="../xiNET/src/controller/MouseEvents.js"></script>
