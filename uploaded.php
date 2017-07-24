@@ -16,7 +16,7 @@
             $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
             $line = mysqli_fetch_array($result);
         
-            $clmsCsv = $line['links'];
+            $clmsCsv = preg_replace('/(")/','',$line['links']);
             $filename = $line['filename'];
             $layout = $line['layout'];
             $fasta = $line['fasta'];
