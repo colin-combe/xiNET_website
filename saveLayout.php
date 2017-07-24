@@ -1,7 +1,7 @@
 <?php
     //your connection string here
     // $connectionString = "host= dbname= user= password=";
-    include('./uploadsConnectionString.php');
+    include('./connection.php');
     $id = $_POST["id"];
     $layout = $_POST["layout"];
 	$dbconn = mysqli_connect($server,$user,$password) or die('Could not connect: ' . mysqli_error($dbconn));

@@ -1,10 +1,10 @@
-ProteinId,AnnotName,StartRes,EndRes,Color 	
+ProteinId,AnnotName,StartRes,EndRes,"Color" 	
 sp|P41896|Tfg2,Dimerization domain,55,144, #e78ac3
 sp|P41896|Tfg2,Dimerization domain,192,226, #e78ac3
 sp|P41896|Tfg2,Linker,227,291, #fdbf6f
 sp|P41896|Tfg2,WH domain,292,354, #a6d854
 sp|P41896|Tfg2,Insertion,145,191, #cccccc
-sp|P41895|Tfg1,N-terminal domain,1,97, #b3cde3
+sp|P41895|Tfg1,N-terminal domain,1,97," #b3cde3"
 sp|P41895|Tfg1,Dimerization domain,98,167, #e78ac3
 sp|P41895|Tfg1,Dimerization domain,305,400, #e78ac3
 sp|P41895|Tfg1,Charged region,401,510, #1f78b4

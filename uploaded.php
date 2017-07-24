@@ -20,7 +20,7 @@
             $filename = $line['filename'];
             $layout = $line['layout'];
             $fasta = $line['fasta'];
-            $annot = $line['annot'];
+            $annot = preg_replace('/(")/','',$line['annot']);
             mysqli_close($dbconn);
             echo ('<title> xiNET | ' . $filename . '</title>');
         ?>
