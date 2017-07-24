@@ -36,9 +36,9 @@
         }
         //~ echo $annotData;
 
-        $dbconn = mysql_connect($server,$user,$password) or die('Could not connect: ' . mysql_error());
-        mysql_select_db($db, $dbconn) or die("Could not select database.");
-        $query = "INSERT INTO upload (rand, links, fileName, fasta, annot) "
+         $dbconn = mysqli_connect($server,$user,$password) or die('Could not connect: ' . mysqli_error($dbconn));
+         mysqli_select_db($dbconn, $db) or die("Could not select database.");
+         $query = "INSERT INTO upload (rand, links, fileName, fasta, annot) "
                 . "VALUES ('".$rand."','".$linkData."','".$fileName."','".$fastaData."','".$annotData."');";
         //echo $query;
         $result = mysql_query($query) or die('Query failed: ' . mysql_error());
