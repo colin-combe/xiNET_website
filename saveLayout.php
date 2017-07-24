@@ -4,10 +4,12 @@
     include('./uploadsConnectionString.php');
     $id = $_POST["id"];
     $layout = $_POST["layout"];
-    $dbconn = mysql_connect($server,$user,$password) or die('Could not connect: ' . mysql_error());
-    mysql_select_db($db, $dbconn) or die("Could not select database.");
+	$dbconn = mysqli_connect($server,$user,$password) or die('Could not connect: ' . mysqli_error($dbconn));
+    mysqli_select_db($dbconn, $db) or die("Could not select database.");
     $query = "UPDATE upload SET layout = '" . $layout . "' WHERE rand = '" . $id . "';";
     //echo $query;
-    $result = mysql_query($query) or die('Query failed: ' . mysql_error());
+    $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
     echo 'Layout saved';
+    mysqli_close($dbconn);
+        
 ?>

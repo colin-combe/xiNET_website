@@ -15,11 +15,13 @@
             //~ echo $query;
             $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
             $line = mysqli_fetch_array($result);
+        
             $clmsCsv = $line['links'];
             $filename = $line['filename'];
             $layout = $line['layout'];
             $fasta = $line['fasta'];
             $annot = $line['annot'];
+            mysqli_close($dbconn);
             echo ('<title> xiNET | ' . $filename . '</title>');
         ?>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />

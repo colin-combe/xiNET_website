@@ -45,7 +45,7 @@
         // Free resultset
         //mysql_free_result();
         // Closing connection
-        mysql_close($dbconn);
+        mysqli_close($dbconn);
         //redirect to page with unique url
         header('Location: ./uploaded.php?uid='.$rand);
     }
