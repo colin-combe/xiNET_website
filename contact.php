@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 	    <?php
-	    $pageName = "Home";
+	    $pageName = "Contact";
 	    include("head.php");
 	    ?>
 	</head>

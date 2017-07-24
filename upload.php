@@ -60,53 +60,25 @@
                which you can share with others.</p>
             </form>
             
-            <div class="image-link-left"><img alt="xiNET workflow" class="image full" 
+            <div class="image-link"><img alt="xiNET workflow" class="image full" 
 					src="images/diagrams/workflow.svg"></div>
-            <h4>Getting Started</h4>
             <p>You can view your results by uploading <a href=
-            "#CLMS-CSV">cross-link data</a> in a Comma Separated
-            Values (CSV) file. Optionally, this can be accompanied
+            "./CLMS-CSV.php">cross-link data</a> in a Comma Separated
+            Values (CSV) file.</p>
+            <br>
+            <p>Optionally, this can be accompanied
             by a <a href=
             "https://en.wikipedia.org/wiki/FASTA_format" target=
             "_blank">FASTA file</a> giving the protein sequences
             and/or a CSV file containing <a href=
-            "#annotCSV">annotations</a>. If the FASTA file is
-            omitted then protein sequences are retrieved by looking
-            up accession numbers via the UniprotKB web service. 
-            <!--
-                                <a href="http://www.biodas.org/wiki/Main_Page" target="_blank">Distributed Annotation System</a>. 
--->
-             This assumes that the sequences used in the search
-            correspond exactly with those of valid, current
-            UniprotKB accession numbers.</p>
-            <div class="columnNames">
-               <h4>Column Names in CSV files</h4>
-               <ul style="list-style-type:square;">
-                  <li>Column names are required as the first line
-                  of the CSV file.</li>
-                  <li>Column names are case-sensitive.</li>
-                  <li>The order of the columns is unspecified.</li>
-               </ul>
-            </div>
-            <div class="protIds">
-               <h4>Protein Identifiers</h4>
-               <h6>If a FASTA file is provided:</h6>
-               <p>then the protein identifiers (columns 'Protein1'
-               and 'Protein2') must match identifiers in the FASTA
-               file. In a FASTA file, the word following the "&gt;"
-               symbol is the identifier of the sequence, and the
-               rest of the line is the description.</p>
-               <div class="external-link">
-                  <h6>If a FASTA file is not provided:</h6>
-                  <p>protein identifiers are assumed to be six
-                  character <a href=
-                  "http://www.uniprot.org/help/accession_numbers">UniprotKB</a>
-                  accession numbers. SwissProt style identifiers of
-                  the format: <code>sp|accession|name</code> are
-                  also accepted and in this case 'name' will be
-                  used for the protein labels.</p>
-               </div>
-            </div>
+            "./annotationCSV.php">annotations</a>.</p>  
+            <br>
+            <p>For further information on the file formats see:</p>
+            <ul>
+				<li><a id="CLMS-CSV" href="./CLMS-CSV.php">Cross-link CSV format</a></li>
+				<li><a href="./proteinData.php">FASTA files / protein IDs</a></li>
+				<li><a id="Annotations" href="./annotationCSV.php">Annotations CSV format</a></li>
+			</ul>
          </div><!-- CONTAINER -->
       </section>
    </div>
