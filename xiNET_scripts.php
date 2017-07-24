@@ -2,6 +2,11 @@
 <!--
         <script type="text/javascript" src="./crosslinkviewer.js"></script>
 -->
+
+<!--
+for dev / debugging
+-->
+
        <!--libraries -->
         <script type="text/javascript" src="../xiNET/vendor/d3.js"></script>
         <script type="text/javascript" src="../xiNET/vendor/colorbrewer.js"></script>
