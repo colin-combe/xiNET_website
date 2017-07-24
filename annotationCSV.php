@@ -89,9 +89,7 @@
                                         </td>
                                         <td>
                                             <p>Hex value for color or  <a target="_blank" href="https://www.w3schools.com/colors/colors_names.asp">HTML color name</a><br>
-												If omitted then a color is chosen automatically.
-                                             In this case annotations with the same name are always assigned the same color.</p>
-                                        </td>
+								        </td>
                                     </tr>
 
                                 </table>

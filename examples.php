@@ -18,10 +18,8 @@
                         <option value="TFIIF">TFIIF</option>
 -->
                         <option selected value="PolII">PolII</option>
-<!--
-                        <option value="PP2A">PP2A</option>
--->
                         <option value="NPC">NPC</option>
+						<option value="PP2A">PP2A</option>
                     </select>
                     <div style='float:right'>
 <!--
@@ -62,14 +60,14 @@
                     cite:"<p>Data from <a href='http://www.nature.com/emboj/journal/v29/n4/full/emboj2009401a.html' target='_blank'>Chen ZA, Jawhari A, Fischer L, Buchen C, Tahir S, Kamenski T, Rasmussen M, Lariviere L, Bukowski-Wills J-C, Nilges M, Cramer P &amp; Rappsilber J (2010) Architecture of the RNA polymerase II–TFIIF complex revealed by cross-linking and mass spectrometry. The EMBO Journal 29: 717–726</a>.</p>",
                     customAnnot:"./data/TFIIF_annot.csv"
                 },
-                //~ {//PP2A
-                    //~ file:"./data/PP2A.csv",
-                    //~ cite:"<p>Data from <a href='http://www.sciencemag.org/content/337/6100/1348' target='_blank'>Herzog, F., Kahraman, A., Boehringer, D., Mak, R., Bracher, A., Walzthoeni, T., Leitner, A., Beck, M., Hartl, F.-U., Ban, N., Malmstrom, L., and Aebersold, R. (2012) Structural Probing of a Protein Phosphatase 2A Network by Chemical Cross-Linking and Mass Spectrometry. Science 337, 1348–1352</a>.</p>"
-                //~ },
                 {//NPC
                     file:"./data/NPC.csv",
                     cite:"<p>Data from <a href='http://www.sciencedirect.com/science/article/pii/S0092867413014165' target='_blank'>Bui, K. H., von Appen, A., DiGuilio, A. L., Ori, A., Sparks, L., Mackmull, M.-T., Bock, T., Hagen, W., Andrés-Pons, A., Glavy, J. S., and Beck, M. (2013) Integrated Structural Analysis of the Human Nuclear Pore Complex Scaffold. Cell 155, 1233–1243</a>.</p>"
-                }
+                },
+                {//PP2A
+                    file:"./data/PP2A.csv",
+                    cite:"<p>Data from <a href='http://www.sciencemag.org/content/337/6100/1348' target='_blank'>Herzog, F., Kahraman, A., Boehringer, D., Mak, R., Bracher, A., Walzthoeni, T., Leitner, A., Beck, M., Hartl, F.-U., Ban, N., Malmstrom, L., and Aebersold, R. (2012) Structural Probing of a Protein Phosphatase 2A Network by Chemical Cross-Linking and Mass Spectrometry. Science 337, 1348–1352</a>.</p>"
+                },
             ];
 
             function loadData(){
