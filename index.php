@@ -37,7 +37,7 @@
 						</div><!-- external-link -->
 							
 						<div class="controlsexamplespage">						
-						<p style="text-align:center;font-size:small;">
+						<p style="text-align:center;font-size:small;">Citation: 
 							<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/25648531">
 							Combe, C. W., Fischer, L. &amp; Rappsilber, J. xiNET: Cross-link Network Maps With Residue Resolution. <i>Mol Cell Proteomics</i> <b>14,</b> 1137–1147 (2015).
 							</a>

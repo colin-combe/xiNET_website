@@ -24,45 +24,9 @@
             mysqli_close($dbconn);
             echo ('<title> xiNET | ' . $filename . '</title>');
         ?>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="description" content="xiNET is a visualisation tool for cross-linking and mass spectrometry data." />
-        <meta name="keywords" content="xiNET, biologists, mass-spectrometrists, cross-linking, protein, complexes, 3d, models, rappsilber, software" />
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="icon" type="image/ico" href="images/logos/favicon.ico">
-        <link rel="stylesheet" href="./css/reset.css" />
-        <link rel="stylesheet" href="./css/noscript.css" />
-        <link rel="stylesheet" href="./css/style.css" />
+        <?php include("head.php");?>
         <link rel="stylesheet" href="./css/noNav.css" />
-        <link rel="stylesheet" href="./css/xiNET.css" />
-        <!--libraries-->
-<!--
-        <script type="text/javascript" src="../xiNET/vendor/d3.js"></script>
-        <script type="text/javascript" src="../xiNET/vendor/colorbrewer.js"></script>
-        <script type="text/javascript" src="../xiNET/vendor/FileSaver.js"></script>
-        <script type="text/javascript" src="../xiNET/vendor/rgbcolor.js"></script>
--->
-        <!--xiNET-->
-        <script type="text/javascript" src="./crosslinkviewer.js"></script>
-<!--
-        <script type="text/javascript" src="../xiNET/src/controller/Init.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/MouseEvents.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/Layout.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/Refresh.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/ToolTips.js"></script>
-        <script type="text/javascript" src="../xiNET/src/model/Match.js"></script>
-        <script type="text/javascript" src="../xiNET/src/model/Link.js"></script>
-        <script type="text/javascript" src="../xiNET/src/model/Protein.js"></script>
-        <script type="text/javascript" src="../xiNET/src/model/Annotation.js"></script>
-        <script type="text/javascript" src="../xiNET/src/model/ProteinLink.js"></script>
-        <script type="text/javascript" src="../xiNET/src/model/ResidueLink.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/ExternalControls.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/Rotator.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/xiNET_Storage.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/ReadCSV.js"></script>
-        <script type="text/javascript" src="../xiNET/src/controller/Fasta.js"></script>
--->
+        <?php include("xiNET_scripts.php");?>
     </head>
     <body>
 
@@ -343,7 +307,8 @@
                     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                     xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
                         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                            xlv.message(xmlhttp.responseText, true);
+                            //xlv.message(xmlhttp.responseText, true);
+                            alert(xmlhttp.responseText);
                         }
                     }
                     xmlhttp.send(params);
@@ -364,9 +329,6 @@
                             d3.select('#scoreSlider').style('display', 'inline-block');
                         }
                   };
-
-			//var test = "ProteinId,AnnotName,StartRes,EndRes,Color 	\nsp|P41896|Tfg2,Dimerization domain,55,144, 0xe78ac3\nsp|P41896|Tfg2,Dimerization domain,192,226, 0xe78ac3\nsp|P41896|Tfg2,Linker,227,291, 0xfdbf6f\nsp|P41896|Tfg2,WH domain,292,354, 0xa6d854\nsp|P41896|Tfg2,Insertion,145,191, 0xcccccc\nsp|P41895|Tfg1,N-terminal domain,1,97, 0xb3cde3\nsp|P41895|Tfg1,Dimerization domain,98,167, 0xe78ac3\nsp|P41895|Tfg1,Dimerization domain,305,400, 0xe78ac3\nsp|P41895|Tfg1,Charged region,401,510, 0x1f78b4\nsp|P41895|Tfg1,WH domain,673,728, 0xa6d854\nsp|P41895|Tfg1,Insertion,168,304, 0xcccccc\n"
-
             //]]>
         </script>
     </body>
