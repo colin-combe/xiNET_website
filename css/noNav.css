@@ -21,9 +21,15 @@
 }
 .controlsexamplespage{
 	left: 0px;
+	margin:0px;
+	padding:10px;
 }
 #networkContainer{
 	left: 0px;
-	top:100px;
+	top:56px;
+	bottom: 55px!important;
 }
 
+.container {
+    margin: 0px;
+}

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <?php
             //your connection string here
             // $connectionString = "host= dbname= user= password=";
@@ -22,9 +19,9 @@
             $fasta = $line['fasta'];
             $annot = preg_replace('/(")/','',$line['annot']);
             mysqli_close($dbconn);
-            echo ('<title> xiNET | ' . $filename . '</title>');
+            $pageName = $filename;
+            include("head.php");
         ?>
-        <?php include("head.php");?>
         <link rel="stylesheet" href="./css/noNav.css" />
         <?php include("xiNET_scripts.php");?>
     </head>
@@ -151,7 +148,7 @@
         <!-- Main -->
         <div id="main">
             <div class="container">
-                <h1 class="page-header">
+                <div class="page-header">
                     <button class="btn btn-1 btn-1a network-control resetzoom" onclick="saveLayout();">
                             Save layout
                     </button>
@@ -174,7 +171,7 @@
                                 <input onclick="toggleHelpPanel()" type="checkbox">
                         </label>
                     </div>
-                </h1>
+                </div>
             </div>
 
             <div id="networkContainer"></div>
@@ -208,7 +205,8 @@
                             <p id="cutoffLabel">(cut-off)</p>
 
                         </div> <!-- outlined scoreSlider -->
-                        <div style='float:right'>
+                        <div  style='display:inline-block;'>
+							&nbsp;&nbsp;&nbsp;
                             <label>Annot.
                             <select id="annotationsSelect" onChange="changeAnnotations();">
                                 <option selected='selected'>Custom</option>
@@ -219,6 +217,13 @@
                             </select>
                             </label>
                         </div>
+						<a  style='float:right' target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/25648531">
+							Citation
+						</a>
+
+
+
+
 
                     </div>
                     <script type="text/javascript">

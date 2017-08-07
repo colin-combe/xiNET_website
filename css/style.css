@@ -394,9 +394,11 @@ table.default tfoot {
 */
     background-color: #091D42;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
+/*
     margin-bottom: 20px;
     margin-top: 20px;
+*/
 }
 .bottom a:hover {
     opacity: .5;
