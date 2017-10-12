@@ -173,7 +173,7 @@
          <div class="container">
             <h4>Ambiguous Linkage Sites</h4>
             <p>Ambiguous links are represented by listing the
-            alternative linkage sites separated by commas or
+            alternative linkage sites separated by 
             semi-colons in the protein and position fields. For
             example:</p>
             <table class="hor-minimalist-a" style=
