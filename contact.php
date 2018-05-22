@@ -2,8 +2,9 @@
 <html>
 	<head>
 	    <?php
-	    $pageName = "Home";
+	    $pageName = "Contact";
 	    include("head.php");
+		include("xiSPEC_scripts.php");
 	    ?>
 	</head>
 		<body>
@@ -22,56 +23,44 @@
 									<tr>
 						   		 <td><div class="contact no-hover">
 						   		 		<ul id="navlist"  class="no-hover">
-						   		 			<li class="no-hover"><a class="colin" href="mailto:colin.combe@ed.ac.uk" class="no-hover" title="Email Colin!"></a></li>
+						   		 			<li><a href="mailto:lars.b.kolbowski@campus.tu-berlin.de" title="Email Lars!">
+						   		 				<img src="images/team/lars-kolbowski.jpg" class="grayscale" />
+						   		 			</a></li>
 						   		 		</ul>
 						   		 	</a>
 									<div class="external-link">
-						   		 	<p class="colintext">
-						   		 		<strong>Dr Colin Combe</strong>
-						   		 		<br/><a href="mailto:colin.combe@ed.ac.uk">colin.combe@ed.ac.uk</a>
+						   		 	<p>
+						   		 		<strong>Lars Kolbowski</strong>
+						   		 		<br/><a href="mailto:lars.b.kolbowski@campus.tu-berlin.de">lars.b.kolbowski@campus.tu-berlin.de</a>
 						   		 		<br/>Developer
-						   		 		<br/>Room 4.17
-						   		 		<br/>Michael Swann Building
-						   		 		<br/>King’s Buildings
-						   		 		<br/>Edinburgh
-						   		 		<br/>EH9 3JR
+						   		 		<br/>TU-Berlin
+										<br/>Sekr. TIB 4/4-3
+										<br/>Gustav-Meyer-Allee 25
+										<br/>13355 Berlin
+										<br/>TIB Gebäude 17, Etage
+										<br/>Raum 477
 						   		 	</p>
 									</div>
 						   		 </div> <!-- CONTACT--></td>
-			               		<td> <div class="contact">
-						   		 		<ul id="navlist">
-						   		 			<li><a class="matt no-hover" href="mailto:matthew.dunn@ed.ac.uk" title="Email Matt!"></a></li>
-						   		 		</ul>
-						   		 	</a>
-									<div class="external-link">
-						   		 	<p class="matttext">
-						   		 		<strong>Matthew Dunn</strong>
-						   		 		<br/><a href="mailto:matthew.dunn@ed.ac.uk">matthew.dunn@ed.ac.uk</a>
-						   		 		<br/>Web Designer
-						   		 		<br/>Room 4.15
-						   		 		<br/>Michael Swann Building
-						   		 		<br/>King’s Buildings
-						   		 		<br/>Edinburgh
-						   		 		<br/>EH9 3JR
-						   		 	</p>
-									</div>
-						   		 </div> <!-- CONTACT --></td>
-			               	<td>	 <div class="contact">
+			               	<td>	 <div class="contact contact-right">
 						   		 
 						   		 		<ul id="navlist">
-						   		 			<li><a class="juri no-hover" href="mailto:juri.rappsilber@ed.ac.uk" title="Email Juri!"></a></li>
+						   		 			<li><a href="mailto:juri.rappsilber@ed.ac.uk" title="Email Juri!">
+						   		 				<img src="images/team/juri-rappsilber.jpg" class="grayscale" />
+						   		 			</a></li>
 						   		 		</ul>
 						   		 	</a>
 									<div class="external-link">
-						   		 	<p class="juritext">
+						   		 	<p>
 						   		 		<strong>Prof Juri Rappsilber</strong>
 						   		 		<br/><a  href="mailto:juri.rappsilber@ed.ac.uk">juri.rappsilber@ed.ac.uk</a>
 						   		 		<br/>General Inquiries
-						   		 		<br/>Room 4.18a
-						   		 		<br/>Michael Swann Building
-						   		 		<br/>King’s Buildings
-						   		 		<br/>Edinburgh
-						   		 		<br/>EH9 3JR
+						   		 		<br/>TU-Berlin
+										<br/>Sekr. TIB 4/4-3
+										<br/>Gustav-Meyer-Allee 25
+										<br/>13355 Berlin
+										<br/>TIB Gebäude 17, Etage
+										<br/>Raum 475
 						   		 	</p>
 									</div>
 						   		 </div> <!-- CONTACT --></td>
@@ -85,7 +74,7 @@
 						<div class="container">
 							<div class="external-link">
 								<h4>Support</h4>
-								<p>xiNET can be used by <a href="./upload.php">uploading your data</a> or downloading the <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer"><i class="fa fa-github"></i>&nbsp;GitHub project</a> and using it locally. For support email <a href="mailto:colin.combe@ed.ac.uk">colin.combe@ed.ac.uk</a>. You may also use <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer/issues"> issue tracking at GitHub</a>.</p>
+								<p>For support email <a href="mailto:lars.b.kolbowski@campus.tu-berlin.de">lars.b.kolbowski@campus.tu-berlin.de</a>. You may also use <a target="_blank" href="https://github.com/Rappsilber-Laboratory/xiSPEC/issues"> issue tracking at GitHub</a>.</p>
 							</div>
 							<br>
 						</div>
