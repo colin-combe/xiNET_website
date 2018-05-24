@@ -200,7 +200,8 @@ $( document ).ready(function() {
 			spinner.stop();
 			resp = JSON.parse(data);
 			if (resp.errors.length == 0 && resp.modifications.length == 0 && resp.warnings.length == 0)
-				window.location.href = "viewSpectrum.php";
+				//window.location.href = "viewSpectrum.php";
+				console.log("success");
 			else{
 				$('#submitDataInfo').show();
 				$('#processDataInfo').hide();
@@ -244,6 +245,6 @@ $( document ).ready(function() {
 		}
 		});
 		return false;
-    }; 
+    };
 
 });
