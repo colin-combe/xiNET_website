@@ -2,19 +2,19 @@
 	<div class="header-bg">
 		<div class="top">
 			<div class="logogroup">
-				<a style="text-decoration:none;" href="index.php"><h1 class="logo">xiSPEC v2</h1></a>
-				<h4 class="logo-subtitle">Spectrum Viewer</h4>
+				<a style="text-decoration:none;" href="index.php"><h1 class="logo">xiVIEW</h1></a>
+				<!-- <h4 class="logo-subtitle">Spectrum Viewer</h4> -->
 			</div>
 			<nav class="hover-effect">
 				<a href="index.php" data-hover="Home" data-no-instant>Home</a><br/>
 <!--
 				<a href="features.php" data-hover="Features">Features</a><br/>
 -->
-				<a href="examples.php" data-hover="Examples" data-no-instant>Examples</a><br/>
+				<!-- <a href="examples.php" data-hover="Examples" data-no-instant>Examples</a><br/> -->
 				<a href="upload.php" data-hover="Upload">Upload</a><br/>
 				<a href="help.php" data-hover="Help">Help</a><br/>
 				<a href="contact.php" data-hover="Contact">Contact</a><br/>
-				<a href="legacy.php" data-hover="Legacy">Legacy</a><br/>
+				<!-- <a href="legacy.php" data-hover="Legacy">Legacy</a><br/> -->
 			</nav>
 		</div>
 		<div class="bottom">

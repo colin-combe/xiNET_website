@@ -90,7 +90,7 @@ em, i {
     margin-right: auto;
 }
 #main a {
-    color: #750000;
+    color: #091D42;
 }
 #main a:visited {
     color: #300;
@@ -213,11 +213,11 @@ nav a:focus, nav a:hover {
 }
 .menu-top .header-top{
     display: none;
-    background-color: #750000;
+    background-color: #091D42;
 }
 .menu-top .header-top-bg{
     position: relative;
-    background: #750000;
+    background: #091D42;
     background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2)0, rgba(9, 29, 66, 0)100%);
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255, 255, 255, .2)), color-stop(100%, rgba(9, 29, 66, 0)));
     background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2)0, rgba(9, 29, 66, 0)100%);
@@ -699,7 +699,7 @@ h4{
     position: relative;
     width: 300px;
     height: 100%;
-    background: #750000;
+    background: #091D42;
     background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2)0, rgba(9, 29, 66, 0)100%);
     background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(255, 255, 255, .2)), color-stop(100%, rgba(9, 29, 66, 0)));
     background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2)0, rgba(9, 29, 66, 0)100%);
@@ -716,7 +716,7 @@ h4{
     width: 300px;
     height: 100%;
     color: #fff;
-    background-color: #750000;
+    background-color: #091D42;
     box-shadow: inset -.25em 0 .25em 0 rgba(0, 0, 0, .125);
     text-align: left;
 }
@@ -982,7 +982,7 @@ code {
     display: none;
 }
 #submitDataInfo  a {
-    color: #750000;
+    color: #091D42;
 }
 #submitDataInfo  a:visited {
     color: #300;
@@ -1329,7 +1329,7 @@ div.file_upload {
     }
     .form-group.focus .form-control,
     .form-control:focus {
-      border-color: #750000;
+      border-color: #091D42;
       outline: 0;
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -1351,7 +1351,7 @@ div.file_upload {
       border-color: #bdc3c7;
     }
     .form-control.flat:focus {
-      border-color: #750000;
+      border-color: #091D42;
   }
 .form-control::-moz-selection {
     background-color: #091d42;
@@ -1969,7 +1969,7 @@ textarea {
 }
 .external-link a:hover {
     color: #ffffff!important;
-    background-color: #750000;
+    background-color: #091D42;
     text-decoration: none;
 }
 .residue-level {
@@ -2128,7 +2128,7 @@ section.two.contact-section2 {
         margin-left: 0;
     }
     #sidePanel {
-        background: #750000 url("../images/overlay.png");
+        background: #091D42 url("../images/overlay.png");
         box-shadow: inset -.25em 0 .25em 0 rgba(0, 0, 0, .125);
     }
     #sidePanelToggle .toggle {
@@ -2143,7 +2143,7 @@ section.two.contact-section2 {
         border: 1px solid #eee;
     }
     #sidePanelToggle .toggle:hover {
-        background: #750000 url("../images/icons/menu.png") center center no-repeat;
+        background: #091D42 url("../images/icons/menu.png") center center no-repeat;
     }
     .contact {
         position: relative;

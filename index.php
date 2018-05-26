@@ -53,15 +53,14 @@
 		<!-- Main -->
 		<div id="main">
 			<div class="container">
-				<h1 class="page-header">Visualizing mass spectrometry data.</h1>
-				Citation: <a target="_blank" href="https://doi.org/10.1093/nar/gky353"> Lars Kolbowski, Colin Combe, Juri Rappsilber; xiSPEC: web-based visualization, analysis and sharing of proteomics data, Nucleic Acids Research, gky353</a></br>
-				xiSPEC is an interactive tool for visualizing and analyzing mass spectrometry data.
+				<h1 class="page-header">Multiple Coordinated Views of Cross-Linking / Mass Spectrometry Data.</h1>
+				xiView is a visualisation tool for the downstream analysis of cross-linking / mass spectrometry results. It provides multiple, linked views of the data, including:
 				<ul>
-					<li>Analyse mass spectra intuitively and test hypotheses.</li>
-					<li>Upload and share whole MS datasets.</li>
-					<li>Download annotated spectra in publication quality (vector graphic).</li>
+					<li>2D network (xiNET or circular)</li>
+					<li>the supporting annotated spectra (xiSPEC)</li>
+					<li>3D structure view (NGL).</li>
 			 </ul>
-				<p>xiSPEC is an open source project on <a href="https://github.com/Rappsilber-Laboratory/xiSPEC" >GitHub</a>. Report issues and request features <a href="https://github.com/Rappsilber-Laboratory/xiSPEC/issues">here</a>.</p>
+				<p>xiView is an open source project on <a href="https://github.com/Rappsilber-Laboratory/xiView" >GitHub</a>. Report issues and request features <a href="https://github.com/Rappsilber-Laboratory/xiView/issues">here</a>.</p>
 				<p>
 									</p>
 				<div style="text-align: center;">
