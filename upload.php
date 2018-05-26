@@ -58,7 +58,7 @@
 							</div>
 						</div>
 						<div id="fileUploadWrapper">
-							<input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.zip,.gz" multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
+							<input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.zip,.gz, .fasta" multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
 							<label for="fileupload"><span class="uploadbox"></span><span class="btn">Choose file(s)</span></label>
 							<div id="uploadProgress">
 								<div class="file_upload_bar" style="width: 0%;"><div class="file_upload_percent"></div></div>
@@ -81,6 +81,14 @@
 									<span class="fileName">Select a mzML, mgf or zip file to upload.</span>
 									<span class="statusBox" data-filetype="mzml"></span>
 									<input class="uploadCheckbox" type="checkbox" id="mzml_checkbox" style="visibility: hidden;">
+								</td>
+							</tr>
+							<tr id="fasta_fileBox">
+								<td style="text-align: center;">Sequence file:</td>
+								<td>
+									<span class="fileName">Select a FASTA or zip file to upload.</span>
+									<span class="statusBox" data-filetype="fasta"></span>
+									<input class="uploadCheckbox" type="checkbox" id="fasta_checkbox" style="visibility: hidden;">
 								</td>
 							</tr>
 						</table>

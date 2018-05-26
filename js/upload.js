@@ -32,7 +32,7 @@ $( document ).ready(function() {
 
 	$('#fileupload').fileupload({
 		dataType: 'json',
-		fileTypes: "mzid|mzml|mgf|csv|zip|gz",
+		fileTypes: "mzid|mzml|mgf|csv|zip|gz|fasta",
 		maxChunkSize: 100000000,	//100MB
 		progressall: function (e, data) {
 			var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -55,6 +55,13 @@ $( document ).ready(function() {
 				$('#mzml_checkbox').prop( "checked", false ).change();
 				$('#mzml_fileBox .fileName').html(data.files[0].name);
 				data.context = $('#mzml_fileBox .statusBox').html('<div class="loader"></div>');
+				data.submit();
+			}
+
+			if(new RegExp("\.(fasta)(.gz)?$", 'i').test(data.files[0].name)){
+				$('#fasta_checkbox').prop( "checked", false ).change();
+				$('#fasta_fileBox .fileName').html(data.files[0].name);
+				data.context = $('#fasta_fileBox .statusBox').html('<div class="loader"></div>');
 				data.submit();
 			}
 
