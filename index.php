@@ -65,7 +65,7 @@
 									</p>
 				<div style="text-align: center;">
 					<div class="sliderWrapper">
-					<img class="sliderImg" alt="Interactive highlighting between all views" src="images/slider/interactiveViews.png">
+					<img class="sliderImg" alt="Automatic mapping of links onto 3D structures" src="images/slider/xiView_3d.png">
 					<img class="sliderImg" alt="Measure distances between peaks" src="images/slider/measuringTool.png" style="display:none;">
 					<img class="sliderImg" alt="Change spectrum annotation parameters" src="images/slider/settingsView.png" style="display:none;">
 					<img class="sliderImg" alt="Zoom into spectra" src="images/slider/zoom.png" style="display:none;">

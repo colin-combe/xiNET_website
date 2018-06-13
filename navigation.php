@@ -11,7 +11,8 @@
 				<a href="features.php" data-hover="Features">Features</a><br/>
 -->
 				<!-- <a href="examples.php" data-hover="Examples" data-no-instant>Examples</a><br/> -->
-				<a href="upload.php" data-hover="Upload">Upload</a><br/>
+				<a href="createAccount.php" data-hover="Create user account">New Account</a><br/>
+				<!-- <a href="upload.php" data-hover="Upload">Upload</a><br/> -->
 				<a href="help.php" data-hover="Help">Help</a><br/>
 				<a href="contact.php" data-hover="Contact">Contact</a><br/>
 				<!-- <a href="legacy.php" data-hover="Legacy">Legacy</a><br/> -->
