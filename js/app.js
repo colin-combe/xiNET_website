@@ -76,7 +76,7 @@ $(function() {
 				if (response.hasOwnProperty('error'))
 					$('#saveDBerror').html(response.error);
 				else{
-					window.location.href = 'viewSpectrum.php?db='+response.name;
+					// window.location.href = 'viewSpectrum.php?db='+response.name;
 					// $('#saveDBerror').html('Dataset was successfully saved!');
 					// $('#saveDB_form').html('<label class="flex-row label">url for access: <div class="flex-grow"><input type="text" class="form-control" value="'+response.url+'" readonly onClick="this.select();"></div>');
 				}

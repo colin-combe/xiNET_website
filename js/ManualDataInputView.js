@@ -56,7 +56,7 @@ var ManualDataInputView = Backbone.View.extend({
 		this.mainForm = this.wrapper.append("form")
 			.attr("id", "manUpPepForm")
 			.attr("target", "_blank")
-			.attr("action", "viewSpectrum.php")
+		//	.attr("action", "viewSpectrum.php")
 			.attr("method", "post")
 		;
 
