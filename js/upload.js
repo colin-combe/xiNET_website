@@ -166,7 +166,7 @@ $( document ).ready(function() {
 		// 	$('#csvModificationsForm').submit();
 		// if($('#ionsInfo').is(':visible'))
 		// 	$('#ionsForm').submit();
-		window.location.href = "../history/history.php";
+		window.location.href = "../history/history.html";
 	});
 
 	$("#startParsing").click(function(e){
