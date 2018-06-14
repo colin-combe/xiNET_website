@@ -29,7 +29,7 @@
             <h1 class="page-header">Multiple Coordinated Views of Cross-Linking / Mass Spectrometry Data.</h1>
             <!-- xiView is a visualisation tool for the downstream analysis of cross-linking / mass spectrometry results. It provides multiple, linked views of the data, including: -->
 
-            <?php include("../userGUI/userRegInnerDiv.php");?>
+            <?php include("../userGUI/userLoginInnerDiv.php");?>
 
         </div> <!-- CONTAINER -->
     </div> <!-- MAIN -->

@@ -58,7 +58,7 @@ $( document ).ready(function() {
 				data.submit();
 			}
 
-			if(new RegExp("\.(fasta)(.gz)?$", 'i').test(data.files[0].name)){
+			if(new RegExp("\.(fasta)$", 'i').test(data.files[0].name)){
 				$('#fasta_checkbox').prop( "checked", false ).change();
 				$('#fasta_fileBox .fileName').html(data.files[0].name);
 				data.context = $('#fasta_fileBox .statusBox').html('<div class="loader"></div>');
@@ -111,6 +111,8 @@ $( document ).ready(function() {
 				$('#mzml_checkbox').prop( "checked", true ).change();
 			if(data.context[0].dataset['filetype'] == 'mzid')
 				$('#mzid_checkbox').prop( "checked", true ).change();
+			if(data.context[0].dataset['filetype'] == 'fasta')
+				$('#fasta_checkbox').prop( "checked", true ).change();
 			data.context.html('<span class="checkmark"><div class="checkmark_stem"></div><div class="checkmark_kick"></div></span>');
 		}
 	});
@@ -164,7 +166,7 @@ $( document ).ready(function() {
 		// 	$('#csvModificationsForm').submit();
 		// if($('#ionsInfo').is(':visible'))
 		// 	$('#ionsForm').submit();
-		window.location.href = "viewSpectrum.php";
+		window.location.href = "../history/history.php";
 	});
 
 	$("#startParsing").click(function(e){
