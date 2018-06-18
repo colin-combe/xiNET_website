@@ -166,7 +166,8 @@ $( document ).ready(function() {
 		// 	$('#csvModificationsForm').submit();
 		// if($('#ionsInfo').is(':visible'))
 		// 	$('#ionsForm').submit();
-		window.location.href = "../history/history.html";
+		var identifier = $("input[name='identifier']").val();
+		window.location.href = "../xi3/network.php?upload=" + identifier;
 	});
 
 	$("#startParsing").click(function(e){
@@ -243,6 +244,7 @@ $( document ).ready(function() {
 					$('#continueToDB').prop('disabled', true);
 					$('#modificationsInfo').show();
 					$('#modificationsMsg').html("Please provide the mass(es) for the following " + resp.modifications.length + " modification(s):");
+					$('#csvModificationsForm').append('<input class="form-control" name="identifier" readonly type="text" value='+resp.identifier+'>');
 					resp.modifications.forEach(function (mod){
 						var modNameInput = '<input class="form-control" name="mods[]" readonly type="text" value='+mod+'>';
 						var modMassInput = '<input class="form-control" name="modMasses[]" type="number" step=0.000001 value="0" required autocomplete=off>';
