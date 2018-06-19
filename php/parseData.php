@@ -2,27 +2,6 @@
 
 	error_reporting(E_ERROR | E_PARSE);
 
-	function getUserIP(){
-		$client  = @$_SERVER['HTTP_CLIENT_IP'];
-		$forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-		$remote  = $_SERVER['REMOTE_ADDR'];
-
-		if(filter_var($client, FILTER_VALIDATE_IP))
-		{
-			$ip = $client;
-		}
-		elseif(filter_var($forward, FILTER_VALIDATE_IP))
-		{
-			$ip = $forward;
-		}
-		else
-		{
-			$ip = $remote;
-		}
-
-		return $ip;
-	}
-
 	if (session_status() === PHP_SESSION_NONE){session_start();}
 	$_SESSION['tmpDB'] = session_id();
 
@@ -36,15 +15,6 @@
 		$pl_arg = $target_dir . escapeshellarg($pl_file);
 		$upload_arg = session_id();
 		$ftp_arg = '';
-	}
-	elseif ( isset($_POST['res_ftp']) && isset($_POST['peakFile_ftp']) ) {
-		$id_file = substr($_POST['res_ftp'], strrpos($_POST['res_ftp'], "/") + 1) ;
-		$pl_file = substr($_POST['peakFile_ftp'], strrpos($_POST['peakFile_ftp'], "/") + 1) ;
-
-		$id_arg = escapeshellarg($_POST['res_ftp']);
-		$pl_arg = escapeshellarg($_POST['peakFile_ftp']);
-		$upload_arg = session_id();
-		$ftp_arg = '-f';
 	}
 	else {
 		die('error: invalid post data!');

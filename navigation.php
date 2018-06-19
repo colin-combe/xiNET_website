@@ -6,12 +6,21 @@
 				<!-- <h4 class="logo-subtitle">Spectrum Viewer</h4> -->
 			</div>
 			<nav class="hover-effect">
+				<?php
+						// session_start();
+				        // if (!isset($_SESSION['session_name'])) {
+				        //     header("location:./login.php");
+				        //     exit();
+				        // }
+
+				?>
 				<a href="index.php" data-hover="Home" data-no-instant>Home</a><br/>
 <!--
 				<a href="features.php" data-hover="Features">Features</a><br/>
 -->
 				<!-- <a href="examples.php" data-hover="Examples" data-no-instant>Examples</a><br/> -->
-				<a href="createAccount.php" data-hover="Create user account">New Account</a><br/>
+				<a href="login.php" data-hover="Sign in">Sign in</a><br/>
+				<!-- <a href="createAccount.php" data-hover="Create user account">New Account</a><br/> -->
 				<!-- <a href="upload.php" data-hover="Upload">Upload</a><br/> -->
 				<a href="help.php" data-hover="Help">Help</a><br/>
 				<a href="contact.php" data-hover="Contact">Contact</a><br/>
@@ -29,7 +38,7 @@
 	</div> <!-- headerbg -->
 </div> <!-- header -->
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$( document ).ready(function() {
 		$('.menu').click(function(){
 			$('.header-top').slideToggle();
@@ -50,6 +59,6 @@
 				<a href="contact.php" data-hover="Contact">Contact</a>
 				<a href="legacy.php" data-hover="Legacy">Legacy</a>
 			</nav>
-		</div> <!-- headerbg -->
-	</div> <!-- header -->
-</div>
+		</div>
+	</div>
+</div> -->

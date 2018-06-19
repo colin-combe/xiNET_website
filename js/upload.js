@@ -3,12 +3,12 @@ var CLMSUI = CLMSUI || {};
 $( document ).ready(function() {
 	_.extend(window, Backbone.Events);
 	window.onresize = function() { window.trigger('resize') };
-	window.peptide = new AnnotatedSpectrumModel({
-		standalone: false //to use knownModifications from xiAnnotator here. Should probably be changed in the future to unimod?
-	});
+	// window.peptide = new AnnotatedSpectrumModel({
+	// 	standalone: false //to use knownModifications from xiAnnotator here. Should probably be changed in the future to unimod?
+	// });
 
-	window.prideSelectionView = new PrideSelectionView({el:"#prideSelectionWrapper"});
-	window.manualDataInputView = new ManualDataInputView({model: window.peptide, el:"#myManualDataInput"});
+	// window.prideSelectionView = new PrideSelectionView({el:"#prideSelectionWrapper"});
+	// window.manualDataInputView = new ManualDataInputView({model: window.peptide, el:"#myManualDataInput"});
 
 	//ToDo: could be moved to ManualDataInputView
 	$("#addCLModal").easyModal({

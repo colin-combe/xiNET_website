@@ -2,6 +2,11 @@
 <html>
 	<head>
 		<?php
+		session_start();
+        if (!isset($_SESSION['session_name'])) {
+            header("location:./login.php");
+            exit();
+        }
 		$cacheBuster = '?v='.microtime(true);
 		error_reporting(E_ALL & ~E_NOTICE);
 		$pageName = "Upload";
@@ -19,14 +24,8 @@
 		};
 		?>
 		<?php include("./xiSPEC_scripts.php");?>
-		<script type="text/javascript" src="./src/PepInputView.js<?php echo $cacheBuster ?>"></script>
-		<script type="text/javascript" src="./js/PeptideView.js<?php echo $cacheBuster ?>"></script>
-		<script type="text/javascript" src="./src/PrecursorInfoView.js<?php echo $cacheBuster ?>"></script>
-		<script type="text/javascript" src="./js/ManualDataInputView.js<?php echo $cacheBuster ?>"></script>
-		<script type="text/javascript" src="./js/PrideSelectionView.js<?php echo $cacheBuster ?>"></script>
-		<script type="text/javascript" src="./src/model.js<?php echo $cacheBuster ?>"></script>
 		<script type="text/javascript" src="./js/upload.js<?php echo $cacheBuster ?>"></script>
-		<script type="text/javascript" src="./js/accordion.js<?php echo $cacheBuster ?>"></script>
+		<!-- <script type="text/javascript" src="./js/accordion.js<?php /*echo $cacheBuster */?>"></script> -->
 		<script type="text/javascript" src="./vendor/spin.js"></script>
 		<script src="./vendor/jQueryFileUploadMin/jquery.ui.widget.js"></script>
 		<script src="./vendor/jQueryFileUploadMin/jquery.iframe-transport.js"></script>
@@ -44,13 +43,14 @@
 			<!-- Intro -->
 			<section id="top" class="one">
 				<div class="container" id="jquery-fileupload">
-					<h1 class="page-header accordionHead"><i <?php echo($example ? 'class="fa fa-plus-square"' : 'class="fa fa-minus-square"');?> aria-hidden="true"></i> Data Upload - Upload your data (identification & peak list file pair)</h1>
+					<h1 class="page-header accordionHead"><i <?php /*echo($example ? 'class="fa fa-plus-square"' : 'class="fa fa-minus-square"');*/?> aria-hidden="true"></i> Data Upload - Upload your data (identifications, peak list(s), sequence file)</h1>
 					<div class="accordionContent" <?php echo ($example ? 'style="display: none;"' : '');?>>
 						<div style="margin-left: 1em; line-height: 1.7em;">
 							Supported identification file formats: <a title="HUPO-PIS: mzidentML" href="http://www.psidev.info/mzidentml" target="blank">mzIdentML</a> and <a title="Show column headings" href="help.php#csv">csv</a>.</br>
 							Supported peak list file formats: <a title="HUPO-PIS: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a> and <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a> (+ zip/gz archives of mzML/mgf).</br>
-							Maximum file size: 500 Mb <br />
-							Privacy: Your uploaded data will be kept private unless you choose to make it publicly available upon saving. We will not make use of your data or provide access to others.<br />
+							Supported sequence file formats: <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>.</br>
+							<!-- Maximum file size: 500 Mb <br /> -->
+							Privacy: Your uploaded data will be kept private unless, we will not make use of your data or provide access to others.<br />
 							<div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
 								mzML: Filter out MS1 spectra to reduce file size and upload/parsing time. (e.g. 'MS level 2-' in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
 								<!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
@@ -97,54 +97,6 @@
 					</div>
 				</div>
 			</section>
-			<section class="one">
-				<div class="container">
-					<h1 class="page-header accordionHead"><i <?php echo (($example == 'pxd') ? 'class="fa fa-minus-square"' : 'class="fa fa-plus-square"');?> aria-hidden="true"></i> PRIDE data access</h1>
-					<div class="accordionContent" id="prideSelectionWrapper" <?php echo (($example == 'pxd') ? '' : 'style="display: none;"');?>>
-						<form id="prideForm">
-							<div style="display:flex;">
-								<label class="label">PRIDE accession number: <input type="text" id="pxd_in" class="form-control"/></label>
-								<button class="btn btn-2" style="margin-left: 1em; margin-bottom: 0.6em; font-size: 0.8em;" type="submit">List files</button>
-							</div>
-							<div id="pxd_error"></div>
-							<div id="pxd_title"></div>
-							<div id="pxd_submit" style="display: none;">
-								<div id="pxd_submitInfo">
-								Please Select 1 RESULT and 1 PEAK file then press Submit selected files.</br>
-								Files belonging together usually share the same assayAccession!</div>
-								<button type="submit" id="pxd_submitBtn" class="btn btn-2">Submit selected files</button>
-							</div>
-							<table id="pxdFileTable" class="display" width="100%" style="text-align:center;"></table>
-						</form>
-					</div>
-				</div>
-			</section>
-			<section class="one">
-<!-- <span class="glyphicon glyphicon-upload"></span> -->
-				<div class="container">
-					<h1 class="page-header accordionHead"><i <?php echo (($example == "lin" || $example == "cl") ? 'class="fa fa-minus-square"' : 'class="fa fa-plus-square"');?> aria-hidden="true"></i> Data Input - Manually input your spectrum data</h1>
-					<div class="accordionContent" <?php echo (($example == "lin" || $example == "cl") ? '' : 'style="display: none;"');?> >
-						<div id="myManualDataInput" >
-							<div id="addCLModal" role="dialog" class="modal" style="display: none;">
-								<div class="header">
-									<h1>Add custom cross-linker</h1>
-								</div>
-								<form id="addCustomCLform" action="#">
-									<div style="text-align:center;">
-										<input class="form-control" style="margin-top:30px;width:40%;display:inline;"  required id="newCLname" type="text" placeholder="name" name="newCLname">
-										<input class="form-control" style="margin-top:30px;margin-left:2%;width:40%;display:inline;"  required id="newCLmodmass" type="text" placeholder="modMass" name="newCLmodmass">
-									</div>
-									<div class="btn clearfix">
-										<input type="submit" class="btn network-control" value="add">
-										<input type="button" class="close cancel btn network-control" value="cancel">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div> <!-- MAIN -->
 		<!-- Modals -->
 		<div id="submitDataModal" role="dialog" class="modal" style="display: none;">
 			<div id=submitDataInfo>
@@ -201,8 +153,8 @@
 		</div>
 		<div class="overlay" style="z-index: -1; visibility: hidden;"></div>
 
-		<script type="text/javascript">
-		<?php echo ('var example = "'.$example.'";');?>
+		<!-- <script type="text/javascript">
+		<?php /*echo ('var example = "'.$example.'";');*/ ?>
 			$( document ).ready(function() {
 				if (example == 'cl')
 					manualDataInputView.clExample();
@@ -211,7 +163,7 @@
 				else if (example == 'pxd')
 					window.prideSelectionView.load_pxd('PXD005654');
 			});
-		</script>
+		</script> -->
 
 	</body>
 </html>
