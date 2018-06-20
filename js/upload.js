@@ -102,8 +102,9 @@ $( document ).ready(function() {
 				return;
 			}
 			data.context.removeData('retries');
-			$.blueimp.fileupload.prototype
-				.options.fail.call(this, e, data);
+			if ($.blueimp.fileupload.prototype.options.fail){
+				$.blueimp.fileupload.prototype.options.fail.call(this, e, data);
+			}
 		},
 
 		done: function (e, data) {
