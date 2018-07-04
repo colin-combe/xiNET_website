@@ -24,14 +24,14 @@
 										<td>
 											<div class="contact no-hover">
 												<ul id="navlist"  class="no-hover">
-													<li><a href="mailto:lars.b.kolbowski@campus.tu-berlin.de" title="Email Lars!">
-														<img src="images/team/lars-kolbowski.jpg" class="grayscale" />
+													<li><a href="mailto:martin.graham@ed.ac.uk" title="Email Martin!">
+														<img src="images/team/mgraham.jpg" class="grayscale" />
 													</a></li>
 												</ul>
 												<div class="external-link">
 													<p>
-														<strong>Lars Kolbowski</strong>
-														<br/><a href="mailto:lkolbows@ed.ac.uk">lkolbows@ed.ac.uk</a>
+														<strong>Martin Graham</strong>
+														<br/><a href="mailto:colin.combe@ed.ac.uk">martin.graham@ed.ac.uk</a>
 														<br/>Developer
 														<br/>University of Edinburgh
 														<br/>Room 4.17
@@ -43,8 +43,9 @@
 												</div>
 											</div>
 										</td>
+
 										<td>
-											<div class="contact contact-center no-hover">
+										<div class="contact contact-center no-hover">
 												<ul id="navlist"  class="no-hover">
 													<li><a href="mailto:colin.combe@ed.ac.uk" title="Email Colin!">
 														<img src="images/team/colin-combe.jpg" class="grayscale" />
@@ -65,6 +66,73 @@
 												</div>
 											</div>
 										</td>
+
+										<td>
+											<div class="contact contact-right no-hover">
+												<ul id="navlist"  class="no-hover">
+													<li><a href="mailto:lars.b.kolbowski@campus.tu-berlin.de" title="Email Lars!">
+														<img src="images/team/lars-kolbowski.jpg" class="grayscale" />
+													</a></li>
+												</ul>
+												<div class="external-link">
+													<p>
+														<strong>Lars Kolbowski</strong>
+														<br/><a href="mailto:lars.b.kolbowski@campus.tu-berlin.de">lars.b.kolbowski@campus.tu-berlin.de</a>
+														<br/>Developer
+														<br/>University of Edinburgh
+														<br/>Room 4.17
+														<br/>Michael Swann Building
+														<br/>King’s Buildings
+														<br/>Edinburgh
+														<br/>EH9 3JR
+													</p>
+												</div>
+											</div>
+										</td>
+
+									</tr>
+									<tr>
+
+										<td>
+											<div class="contact no-hover">
+												<ul id="navlist"  class="no-hover">
+													<li><a href="mailto:l.fischer@ed.ac.uk" title="Email Lutz!">
+														<img src="images/team/lutz.jpg" class="grayscale" />
+													</a></li>
+												</ul>
+											</br>
+												<div class="external-link">
+													<p>
+														<strong>Lutz Fischer</strong>
+														<br/><a href="mailto:l.fischer@ed.ac.uk">l.fischer@ed.ac.uk</a>
+														<br/>Developer
+														<br/>University of Edinburgh
+														<br/>Room 4.17
+														<br/>Michael Swann Building
+														<br/>King’s Buildings
+														<br/>Edinburgh
+														<br/>EH9 3JR
+													</p>
+												</div>
+											</div>
+										</td>
+
+										<td>
+											<div class="contact contact-center no-hover">
+												<ul id="navlist"  class="no-hover">
+													<li><a>
+														<img src="images/team/matt.png" class="grayscale" />
+													</a></li>
+												</ul>
+												<div class="external-link">
+													<p>
+														<strong>Matthew Dunn</strong>
+														<br/>Web Designer
+													</p>
+												</div>
+											</div>
+										</td>
+
 										<td>
 											 <div class="contact contact-right">
 												<ul id="navlist">
@@ -77,12 +145,17 @@
 														<strong>Prof Juri Rappsilber</strong>
 														<br/><a  href="mailto:juri.rappsilber@ed.ac.uk">juri.rappsilber@ed.ac.uk</a>
 														<br/>General Inquiries
-														<br/>TU-Berlin
+														<br/>University of Edinburgh
+														<br/>Room 4.18a
+														<br/>Michael Swann Building
+														<br/>King’s Buildings
+														<br/>Edinburgh
+														<br/>EH9 3JR														<!-- <br/>TU-Berlin
 														<br/>Sekr. TIB 4/4-3
 														<br/>Gustav-Meyer-Allee 25
 														<br/>13355 Berlin
 														<br/>TIB Gebäude 17, Etage
-														<br/>Raum 475
+														<br/>Raum 475 -->
 													</p>
 												</div>
 											</div> <!-- CONTACT -->
@@ -93,7 +166,7 @@
 							<br>
 						</div> <!-- CONTAINER -->
 					</section>
-					<section class="two contact-section2">
+					<!-- <section class="two contact-section2">
 						<div class="container">
 							<div class="external-link">
 								<h4>Support</h4>
@@ -101,7 +174,7 @@
 							</div>
 							<br>
 						</div>
-					</section>
+					</section> -->
 			</div> <!-- MAIN -->
 	</body>
 </html>
