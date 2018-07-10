@@ -48,7 +48,7 @@
 							</div>
 							<p>Example set of three corresponding files (use right click > Save link as):
 								<a href="examples/test_HSA_PSM_xiFDR1.1.26.58.csv" target="_blank">CSV</a>
-								<a href="examples/E180510_02_Orbi2_TD_IN_160_HSA_10kDa_10p.mzML" target="_blank">MZML</a>
+								<a href="examples/E180510_02_Orbi2_TD_IN_160_HSA_10kDa_10p.zip" target="_blank">MZML</a>
 								<a href="examples/HSA-Active.FASTA" target="_blank">FASTA</a>
 							</p>
 						</div>
