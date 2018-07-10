@@ -210,8 +210,9 @@ $( document ).ready(function() {
 		success: function (data) {
 			spinner.stop();
 			resp = JSON.parse(data);
+			$('#submitDataInfo').append('<input class="form-control" name="identifier" readonly type="text" value='+resp.identifier+'>');
 			if (resp.errors.length == 0 && resp.modifications.length == 0 && resp.warnings.length == 0)
-				//window.location.href = "viewSpectrum.php";
+				//TODO window.location.href = "viewSpectrum.php";
 				console.log("success");
 			else{
 				$('#submitDataInfo').show();
@@ -245,7 +246,7 @@ $( document ).ready(function() {
 					$('#continueToDB').prop('disabled', true);
 					$('#modificationsInfo').show();
 					$('#modificationsMsg').html("Please provide the mass(es) for the following " + resp.modifications.length + " modification(s):");
-					$('#csvModificationsForm').append('<input class="form-control" name="identifier" readonly type="text" value='+resp.identifier+'>');
+
 					resp.modifications.forEach(function (mod){
 						var modNameInput = '<input class="form-control" name="mods[]" readonly type="text" value='+mod+'>';
 						var modMassInput = '<input class="form-control" name="modMasses[]" type="number" step=0.000001 value="0" required autocomplete=off>';
