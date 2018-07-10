@@ -43,7 +43,7 @@
 							<tr><td>PassThreshold</td><td>No</td><td>True if the identification has passed a given threshold or been validated as correct</td><td>TRUE</td><td>FALSE</td></tr>
 							<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
 							<tr><td>Charge</td><td>Yes</td><td>Precursor charge state</td><td>-</td><td>3</td></tr>
-							<tr><td>CrossLinkerModMass</td><td>No**</td><td>Modification mass of the used cross-linker</td><td>0</td><td>138.06808</td></tr>
+							<tr><td>CrossLinkerModMass</td><td>Yes</td><td>Modification mass of the used cross-linker</td><td>0</td><td>138.06808</td></tr>
 							<tr><td>ExpMz</td><td>No</td><td>The mass-to-charge value measured in the experiment in Daltons / charge.</td><td>-</td><td>985.4341</td></tr>
 							<tr><td>CalcMz</td><td>No</td><td>The theoretical mass-to-charge value calculated for the peptide in Daltons / charge.</td><td>-</td><td>985.6531</td></tr>
 							<tr><td>FragmentTolerance</td><td>No</td><td>MS2 tolerance for annotating fragment peaks (in ppm or Da)</td><td>10 ppm</td><td>0.2 Da</td></tr>
