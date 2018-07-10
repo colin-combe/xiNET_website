@@ -27,14 +27,16 @@
 							<tr><th>column</th><th>required?</th><th>notes</th><th>default</th><th>example</th></tr>
 						</thead>
 						<tbody>
-							<tr><td>PepSeq 1</td><td>Yes</td><td>Peptide sequence for peptide 1 in one letter amino acid code (uppercase) with modifications following the amino acid and consisting of the following characters: a-z:0-9.()\-</td><td>-</td><td>LKECcmCcmEKPLLEK</td></tr>
-							<tr><td>PepSeq 2</td><td>No**</td><td>Peptide sequence for peptide 2 in one letter amino acid code (uppercase) with modifications following the amino acid and consisting of the following characters: a-z:0-9.()\-</td><td>-</td><td>HPYFYAPELLFFAKR</td></tr>
-							<tr><td>LinkPos 1</td><td>No**</td><td>Position of cross-linked residue for peptide 1 (1-based)</td><td>-</td><td>2</td></tr>
-							<tr><td>LinkPos 2</td><td>No**</td><td>Position of cross-linked residue for peptide 2 (1-based)</td><td>-</td><td>14</td></tr>
-							<tr><td>Protein 1</td><td>Yes</td><td>Identifier for protein 1. Ambiguous results are represented by listing the alternative proteins separated by semi-colons</td><td>-</td><td>HSA</td></tr>
-							<tr><td>Protein 2</td><td>No**</td><td>Identifier for protein 2. Ambiguous results are represented by listing the alternative proteins separated by semi-colons</td><td>-</td><td>P02768;P13645</td></tr>
-							<tr><td>Decoy 1</td><td>No</td><td>Set to true if the peptide 1 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
-							<tr><td>Decoy 2</td><td>No</td><td>Set to true if the peptide 2 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
+							<tr><td>PepSeq1</td><td>Yes</td><td>Peptide sequence for peptide 1 in one letter amino acid code (uppercase) with modifications following the amino acid and consisting of the following characters: a-z:0-9.()\-</td><td>-</td><td>LKECcmCcmEKPLLEK</td></tr>
+							<tr><td>PepSeq2</td><td>Yes</td><td>Peptide sequence for peptide 2 in one letter amino acid code (uppercase) with modifications following the amino acid and consisting of the following characters: a-z:0-9.()\-</td><td>-</td><td>HPYFYAPELLFFAKR</td></tr>
+							<tr><td>PepPos1</td><td>Yes</td><td>Position of peptide 1 in protein 1 (1-based)</td><td>-</td><td>10</td></tr>
+							<tr><td>PepPos2</td><td>Yes</td><td>Position of peptide 2 in protein 2 (1-based)</td><td>-</td><td>20</td></tr>
+							<tr><td>LinkPos1</td><td>Yes</td><td>Position of cross-linked residue for peptide 1 (1-based)</td><td>-</td><td>2</td></tr>
+							<tr><td>LinkPos2</td><td>Yes</td><td>Position of cross-linked residue for peptide 2 (1-based)</td><td>-</td><td>14</td></tr>
+							<tr><td>Protein1</td><td>Yes</td><td>Identifier for protein 1. Ambiguous results are represented by listing the alternative proteins separated by semi-colons</td><td>-</td><td>HSA</td></tr>
+							<tr><td>Protein2</td><td>Yes</td><td>Identifier for protein 2. Ambiguous results are represented by listing the alternative proteins separated by semi-colons</td><td>-</td><td>P02768;P13645</td></tr>
+							<!-- <tr><td>Decoy 1</td><td>No</td><td>Set to true if the peptide 1 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
+							<tr><td>Decoy 2</td><td>No</td><td>Set to true if the peptide 2 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr> -->
 							<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
 							<tr><td>Rank</td><td>No*</td><td>Rank of the identification quality as scored by the search engine (1 is the top rank)</td><td>1</td><td>1</td></tr>
 							<tr><td>Score</td><td>No</td><td>Confidence score for the identification (number)</td><td>0</td><td>10.5641</td></tr>
@@ -55,7 +57,6 @@
 					<br/>
 					<p style="font-size: small;line-height: 1.5em;">
 						*required if there are multiple alternative explanations for the same spectrum.</br>
-						**required for cross-linked peptides.
 					</p>
 				</div>
 
@@ -64,7 +65,7 @@
 				</h1>
 				<div class="accordionContent" style="display: none;" id="mzIdSupport">
 					<table class="myTable" id="mzidSupportTable">
-						Coming soon - we stil have some issues to resolve
+						please <a href="mailto:colin.combe@ed.ac.uk">contact us</a> if you are trying to upload mzIdentML, we still have some issues to be resolved
 						<!-- HUPO PSI provide <a href="http://www.psidev.info/tools-implementing-mzidentml">a list of tools that support mzIdentML</a>.
 						<br/>
 						We tested output from the following tools and confirmed that they successfully worked in xiSPEC. <a href="mailto:lars.b.kolbowski@campus.tu-berlin.de" title="Contact us">Contact us</a> if you noticed a tool missing from the list and we will add it.

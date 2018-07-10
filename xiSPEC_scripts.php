@@ -1,8 +1,9 @@
-<script type="text/javascript" src="./vendor/zepto.js"></script>
-<script type="text/javascript" src="./vendor/underscore.js"></script>
-<script type="text/javascript" src="./vendor/backbone.js"></script>
-<script type="text/javascript" src="./vendor/d3.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="../vendor/js/d3.js"></script>
+<script type="text/javascript" src="../vendor/js/colorbrewer.js"></script>
+<script type="text/javascript" src="../vendor/js/underscore.js"></script>
+<script type="text/javascript" src="../vendor/js/spin.js"></script>
+<script type="text/javascript" src="../vendor/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../vendor/js/backbone.js"></script>
 <script type="text/javascript" src="./vendor/colorbrewer.js"></script>
 <script type="text/javascript" src="./vendor/jquery.easyModal.js"></script>
 <script type="text/javascript" src="./vendor/js.cookie.js"></script>

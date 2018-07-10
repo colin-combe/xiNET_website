@@ -40,14 +40,17 @@
 
 							Supported identification file formats: <a title="HUPO-PIS: mzidentML" href="http://www.psidev.info/mzidentml" target="blank">mzIdentML</a> and <a title="Show column headings" href="dataFormats.php#csv">csv</a>.</br>
 							Supported peak list file formats: <a title="HUPO-PIS: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a> and <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a> (+ zip/gz archives of mzML/mgf).</br>
-							Supported sequence file formats: <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>.</br>
+							Supported sequence file formats: <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>.</br></p>
 							<div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
 								mzML: Filter out MS1 spectra to reduce file size and upload/parsing time. (e.g. 'MS level 2-' in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
 								<!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
 								<!-- mgf: If the file does not contain ALL scans it must either contain the scan number directly in the header (SCANS=XX) or in the title (check TPP compatibility in MSconvert)!<br> -->
-TODO -examples
-								<!-- csv: <a href="example/example.csv">download example .csv</a> (<a href="example/example.mzML">corresponding peak list file</a>) -->
 							</div>
+							<p>Example set of three corresponding files (use right click > Save link as):
+								<a href="examples/test_HSA_PSM_xiFDR1.1.26.58.csv" target="_blank">CSV</a>
+								<a href="examples/E180510_02_Orbi2_TD_IN_160_HSA_10kDa_10p.mzML" target="_blank">MZML</a>
+								<a href="examples/HSA-Active.FASTA" target="_blank">FASTA</a>
+							</p>
 						</div>
 						<div id="fileUploadWrapper">
 							<input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.zip,.gz, .fasta" multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
