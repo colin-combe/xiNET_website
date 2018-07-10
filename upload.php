@@ -47,7 +47,7 @@
 								<!-- mgf: If the file does not contain ALL scans it must either contain the scan number directly in the header (SCANS=XX) or in the title (check TPP compatibility in MSconvert)!<br> -->
 							</div>
 							<p>Example set of three corresponding files (use right click > Save link as):
-								<a href="examples/test_HSA_PSM_xiFDR1.1.26.58.csv" target="_blank">CSV</a>
+								<a href="examples/test_HSA.csv" target="_blank">CSV</a>
 								<a href="examples/E180510_02_Orbi2_TD_IN_160_HSA_10kDa_10p.mzML" target="_blank">MZML</a>
 								<a href="examples/HSA-Active.FASTA" target="_blank">FASTA</a>
 							</p>
