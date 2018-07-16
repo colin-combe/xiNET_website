@@ -246,6 +246,7 @@ $( document ).ready(function() {
 					$('#continueToDB').prop('disabled', true);
 					$('#modificationsInfo').show();
 					$('#modificationsMsg').html("Please provide the mass(es) for the following " + resp.modifications.length + " modification(s):");
+					$('#csvModificationsForm').append('<input class="form-control" name="identifier" readonly type="text" value='+resp.identifier+'>');
 
 					resp.modifications.forEach(function (mod){
 						var modNameInput = '<input class="form-control" name="mods[]" readonly type="text" value='+mod+'>';

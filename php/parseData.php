@@ -8,7 +8,7 @@
         exit();
     }
 
-	if( isset($_POST['res_fn']) && isset($_POST['peakFile_fn']) ){
+	if( isset($_POST['res_fn'])){
 		$id_file = $_POST['res_fn'];
 		$pl_file = $_POST['peakFile_fn'];
 
@@ -24,7 +24,9 @@
 
 	$xiSPEC_ms_parser_dir = '../../xiSPEC_ms_parser/';
 
-	$argStr = implode(' ', [$id_arg, $pl_arg, $upload_arg, $_SESSION['user_id']]);
+	//$argStr = implode(' ', [$id_arg, $pl_arg, $upload_arg, $_SESSION['user_id']]);
+#	$argStr = ' -i '.$id_arg.' -p '.$pl_arg.' -s '.session_id().' -u '.$_SESSION['user_id'].' --postgresql';
+	$argStr = ' -i '.$id_arg.' -p '.$pl_arg.' -s '.session_id().' -u '.$_SESSION['user_id'].' --postgresql';
 
 	$command = $xiSPEC_ms_parser_dir.'python_env/bin/python '.$xiSPEC_ms_parser_dir.'parser.py '.$argStr;
 	// die($command);
