@@ -108,24 +108,28 @@ $( document ).ready(function() {
 		},
 
 		done: function (e, data) {
-			if(data.context[0].dataset['filetype'] == 'mzml' || data.context[0].dataset['filetype'] == 'mgf')
+			if(data.context[0].dataset['filetype'] == 'mzml' || data.context[0].dataset['filetype'] == 'mgf'){
 				$('#mzml_checkbox').prop( "checked", true ).change();
-			if(data.context[0].dataset['filetype'] == 'mzid')
+			}
+			if(data.context[0].dataset['filetype'] == 'mzid') {
 				$('#mzid_checkbox').prop( "checked", true ).change();
-			if(data.context[0].dataset['filetype'] == 'fasta')
+				$('#startParsing').prop('disabled', false);
+			}
+			if(data.context[0].dataset['filetype'] == 'fasta') {
 				$('#fasta_checkbox').prop( "checked", true ).change();
+			}
 			data.context.html('<span class="checkmark"><div class="checkmark_stem"></div><div class="checkmark_kick"></div></span>');
 		}
 	});
 
-	$(".uploadCheckbox").change(function(){
+/*	$(".uploadCheckbox").change(function(){
 		if ($('.uploadCheckbox:checked').length == $('.uploadCheckbox').length) {
 			$('#startParsing').prop('disabled', false);
 		}
 		else{
 			$('#startParsing').prop('disabled', true);
 		}
-	});
+	}); */
 
 	$('#csvModificationsForm').submit(function(e){
 		e.preventDefault();
@@ -174,7 +178,9 @@ $( document ).ready(function() {
 	$("#startParsing").click(function(e){
 		e.preventDefault();
 		var formData = new FormData();
-		formData.append("peakFile_fn", $('#mzml_fileBox .fileName').html());
+		if ($('#mzml_checkbox').prop("checked") == true) {
+			formData.append("peakFile_fn", $('#mzml_fileBox .fileName').html());
+		}
 		formData.append("res_fn", $('#mzid_fileBox .fileName').html());
 		CLMSUI.startParser(formData);
 

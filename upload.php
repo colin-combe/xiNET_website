@@ -73,7 +73,7 @@
 							<tr id="mzml_fileBox">
 								<td style="text-align: center;">Peak list file(s):</td>
 								<td>
-									<span class="fileName">Select a mzML, mgf or zip file to upload.</span>
+									<span class="fileName">No peak list file(s) selected - spectra will be unavailable</span>
 									<span class="statusBox" data-filetype="mzml"></span>
 									<input class="uploadCheckbox" type="checkbox" id="mzml_checkbox" style="visibility: hidden;">
 								</td>
@@ -81,7 +81,7 @@
 							<tr id="fasta_fileBox">
 								<td style="text-align: center;">Sequence file:</td>
 								<td>
-									<span class="fileName">Select a FASTA file to upload.</span>
+									<span class="fileName">No FASTA file selected, protein identifiers must be UniprotKB accession numbers</span>
 									<span class="statusBox" data-filetype="fasta"></span>
 									<input class="uploadCheckbox" type="checkbox" id="fasta_checkbox" style="visibility: hidden;">
 								</td>

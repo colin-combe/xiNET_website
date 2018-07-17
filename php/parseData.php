@@ -8,25 +8,25 @@
         exit();
     }
 
+	$target_dir = "../uploads/".session_id()."/";
 	if( isset($_POST['res_fn'])){
 		$id_file = $_POST['res_fn'];
-		$pl_file = $_POST['peakFile_fn'];
-
-		$target_dir = "../uploads/".session_id()."/";
 		$id_arg = $target_dir . escapeshellarg($id_file);
-		$pl_arg = $target_dir . escapeshellarg($pl_file);
-		$upload_arg = session_id();
-	//	$ftp_arg = '';
 	}
 	else {
 		die('error: invalid post data!');
 	}
+	$argStr = ' -i '.$id_arg;
+
+	if (isset($_POST['peakFile_fn'])){
+			$pl_file = $_POST['peakFile_fn'];
+			$pl_arg = $target_dir . escapeshellarg($pl_file);
+			$argStr = $argStr.' -p '.$pl_arg;
+	}
+
+	$argStr = $argStr.' -s '.session_id().' -u '.$_SESSION['user_id'].' --postgresql';
 
 	$xiSPEC_ms_parser_dir = '../../xiSPEC_ms_parser/';
-
-	//$argStr = implode(' ', [$id_arg, $pl_arg, $upload_arg, $_SESSION['user_id']]);
-#	$argStr = ' -i '.$id_arg.' -p '.$pl_arg.' -s '.session_id().' -u '.$_SESSION['user_id'].' --postgresql';
-	$argStr = ' -i '.$id_arg.' -p '.$pl_arg.' -s '.session_id().' -u '.$_SESSION['user_id'].' --postgresql';
 
 	$command = $xiSPEC_ms_parser_dir.'python_env/bin/python '.$xiSPEC_ms_parser_dir.'parser.py '.$argStr;
 	// die($command);
