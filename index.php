@@ -58,11 +58,11 @@
 				<h1 class="page-header">Multiple Coordinated Views of Cross-Linking / Mass Spectrometry Data.</h1>
 				xiView is a visualisation tool for the downstream analysis of cross-linking / mass spectrometry results. It provides multiple, linked views of the data, including:
 				<ul>
-					<li>2D network (xiNET or circular)</li>
-					<li>the supporting annotated spectra (xiSPEC)</li>
-					<li>3D structure view (NGL).</li>
+					<li>2D network (<a href="http://crosslinkviewer.org" target="_blank">xiNET</a> or circular)</li>
+					<li>the supporting annotated spectra using <a href="http://spectrumviewer.org" target="_blank">xiSPEC</a>.</li>
+					<li>3D structure view using <a href="http://nglviewer.org/ngl" target="_blank">NGL</a>.</li>
 			 </ul>
-				<p>xiView is an open source project on <a href="https://github.com/Rappsilber-Laboratory/xiView" >GitHub</a>. Report issues and request features <a href="https://github.com/Rappsilber-Laboratory/xiView/issues">here</a>.</p>
+				<p>xiView is an open source project on <a href="https://github.com/Rappsilber-Laboratory/xiView_container" >GitHub</a>. Report issues and request features <a href="https://github.com/Rappsilber-Laboratory/xiView_container/issues">here</a>.</p>
 				<br/>
 <div class="login">
 		                 <div class="newUserSection" style="display:block;">

@@ -7,9 +7,6 @@ $( document ).ready(function() {
 	// 	standalone: false //to use knownModifications from xiAnnotator here. Should probably be changed in the future to unimod?
 	// });
 
-	// window.prideSelectionView = new PrideSelectionView({el:"#prideSelectionWrapper"});
-	// window.manualDataInputView = new ManualDataInputView({model: window.peptide, el:"#myManualDataInput"});
-
 	//ToDo: could be moved to ManualDataInputView
 	$("#addCLModal").easyModal({
 		onClose: function(myModal){
@@ -43,6 +40,7 @@ $( document ).ready(function() {
 			$('#uploadProgress .file_upload_percent').html(progress + '%');
 		},
 		add: function (e, data) {
+			$('#startParsing').prop('disabled', true);
 
 			if(new RegExp("\.(mzid|csv)(.gz)?$", 'i').test(data.files[0].name)){
 				$('#mzid_checkbox').prop( "checked", false ).change();
@@ -108,6 +106,9 @@ $( document ).ready(function() {
 		},
 
 		done: function (e, data) {
+			if ($('#mzid_checkbox').prop( "checked") == true) {
+				$('#startParsing').prop('disabled', false);
+			}
 			if(data.context[0].dataset['filetype'] == 'mzml' || data.context[0].dataset['filetype'] == 'mgf'){
 				$('#mzml_checkbox').prop( "checked", true ).change();
 			}
@@ -121,15 +122,6 @@ $( document ).ready(function() {
 			data.context.html('<span class="checkmark"><div class="checkmark_stem"></div><div class="checkmark_kick"></div></span>');
 		}
 	});
-
-/*	$(".uploadCheckbox").change(function(){
-		if ($('.uploadCheckbox:checked').length == $('.uploadCheckbox').length) {
-			$('#startParsing').prop('disabled', false);
-		}
-		else{
-			$('#startParsing').prop('disabled', true);
-		}
-	}); */
 
 	$('#csvModificationsForm').submit(function(e){
 		e.preventDefault();
