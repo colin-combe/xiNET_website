@@ -208,10 +208,12 @@ $( document ).ready(function() {
 		success: function (data) {
 			spinner.stop();
 			resp = JSON.parse(data);
-			$('#submitDataInfo').append('<input class="form-control" name="identifier" readonly type="text" value='+resp.identifier+'>');
+			$('#submitDataInfo').append('<input class="form-control identifier" name="identifier" class="identifier" readonly type="text" value='+resp.identifier+'>');
+			$('#ionsForm').append('<input class="form-control identifier" name="identifier" class="identifier" readonly type="text" value='+resp.identifier+'>');
 			if (resp.errors.length == 0 && resp.modifications.length == 0 && resp.warnings.length == 0)
 				//TODO window.location.href = "viewSpectrum.php";
 				console.log("success");
+				//TODO - clear things
 			else{
 				$('#submitDataInfo').show();
 				$('#processDataInfo').hide();
@@ -244,7 +246,7 @@ $( document ).ready(function() {
 					$('#continueToDB').prop('disabled', true);
 					$('#modificationsInfo').show();
 					$('#modificationsMsg').html("Please provide the mass(es) for the following " + resp.modifications.length + " modification(s):");
-					$('#csvModificationsForm').append('<input class="form-control" name="identifier" readonly type="text" value='+resp.identifier+'>');
+					$('#csvModificationsForm').append('<input class="form-control identifier" name="identifier" readonly type="text" value='+resp.identifier+'>');
 
 					resp.modifications.forEach(function (mod){
 						var modNameInput = '<input class="form-control" name="mods[]" readonly type="text" value='+mod+'>';

@@ -1,26 +1,28 @@
 <?php
-
+	include_once('../../vendor/php/utils.php');
 	// if (session_status() === PHP_SESSION_NONE){session_start();}
 
 	$identifier = $_POST['identifier'];
-	$dashSeperated = explode("-" , $identifier);
-	$randId = implode('-' , array_slice($dashSeperated, 1 , 4));
-	$upload_id = $dashSeperated[0];
 
 	include('../../connectionString.php');
-	$dbconn = pg_connect($connectionString) or die('Could not connect: ' . pg_last_error());
-	// Prepare a query for execution
-	pg_prepare($dbconn, "my_query", 'INSERT INTO modifications (upload_id, mod_name, mass, residues, accession) VALUES ($1, $2, $3, $4, $5)');
+	$dbConn = pg_connect($connectionString) or die('Could not connect: ' . pg_last_error());
 
-	$i = 0;
-	foreach ($_POST['mods'] as $modname) {
-		$result = pg_execute($dbconn, "my_query", [$upload_id, $modname, $_POST['modMasses'][$i], '*', '']) or die('Query failed: ' . pg_last_error());
-		$i++;
+    $upload_id = validateID_RandID($dbConn, $identifier);
+
+	if ($upload_id > 0) {
+		// Prepare a query for execution
+		pg_prepare($dbConn, "my_query", 'INSERT INTO modifications (upload_id, mod_name, mass, residues, accession) VALUES ($1, $2, $3, $4, $5)');
+
+		$i = 0;
+		foreach ($_POST['mods'] as $modname) {
+			$result = pg_execute($dbConn, "my_query", [$upload_id, $modname, $_POST['modMasses'][$i], '*', '']) or die('Query failed: ' . pg_last_error());
+			$i++;
+		}
+		// }// Free resultset
+		pg_free_result($result);
 	}
-	// }// Free resultset
-	pg_free_result($result);
 	// Closing connection
-	pg_close($dbconn);
+	pg_close($dbConn);
 
 
 
