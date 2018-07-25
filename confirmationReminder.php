@@ -24,7 +24,7 @@
 				<p>An email was sent to the address you used to register for xiVIEW.
                     <br>You must click the link contained in that email before you can sign in. 
                     <br>By doing so, you are giving us permission to store your data in accordance with our <a href="./privacy.php"> Privacy Statment</a>.
-                    <br>The privacy statement is also contained in the email you recieved</p>
+                    <br>The privacy statement is also contained in the email you recieved.</p>
                 </p>
 
         </div> <!-- CONTAINER -->
