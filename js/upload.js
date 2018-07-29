@@ -7,6 +7,9 @@ $( document ).ready(function() {
 	// 	standalone: false //to use knownModifications from xiAnnotator here. Should probably be changed in the future to unimod?
 	// });
 
+	//having some problems with firefox
+	CLMSUI.mzmlCbChecked = false;
+
 	//ToDo: could be moved to ManualDataInputView
 	$("#addCLModal").easyModal({
 		onClose: function(myModal){
@@ -51,6 +54,7 @@ $( document ).ready(function() {
 			}
 
 			if(new RegExp("\.(mzml|mgf|zip)(.gz)?$", 'i').test(data.files[0].name)){
+				CLMSUI.mzmlCbChecked = false;
 				$('#mzml_checkbox').prop( "checked", false ).change();
 				$('#mzml_fileBox .fileName').html(data.files[0].name);
 				data.context = $('#mzml_fileBox .statusBox').html('<div class="loader"></div>');
@@ -111,6 +115,7 @@ $( document ).ready(function() {
 				$('#startParsing').prop('disabled', false);
 			}
 			if(data.context[0].dataset['filetype'] == 'mzml' || data.context[0].dataset['filetype'] == 'mgf'){
+				CLMSUI.mzmlCbChecked = true;
 				$('#mzml_checkbox').prop( "checked", true ).change();
 			}
 			if(data.context[0].dataset['filetype'] == 'mzid') {
@@ -171,8 +176,10 @@ $( document ).ready(function() {
 	$("#startParsing").click(function(e){
 		e.preventDefault();
 		var formData = new FormData();
-		if ($('#mzml_checkbox').prop("checked") == true) {
+		if (CLMSUI.mzmlCbChecked == true) {
 			formData.append("peakFile_fn", $('#mzml_fileBox .fileName').html());
+		} else {
+			alert("no peak list (debug message)");
 		}
 		formData.append("res_fn", $('#mzid_fileBox .fileName').html());
 		CLMSUI.startParser(formData);
