@@ -56,28 +56,37 @@
 		<div id="main">
 			<div class="container">
 				<h1 class="page-header">Multiple Coordinated Views of Cross-Linking / Mass Spectrometry Data.</h1>
-				xiView is a visualisation tool for the downstream analysis of cross-linking / mass spectrometry results. It provides multiple, linked views of the data, including:
+				<p>xiView is a visualisation tool for the downstream analysis of cross-linking / mass spectrometry results, it is independent of the search software used. It provides multiple, linked views of the data, including:</p>
 				<ul>
 					<li>2D network (<a href="http://crosslinkviewer.org" target="_blank">xiNET</a> or circular)</li>
 					<li>the supporting annotated spectra using <a href="http://spectrumviewer.org" target="_blank">xiSPEC</a>.</li>
 					<li>3D structure view using <a href="http://nglviewer.org/ngl" target="_blank">NGL</a>.</li>
-			 </ul>
-				<p>xiView is an open source project on <a href="https://github.com/Rappsilber-Laboratory/xiView_container" >GitHub</a>. Report issues and request features <a href="https://github.com/Rappsilber-Laboratory/xiView_container/issues">here</a>.</p>
-				<br/>
-<div class="login">
-		                 <div class="newUserSection" style="display:block;">
-				             <hr class="wideDivider">
-				             <h3>New User?</h3>
-				             <form id="new_user_form" name="new_user_form" action="./createAccount.php">
-				                 <input name="Submit" value="Create New Account" type="submit" class="btn btn-1a"/>
-				             </form>
-				         </div>
-       </div>
+				</ul>
+				<div>
+					 <hr class="wideDivider">
+					<p>The <a href="http://rappsilberlab.org/rappsilber-laboratory-home-page/tools/xiview/xiview-videos/" target="_blank" >video tutorials</a> give an overview of xiView's many features.</p>
+				</div>
+				<div>
+					 <hr class="wideDivider">
+					<p>xiView is an open source project on
+						<a href="https://github.com/Rappsilber-Laboratory/xiView_container" target="_blank">GitHub</a>.
+						Report issues and request features
+						<a href="https://github.com/Rappsilber-Laboratory/xiView_container/issues"  target="_blank">here</a>.
+					</p>
+				</div>
 
-					<!-- <br><a href="./createAccount.php">Create xiView account</a>.</p> -->
+				<div class="login">
+		             <div class="newUserSection" style="display:block;">
+			             <hr class="wideDivider">
+			             <h3>New User?</h3>
+			             <form id="new_user_form" name="new_user_form" action="./createAccount.php">
+			                 <input name="Submit" value="Create New Account" type="submit" class="btn btn-1a"/>
+			             </form>
+			         </div>
+			 	</div>
 				<br/>
 				<div >
-					<img style="display:block;margin:auto;" class="sliderImg" alt="Automatic mapping of links onto 3D structures" src="images/slider/xiView_3d.png">
+					<img style="display:block;margin:auto;" class="sliderImg" alt="Automatic mapping of links onto 3D structures" src="images/midScreenshot.png">
 				</div>
 				<!-- <div style="text-align: center;">
 					<div class="sliderWrapper">

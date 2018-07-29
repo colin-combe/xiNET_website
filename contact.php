@@ -166,15 +166,14 @@
 							<br>
 						</div> <!-- CONTAINER -->
 					</section>
-					<!-- <section class="two contact-section2">
+					<section class="two contact-section2">
 						<div class="container">
 							<div class="external-link">
-								<h4>Support</h4>
-								<p>For support email <a href="mailto:lkolbows@ed.ac.uk">lkolbows@ed.ac.uk</a>. You may also use <a target="_blank" href="https://github.com/Rappsilber-Laboratory/xiSPEC/issues"> issue tracking at GitHub</a>.</p>
+								<p>You may also use <a target="_blank" href="https://github.com/Rappsilber-Laboratory/xiView_container/issues"> issue tracking at GitHub</a>.</p>
 							</div>
 							<br>
 						</div>
-					</section> -->
+					</section>
 			</div> <!-- MAIN -->
 	</body>
 </html>
