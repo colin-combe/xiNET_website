@@ -33,7 +33,14 @@ $( document ).ready(function() {
 	$('#fileupload').fileupload({
 		dataType: 'json',
 		fileTypes: "mzid|mzml|mgf|csv|zip|gz|fasta",
-		maxChunkSize: 100000000,	//100MB
+        maxChunkSize:0,
+        // singleFileUploads: false,
+        // limitMultiFileUploadSize: 5000000,
+        // Error and info messages:
+        // messages: {
+        //     uploadedBytes: 'Uploaded bytes exceed file size'
+        // },
+		// maxChunkSize: 100000000,	//100MB
 		progressall: function (e, data) {
 			var progress = parseInt(data.loaded / data.total * 100, 10);
 			if (progress > 100) progress = 100; //quick&dirty fix to limit % to 100 (can happen if file is reuploaded)

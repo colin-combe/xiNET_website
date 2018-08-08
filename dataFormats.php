@@ -42,21 +42,22 @@
 							<tr><td>Score</td><td>No</td><td>Confidence score for the identification (number)</td><td>0</td><td>10.5641</td></tr>
 							<tr><td>PassThreshold</td><td>No</td><td>True if the identification has passed a given threshold or been validated as correct</td><td>TRUE</td><td>FALSE</td></tr>
 							<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
-							<tr><td>Charge</td><td>Yes</td><td>Precursor charge state</td><td>-</td><td>3</td></tr>
-							<tr><td>CrossLinkerModMass</td><td>Yes</td><td>Modification mass of the used cross-linker</td><td>0</td><td>138.06808</td></tr>
+							<tr><td>Charge</td><td>Yes**</td><td>Precursor charge state</td><td>-</td><td>3</td></tr>
+							<tr><td>CrossLinkerModMass</td><td>Yes**</td><td>Modification mass of the used cross-linker</td><td>0</td><td>138.06808</td></tr>
 							<tr><td>ExpMz</td><td>No</td><td>The mass-to-charge value measured in the experiment in Daltons / charge.</td><td>-</td><td>985.4341</td></tr>
 							<tr><td>CalcMz</td><td>No</td><td>The theoretical mass-to-charge value calculated for the peptide in Daltons / charge.</td><td>-</td><td>985.6531</td></tr>
 							<tr><td>FragmentTolerance</td><td>No</td><td>MS2 tolerance for annotating fragment peaks (in ppm or Da)</td><td>10 ppm</td><td>0.2 Da</td></tr>
 							<tr><td>IonTypes</td><td>No</td><td>Fragment ion types to be considered separated by semicolon</td><td>peptide;b;y</td><td>peptide;a;b;c;x;y;z</td></tr>
 							<tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
-							<tr><td>ScanId</td><td>Yes</td><td>mzML: 1-based scan number; MGF: 0-based index in file</td><td>-</td><td>2256</td></tr>
-							<tr><td>PeakListFileName</td><td>Yes</td><td>File name of the associated peak list file that contains the scan</td><td>-</td><td>example_file.mzML</td></tr>
+							<tr><td>ScanId</td><td>Yes**</td><td>mzML: 1-based scan number; MGF: 0-based index in file</td><td>-</td><td>2256</td></tr>
+							<tr><td>PeakListFileName</td><td>Yes**</td><td>File name of the associated peak list file that contains the scan</td><td>-</td><td>example_file.mzML</td></tr>
 
 						</tbody>
 					</table>
 					<br/>
 					<p style="font-size: small;line-height: 1.5em;">
 						*required if there are multiple alternative explanations for the same spectrum.</br>
+						**can be ommitted if your not uploading peak lists and don't expect to see annotated spectra.</br>
 					</p>
 				</div>
 
@@ -65,15 +66,14 @@
 				</h1>
 				<div class="accordionContent" style="display: none;" id="mzIdSupport">
 					<table class="myTable" id="mzidSupportTable">
-						please <a href="mailto:colin.combe@ed.ac.uk">contact us</a> if you are trying to upload mzIdentML, we still have some issues to be resolved
-						<!-- HUPO PSI provide <a href="http://www.psidev.info/tools-implementing-mzidentml">a list of tools that support mzIdentML</a>.
-						<br/>
-						We tested output from the following tools and confirmed that they successfully worked in xiSPEC. <a href="mailto:lars.b.kolbowski@campus.tu-berlin.de" title="Contact us">Contact us</a> if you noticed a tool missing from the list and we will add it.
+						<p>Please <a href="mailto:colin.combe@ed.ac.uk">contact us</a> if you are having difficulties uploading MzIdentML.</p>
+
+                        <p>We tested output from the following tools and confirmed that they successfully worked in xiVIEW:</p>
 						<ul>
 							<li>
-								<a href="http://www.matrixscience.com/">Mascot (Matrix Science)</a>
+								<a href="http://patternlabforproteomics.org/sim-xl/" target="_blank">SIM-XL</a>
 							</li>
-							<li>
+						<!--	<li>
 								<a href="http://www.proteomesoftware.com/products/scaffold/">Scaffold</a>
 							</li>
 							<li>
@@ -84,8 +84,20 @@
 							</li>
 							<li>
 								<a href="https://github.com/Rappsilber-Laboratory/xiFDR">xiFDR</a>
-							</li>
-						</ul> -->
+							</li> -->
+						</ul>
+
+                        <p>It is also reputed to work with ProteomeDiscoverer mzIdentML output, but we haven't tested this.</p>
+                        <p>More example files (prefferably including peak list data) from other pieces of software would be most appreciated.</p>
+                        <p>In particular, we would like to support multiple fragmentation approaches but are lacking suitable mzIdentML test files.</p>
+
+                        <p>There may be some issues in this area would be best solved by improving the official <a href="https://github.com/HUPO-PSI/mzIdentML/issues"  target="_blank">mzIdentML validator</a>.</p>
+
+
+
+						<!-- HUPO PSI provide <a href="http://www.psidev.info/tools-implementing-mzidentml">a list of tools that support mzIdentML</a>.
+						<br/>
+
 					</table>
 				</div>
  			</div> <!-- CONTAINER -->
