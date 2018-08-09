@@ -66,6 +66,7 @@
 				</h1>
 				<div class="accordionContent" style="display: none;" id="mzIdSupport">
 					<table class="myTable" id="mzidSupportTable">
+						<p>Cross-link data is supported in <a href="http://www.psidev.info/mzidentml#mzid12" target="_blank">version 1.2 of the MzIdentML schema</a>.</p>
 						<p>Please <a href="mailto:colin.combe@ed.ac.uk">contact us</a> if you are having difficulties uploading MzIdentML.</p>
 
                         <p>We tested output from the following tools and confirmed that they successfully worked in xiVIEW:</p>
@@ -87,11 +88,11 @@
 							</li> -->
 						</ul>
 
-                        <p>It is also reputed to work with ProteomeDiscoverer mzIdentML output, but we haven't tested this.</p>
-                        <p>More example files (prefferably including peak list data) from other pieces of software would be most appreciated.</p>
-                        <p>In particular, we would like to support multiple fragmentation approaches but are lacking suitable mzIdentML test files.</p>
+                        <p>It is also reputed to work with ProteomeDiscoverer MzIdentML output, but we haven't tested this.</p>
+                        <p>More example files (including peak list data if possible) from other pieces of software would be gratefully recieved.</p>
+                        <p>We would like to support the 'combined spectra' spectrum id types (see Section 5.2.9 of MzIdentML v1.2) but are currently lacking suitable test files.</p>
 
-                        <p>There may be some issues in this area would be best solved by improving the official <a href="https://github.com/HUPO-PSI/mzIdentML/issues"  target="_blank">mzIdentML validator</a>.</p>
+                        <p>There might be some issues in this area that could be resolved by updating the official <a href="https://github.com/HUPO-PSI/mzIdentML/issues"  target="_blank">mzIdentML validator</a>.</p>
 
 
 
