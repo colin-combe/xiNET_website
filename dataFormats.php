@@ -90,7 +90,7 @@
 
                         <p>It is also reputed to work with ProteomeDiscoverer MzIdentML output, but we haven't tested this.</p>
                         <p>More example files (including peak list data if possible) from other pieces of software would be gratefully recieved.</p>
-                        <p>We would like to support the 'combined spectra' spectrum id types (see Section 5.2.9 of MzIdentML v1.2) but are currently lacking suitable test files.</p>
+                        <!-- <p>We would like to support the 'combined spectra' spectrum id types (see Section 5.2.9 of MzIdentML v1.2) but are currently lacking suitable test files.</p> -->
 
                         <p>There might be some issues in this area that could be resolved by updating the official <a href="https://github.com/HUPO-PSI/mzIdentML/issues"  target="_blank">mzIdentML validator</a>.</p>
 
