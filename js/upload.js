@@ -60,7 +60,7 @@ $( document ).ready(function() {
 				data.submit();
 			}
 
-			if(new RegExp("\.(mzml|mgf|zip)(.gz)?$", 'i').test(data.files[0].name)){
+			if(new RegExp("\.(mzml|mgf|ms2|zip)(.gz)?$", 'i').test(data.files[0].name)){
 				CLMSUI.mzmlCbChecked = false;
 				$('#mzml_checkbox').prop( "checked", false ).change();
 				$('#mzml_fileBox .fileName').html(data.files[0].name);
