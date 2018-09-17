@@ -38,8 +38,9 @@
 
 							<p>xiView accepts three types of input data: peptide identifications, peak lists, and protein sequences.</p>
 
-							Supported identification file formats: <a title="HUPO-PIS: mzidentML" href="http://www.psidev.info/mzidentml" target="blank">mzIdentML</a> and <a title="Show column headings" href="dataFormats.php#csv">csv</a>.</br>
-							Supported peak list file formats: <a title="HUPO-PIS: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a> and <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a> (+ zip/gz archives of mzML/mgf).</br>
+							Supported identification file formats: <a title="HUPO-PSI: mzidentML" href="http://www.psidev.info/mzidentml" target="blank">mzIdentML</a> and <a title="Show column headings" href="dataFormats.php#csv">csv</a>.</br>
+							Supported peak list file formats: <a title="HUPO-PSI: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a>, <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a>,
+                                and <a href="https://www.ncbi.nlm.nih.gov/pubmed/15317041"  target="blank"> ms2</a> (&amp; zip/gz archives of mzML/mgf/ms2).</br>
 							Supported sequence file formats: <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>.</br></p>
 							<div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
 								mzML: Filter out MS1 spectra to reduce file size and upload/parsing time. (e.g. 'MS level 2-' in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
