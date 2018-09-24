@@ -5,24 +5,7 @@
                 <a style="text-decoration:none;" href="index.php"><h1 class="logo">xiVIEW</h1></a>
                 <!-- <h4 class="logo-subtitle">Multiple Coordinated Views of Cross-Linking / Mass Spectrometry Data.</h4> -->
             </div>
-            <nav class="hover-effect">
-                <a href="index.php" data-hover="Home" data-no-instant>Home</a><br/>
-                <a href="demo.php" data-hover="Demo" data-no-instant>Demo</a><br/>
-                <a href="dataFormats.php" data-hover="Data Formats">Data Formats</a><br/>
-                <a href="privacy.php" data-hover="Privacy Statement">Privacy</a><br/>
-                <a href="contact.php" data-hover="Contact">Contact</a><br/>
-                <?php
-                    session_start();
-                    if (!isset($_SESSION['session_name'])) {
-                        echo '<a href="createAccount.php" data-hover="Create Account" data-no-instant>Create Account</a><br/>';
-                        echo '<a href="login.php" data-hover="Sign in">Sign in</a><br/>';
-                    } else {
-                        echo '<a href="upload.php" data-hover="Upload new data set">Upload</a><br/>';
-                        echo '<a href="../history/history.html" data-hover="Back to data set list" data-no-instant>My Data</a><br/>';
-                        echo '<a href="../userGUI/php/logout.php" data-hover="Sign out">Sign Out</a><br/>';
-                    }
-                ?>
-            </nav>
+            <?php include('menuItems.php'); ?>
         </div>
         <div class="bottom">
             <a href="http://rappsilberlab.org/" target="_blank">
@@ -35,7 +18,7 @@
     </div> <!-- headerbg -->
 </div> <!-- header -->
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $( document ).ready(function() {
     $('.menu').click(function(){
     $('.header-top').slideToggle();
@@ -48,14 +31,7 @@
 <div class="menu-top">
     <div class="header-top">
     <div class="header-top-bg">
-    <nav class="hover-effect">
-    <a href="index.php" data-hover="Home" data-no-instant>Home</a>
-    <a href="examples.php" data-hover="Examples" data-no-instant>Examples</a>
-    <a href="upload.php" data-hover="Upload">Upload</a>
-    <a href="help.php" data-hover="Help">Help</a>
-    <a href="contact.php" data-hover="Contact">Contact</a>
-    <a href="legacy.php" data-hover="Legacy">Legacy</a>
-    </nav>
+        <?php include('menuItems.php'); ?>
     </div>
     </div>
-</div> -->
+</div>
