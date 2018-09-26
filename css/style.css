@@ -172,54 +172,9 @@ nav a:focus, nav a:hover {
     text-align: center;
 }
 
-.sliderWrapper{
-    width: 1092px;
-    margin-top: 20px;
-    position: relative;
-    display: inline-block;
-}
-
-#sliderInfo{
-    padding: 4px 21px;
-    color: #eee;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    background: rgba(127, 127, 127, 0.7);
-    transform: translate(-50%, -50%);
-}
-
-.sliderBtn{
-    color: #fff!important;
-    background: rgba(127, 127, 127, 0.7)!important;
-    border: none;
-    display: inline-block;
-    outline: 0;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    background-color: inherit;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-}
-.sliderBtn:hover{color: #000!important;background-color: #ccc!important;}
-.slider-right{
-    position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(0%,-50%);
-}
-.slider-left{
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(0%,-50%);
-}
 .accordionHead{
     cursor: pointer;
+    clear: both;
 }
 .accordionHead:hover{
     color: #333!important;
@@ -292,9 +247,25 @@ article, section {
 .row>article, .row>section, article:last-child, article>.container>:last-child, article>:last-child, section:last-child, section>.container>:last-child, section>:last-child {
     margin-bottom: 0;
 }
+
+.image-link {
+    border: none;
+    float: right;
+    top: 0;
+    text-decoration: none;
+}
+.image-link-left {
+    border: none;
+    float: left;
+    top: 0;
+    text-decoration: none;
+    margin-right:20px;
+}
+
 .image {
     display: inline-block;
     border: 0;
+    padding: 20px;
 }
 .image img, .image.full {
     display: block;
@@ -326,6 +297,11 @@ ul.default li {
 ul.menu {
     cursor: default;
 }
+
+li {
+    margin-bottom: 20px;
+}
+
 ul.`menu` li {
     display: inline-block;
     line-height: 1em;
@@ -465,7 +441,7 @@ table.default tfoot {
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     font-size: 15pt;
 }
 .hidden{

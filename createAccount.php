@@ -2,12 +2,9 @@
 <html>
     <head>
         <?php
-        $pageName = "Home";
+        $pageName = "Create Account";
         include("head.php");
         ?>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <link rel="stylesheet" href="../vendor/css/example.wink.css" />
         <link rel="stylesheet" href="../vendor/css/common.css" />
@@ -26,8 +23,7 @@
     <!-- Main -->
     <div id="main">
         <div class="container">
-            <h1 class="page-header">Multiple Coordinated Views of Cross-Linking / Mass Spectrometry Data.</h1>
-            <!-- xiView is a visualisation tool for the downstream analysis of cross-linking / mass spectrometry results. It provides multiple, linked views of the data, including: -->
+            <h1 class="page-header"><?php echo($pageName); ?></h1>
 
             <?php include("../userGUI/userRegInnerDiv.php");?>
 

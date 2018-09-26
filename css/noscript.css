@@ -14,7 +14,7 @@ body {
     width: 1200px;
 	padding: 36px;
 */
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 20px;
     margin-left: 80px;
     margin-right: 80px;
@@ -74,5 +74,3 @@ body {
 	background-color: #091D42;
 	display: none;
 }
-
-

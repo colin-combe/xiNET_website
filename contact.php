@@ -2,10 +2,9 @@
 <html>
 	<head>
 		<?php
-		$pageName = "Contact";
-		include("head.php");
-		include("xiSPEC_scripts.php");
-		?>
+        $pageName = "Contact";
+        include("head.php");
+        ?>
 	</head>
 		<body>
 			<!-- Sidebar -->
@@ -17,7 +16,7 @@
 				<!-- Intro -->
 					<section id="top" class="one contact-section">
 						<div class="container">
-							<h1 class="page-header">Contact The Team</h1>
+							<h1 class="page-header"><?php echo($pageName); ?></h1>
 							<div class="contactGroup">
 								<table>
 									<tr>

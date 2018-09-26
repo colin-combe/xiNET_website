@@ -2,7 +2,6 @@
 <script type="text/javascript" src="../vendor/js/colorbrewer.js"></script>
 <script type="text/javascript" src="../vendor/js/underscore.js"></script>
 <script type="text/javascript" src="../vendor/js/spin.js"></script>
-<script type="text/javascript" src="../vendor/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../vendor/js/backbone.js"></script>
 <script type="text/javascript" src="./vendor/colorbrewer.js"></script>
 <script type="text/javascript" src="./vendor/jquery.easyModal.js"></script>
