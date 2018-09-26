@@ -135,6 +135,9 @@
                 <tr><th>column</th><th>required?</th><th>notes</th><th>default</th><th>example</th></tr>
                 </thead>
                 <tbody>
+                <tr><td>Decoy 1</td><td>No</td><td>Set to true if the peptide 1 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
+                <tr><td>Decoy 2</td><td>No</td><td>Set to true if the peptide 2 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
+                <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
                 <tr><td>Score</td><td>No</td><td>Confidence score for the identification (number)</td><td>0</td><td>10.5641</td></tr>
                 <tr><td>PassThreshold</td><td>No</td><td>True if the identification has passed a given threshold or been validated as correct</td><td>TRUE</td><td>FALSE</td></tr>
                 <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
