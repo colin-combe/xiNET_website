@@ -40,12 +40,12 @@
                     </li>
                 </ul>
 
-                <p>The tables below describe the columns for three types of CSV input for peptide identifications and a set of optional columns that can be used in conjunction with any of them.</p>
+                <p>The tables below describe the formats for CSV input of peptide identifications.</p>
                 <br/>
 
 
-                <h1 class="page-header accordionHead">
-                <i class="fa fa-plus-square" aria-hidden="true"></i> Super Minimal CSV: link positions only, no peptide info, no peak lists
+                <!-- <h1 class="page-header accordionHead">
+                <i class="fa fa-plus-square" aria-hidden="true"></i>Minimal CSV: link positions only, no peptide info, no peak lists
                 </h1>
                 <div class="accordionContent" style="display: none;" id="superminimalcsv">
                 <table class="myTable" id="superminimalcsvTable">
@@ -60,12 +60,12 @@
                 </tbody>
                 </table>
                 <br/>
-                </div>
+                </div> -->
 
 
 
                 <h1 class="page-header accordionHead">
-                <i class="fa fa-plus-square" aria-hidden="true"></i> Minimal CSV: link positions and peptide sequences
+                <i class="fa fa-plus-square" aria-hidden="true"></i> CSV without peak lists
                 </h1>
                 <div class="accordionContent" style="display: none;" id="csv">
                 <table class="myTable" id="csvTable">
