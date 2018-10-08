@@ -173,12 +173,6 @@
                 </div>
 
 
-                </tbody>
-                </table>
-                <br/>
-                </div>
-
-
                 <h1 class="page-header accordionHead">
                 <i class="fa fa-plus-square" aria-hidden="true"></i> mzIdentML support
                 </h1>
