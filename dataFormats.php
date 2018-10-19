@@ -59,8 +59,8 @@
                     <tr><td>Protein2</td><td>Yes</td><td>Identifier for protein 2. Ambiguous results are represented by listing the alternative proteins separated by semi-colons</td><td>-</td><td>P02768;P13645</td></tr>
                     <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
 
-                    <tr><td>Decoy 1</td><td>No</td><td>Set to true if the peptide 1 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
-                    <tr><td>Decoy 2</td><td>No</td><td>Set to true if the peptide 2 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
+                    <tr><td>Decoy1</td><td>No</td><td>Set to true if the peptide 1 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
+                    <tr><td>Decoy2</td><td>No</td><td>Set to true if the peptide 2 is matched to a decoy sequence</td><td>FALSE</td><td>TRUE</td></tr>
 
                     <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
 
