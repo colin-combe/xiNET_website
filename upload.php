@@ -13,6 +13,12 @@
       <!-- Intro -->
       <section id="top" class="one">
          <div class="container">
+
+		
+
+            <h1 class="page-header">NEW! Try xiNET's successor at <a href="https://xiview.org">xiVIEW.org</a></h1>
+        	
+
             <h1 class="page-header">Upload Your Own Data</h1>
             <form class="fileupload" action="./fup.php" enctype=
             "multipart/form-data" method="post">
