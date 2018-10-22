@@ -7,7 +7,7 @@
                 <br/>
                 <br/>
                 <?php
-                    session_start();
+                    if (session_status() === PHP_SESSION_NONE){session_start();}
                     if (!isset($_SESSION['session_name'])) {
                         echo '<a href="createAccount.php" data-hover="Create Account" data-no-instant>Create Account</a><br/>';
                         echo '<a href="login.php" data-hover="Sign in">Sign in</a><br/>';
