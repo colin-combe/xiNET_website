@@ -20,7 +20,16 @@
             $result = pg_execute($dbconn, "my_query", [$_SESSION['user_id']]);
 
             $data = pg_fetch_all($result);
-            if ($data[0] == null) $data = [];
+            for ($d = 0; $d < count($data); $d++) {
+                $item = $data[$d];
+                if (!empty($item)){
+                    // json decoding
+                    $item["mod_name"] = $item["mod_name"];
+                    $item["mass"] = number_format($item["mass"], 6);
+                    $data[$d] = $item;
+                }
+            }
+			if ($data[0] == null) $data = [];
 
             echo json_encode(array("user"=>$_SESSION['session_name'], "data"=>$data));
 
