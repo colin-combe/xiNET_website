@@ -24,6 +24,7 @@
     <div id="main">
         <div class="container">
             <h1 class="page-header"><?php echo($pageName); ?></h1>
+            <p><a href="https://player.vimeo.com/video/298348200"  target="_blank">Account creation video tutorial</a></p>
 
             <?php include("../userGUI/userRegInnerDiv.php");?>
 
