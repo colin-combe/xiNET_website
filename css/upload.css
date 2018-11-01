@@ -168,3 +168,6 @@
 .identifier{
     display:none;
 }
+ol {
+    list-style-type: lower-roman;
+}

@@ -21,8 +21,6 @@
 		<script src="./vendor/jQueryFileUploadMin/jquery.fileupload.js"></script>
 
 		<link rel="stylesheet" href="./css/upload.css" />
-		<link rel="stylesheet" href="./css/dropdown.css" />
-		<link rel="stylesheet" href="./css/manDataInput.css" />
 	</head>
 	<body>
 		<!-- Sidebar -->
@@ -35,17 +33,33 @@
 					<h1 class="page-header accordionHead"><i <?php /*echo($example ? 'class="fa fa-plus-square"' : 'class="fa fa-minus-square"');*/?> aria-hidden="true"></i> Upload your data</h1>
 					<div class="accordionContent" >
 						<div style="margin-left: 1em; line-height: 1.7em;">
+                            <p><a href="https://player.vimeo.com/video/298348184" target="_blank">Data upload video tutorial</a></p>
 
-							<p>xiView accepts three types of input data: peptide identifications, peak lists, and protein sequences.</p>
+							<p>xiView accepts three types of input data: (i) peptide identifications; (ii) peak lists; and (iii) protein sequences.</p>
+                            </br>
+                            <ol>
+    							<li>Supported identification file formats:
+                                    <a title="HUPO-PSI: mzidentML" href="http://www.psidev.info/mzidentml" target="blank">mzIdentML</a> (file extension must be '.mzid')
+                                    and <a title="Show column headings" href="dataFormats.php">csv</a> (file extension '.csv').
+                                </li>
 
-							Supported identification file formats: <a title="HUPO-PSI: mzidentML" href="http://www.psidev.info/mzidentml" target="blank">mzIdentML</a> and <a title="Show column headings" href="dataFormats.php#csv">csv</a>.</br>
-							Supported peak list file formats: <a title="HUPO-PSI: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a>, <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a>,
-                                and <a href="https://www.ncbi.nlm.nih.gov/pubmed/15317041"  target="blank"> ms2</a> (&amp; zip/gz archives of mzML/mgf/ms2).</br>
-							Supported sequence file formats: <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>.</br></p>
-							<div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
-								mzML: Filter out MS1 spectra to reduce file size and upload/parsing time. (e.g. 'MS level 2-' in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
-								<!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
-							</div>
+                                <li>Supported peak list file formats:
+                                    <a title="HUPO-PSI: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a>,
+                                    <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a>,
+                                    and <a href="https://www.ncbi.nlm.nih.gov/pubmed/15317041"  target="blank"> ms2</a> (&amp; zip/gz archives of mzML/mgf/ms2). File extension must be '.mzML', '.mgf', '.ms2' or '.zip'.
+                                    <div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
+                                        mzML: Filter out MS1 spectra to reduce file size and upload/parsing time. (e.g. 'MS level 2-' in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
+                                        <!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
+                                    </div>
+                                </li>
+
+    							<li>Supported sequence file formats:
+                                    <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>
+                                    (file extension must be '.fasta').
+                                </li>
+
+                            </ol>
+
 							<br/>
 							<ul>
 								<li>
@@ -60,7 +74,7 @@
 								</li>
 							</ul>
 							<br/>
-							<p>CSV Example:
+							<p>CSV Example (identification, peak lists, sequences):
 								<a href="examples/PolII_XiVersion1.6.742_PSM_xiFDR1.1.27.csv" target="_blank">CSV</a>
 								<a href="examples/Rappsilber_CLMS_PolII_MGFs.zip" target="_blank">MGFs</a>
 								<a href="examples/polII-uniprot.fasta" target="_blank">FASTA</a>
@@ -68,11 +82,11 @@
 								<a href="examples/E180510_02_Orbi2_TD_IN_160_HSA_10kDa_10p.mzML" target="_blank">MZML</a>
 								<a href="examples/HSA-Active.FASTA" target="_blank">FASTA</a> -->
 							</p>
-							<p>MzIdentML <a href="examples/SIM-XL_example.mzid" target="_blank">Example</a> (generated by <a href="http://patternlabforproteomics.org/sim-xl/" target="_blank">SIM-XL<a/>):
+							<p><a href="examples/SIM-XL_example.mzid" target="_blank">MzIdentML Example </a>(generated by <a href="http://patternlabforproteomics.org/sim-xl/" target="_blank">SIM-XL</a>, no peak list associated with this example).
 							<p>
 						</div>
 						<div id="fileUploadWrapper">
-							<input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.ms2,.zip,.gz, .fasta" multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
+							<input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.ms2,.zip,.gz,.fasta" multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
 							<label for="fileupload"><span class="uploadbox"></span><span class="btn">Choose file(s)</span></label>
 							<div id="uploadProgress">
 								<div class="file_upload_bar" style="width: 0%;"><div class="file_upload_percent"></div></div>
