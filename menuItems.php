@@ -1,6 +1,6 @@
     <nav class="hover-effect">
                 <a href="index.php" data-hover="Home" data-no-instant>Home</a><br/>
-                <a href="https://xiview.org/xi3/network.php?upload=328-62065-38042-63762-39609" data-hover="Demo" data-no-instant>Demo</a><br/>
+                <a href="https://xiview.org/xi3/network.php?upload=547-90828-08990-28852-02225" data-hover="Demo" data-no-instant>Demo</a><br/>
                 <a href="dataFormats.php" data-hover="Data Formats">Data Formats</a><br/>
                 <a href="privacy.php" data-hover="Privacy Statement">Privacy</a><br/>
                 <a href="contact.php" data-hover="Contact">Contact</a><br/>
