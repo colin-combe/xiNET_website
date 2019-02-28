@@ -72,7 +72,15 @@
     <a href="https://github.com/Rappsilber-Laboratory/xiView_container/issues"  target="_blank">here</a>.
     </p>
     </div>
-
+    <div>
+     <hr class="wideDivider">
+                Citation:
+                <a target="_blank" href="http://biorxiv.org/cgi/content/short/561829v1">
+                Graham, M., Combe, C. W., Kolbowski, L. &amp; Rappsilber, J. xiView: A common platform for the downstream analysis of
+    Crosslinking Mass Spectrometry data. <i>doi: 10.1101/561829 </i>.
+                </a>
+    </div>
+    <div>
     <div class="login">
                  <div class="newUserSection" style="display:block;">
                  <hr class="wideDivider">
@@ -96,6 +104,7 @@
     <div id="sliderInfo">Interactive highlighting between all views</div>
     </div>
     </div> -->
+
     </div> <!-- CONTAINER -->
     </div> <!-- MAIN -->
 

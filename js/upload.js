@@ -264,8 +264,8 @@ $(document).ready(function() {
 
                         })
                     }
-
-                    if (resp.modifications.length > 0) {
+                    if (CLMSUI.mzmlCbChecked == true) {
+                        if (resp.modifications.length > 0) {
 							var getMass = function(name, data) {
 								for (var i = 0; i < data.data.length; i ++){
 									var mod = data.data[i];
@@ -292,9 +292,10 @@ $(document).ready(function() {
 			                            $('#csvModificationsForm').append('<div style="margin-bottom: 5px;">' + modNameInput + modMassInput + '</div>');
 			                        })
 			                        $('#csvModificationsForm').append('<input type="submit" value="update modifications" class="btn btn-1a btn-2" id="updateModsSubmit">');
-							}
-						}
-					);
+    							}
+    						}
+    					);
+                        }
                     }
                 }
             }

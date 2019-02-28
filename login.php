@@ -25,6 +25,14 @@
         <div class="container">
             <h1 class="page-header"><?php echo($pageName); ?></h1>
             <?php include("../userGUI/userLoginInnerDiv.php");?>
+            <div class="newUserSection">
+                <hr class="wideDivider">
+                <h3>Citation:</h3>
+                <a target="_blank" href="http://biorxiv.org/cgi/content/short/561829v1">
+                Graham, M., Combe, C. W., Kolbowski, L. &amp; Rappsilber, J. xiView: A common platform for the downstream analysis of
+    Crosslinking Mass Spectrometry data. <i>doi: 10.1101/561829 </i>.
+                </a>
+            </div>
         </div> <!-- CONTAINER -->
     </div> <!-- MAIN -->
 
