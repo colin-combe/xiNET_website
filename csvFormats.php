@@ -2,7 +2,7 @@
 <html>
     <head>
     <?php
-        $pageName = "Data Formats";
+        $pageName = "CSV Formats";
         include("head.php");
     ?>
         <script type="text/javascript" src="./js/accordion.js"></script>
@@ -18,7 +18,7 @@
             <div class="container">
                 <h1 class="page-header"><?php echo($pageName); ?></h1>
 
-                <div class="image-link"><img alt="xiView workflow" class="image full" src="images/workflow.svg"></div>
+                <!-- <div class="image-link"><img alt="xiView workflow" class="image full" src="images/workflow.svg"></div>
                 <p>xiView accepts three types of input data:</p>
                 <ul>
                     <li>Peptide Identifications (required) <br/>
@@ -32,20 +32,20 @@
                         If peak list data is uploaded then it must be complete, i.e. all spectra identified must be present, or the upload process will result in an error.<br>
                         mzML tip: Filter out MS1 spectra to reduce file size and upload/parsing time. (e.g. 'MS level 2-' in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
                     <!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
-                    </li>
+                <!--    </li>
                     <li>Protein Sequences (optional)
                         Supported sequence file formats: <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>.</br></p>
                         If you do not provide a FASTA file, then your protein IDs must be valid UniProtKB accession numbers.
                         If you do provide a FASTA file, then your protein IDs must all match identifiers in the FASTA file.
                     </li>
-                </ul>
+                </ul> -->
 
                 <p>The tables below describe the formats for CSV input of peptide identifications.</p>
                 <br/>
 
 
                 <h1 class="page-header accordionHead">
-                <i class="fa fa-plus-square" aria-hidden="true"></i>Minimal CSV: link positions only, no peptide info, no peak lists
+                <i class="fa fa-plus-square" aria-hidden="true"></i> Minimal CSV: link positions only, no peptide info, no peak lists
                 </h1>
                 <div class="accordionContent" style="display: none;" id="superminimalcsv">
                 <table class="myTable" id="superminimalcsvTable">
@@ -179,40 +179,6 @@
                 *required if there are multiple alternative explanations for the same spectrum.</br>
                 </p>
                 <br/>
-                </div>
-
-
-                <h1 class="page-header accordionHead">
-                <i class="fa fa-plus-square" aria-hidden="true"></i> mzIdentML support
-                </h1>
-                <div class="accordionContent" style="display: none;" id="mzIdSupport">
-                <table class="myTable" id="mzidSupportTable">
-                <p>Cross-link data is supported in <a href="http://www.psidev.info/mzidentml#mzid12" target="_blank">version 1.2 of the MzIdentML schema</a>.</p>
-                <p>Please <a href="mailto:colin.combe@ed.ac.uk">contact us</a> if you are having difficulties uploading MzIdentML.</p>
-
-                <p>We have tested output from the following tools and confirmed that it works in xiVIEW:</p>
-                <ul>
-                    <li>
-                    <a href="http://patternlabforproteomics.org/sim-xl/" target="_blank">SIM-XL</a>
-                    </li>
-                    <!--	<li>
-                    <a href="http://www.proteomesoftware.com/products/scaffold/">Scaffold</a>
-                    </li>
-                    <li>
-                    <a href="http://compomics.github.io/projects/peptide-shaker.html">PeptideShaker</a>
-                    </li>
-                    <li>
-                    <a href="https://www.thermofisher.com/order/catalog/product/OPTON-30795">Proteome Discoverer</a>
-                    </li>
-                    <li>
-                    <a href="https://github.com/Rappsilber-Laboratory/xiFDR">xiFDR</a>
-                    </li> -->
-                </ul>
-
-                HUPO PSI provide <a href="http://www.psidev.info/tools-implementing-mzidentml">a list of tools that support mzIdentML</a>.
-                <br/>
-
-                </table>
                 </div>
             </div> <!-- CONTAINER -->
         </div> <!-- MAIN -->

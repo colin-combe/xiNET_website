@@ -1,11 +1,5 @@
     <nav class="hover-effect">
                 <a href="index.php" data-hover="Home" data-no-instant>Home</a><br/>
-                <a href="https://xiview.org/xi3/network.php?upload=547-90828-08990-28852-02225" data-hover="Demo" data-no-instant>Demo</a><br/>
-                <a href="dataFormats.php" data-hover="Data Formats">Data Formats</a><br/>
-                <a href="privacy.php" data-hover="Privacy Statement">Privacy</a><br/>
-                <a href="contact.php" data-hover="Contact">Contact</a><br/>
-                <br/>
-                <br/>
                 <?php
                     if (session_status() === PHP_SESSION_NONE){session_start();}
                     if (!isset($_SESSION['session_name'])) {
@@ -17,4 +11,13 @@
                         echo '<a href="../userGUI/php/logout.php" data-hover="Sign out">Sign Out</a><br/>';
                     }
                 ?>
+                <br/>
+                <a href="https://xiview.org/xi3/network.php?upload=547-90828-08990-28852-02225" data-hover="Demo" data-no-instant>Demo</a><br/>
+                <a href="mzIdentML.php" data-hover="mzIdentML">mzIdentML</a><br/>
+                <a href="csvFormats.php" data-hover="CSV Formats">CSV Formats</a><br/>
+                <a href="privacy.php" data-hover="Privacy Statement">Privacy</a><br/>
+                <a href="contact.php" data-hover="Contact">Contact</a><br/>
+                <br/>
+
+
     </nav>
