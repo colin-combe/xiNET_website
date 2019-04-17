@@ -303,6 +303,10 @@ li {
     margin-bottom: 20px;
 }
 
+li.ionSelect{
+    display: inline-flex;
+}
+
 ul.`menu` li {
     display: inline-block;
     line-height: 1em;
@@ -869,6 +873,10 @@ form table td {
 
 .modal .header h1 {
     color: white;
+}
+
+.multiSelect_dropdown-content{
+    width: 500px;
 }
 
 .myTable{

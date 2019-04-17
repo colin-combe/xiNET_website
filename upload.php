@@ -134,7 +134,8 @@
                     </li> -->
                 </ul>
                 <br/>
-                <hr class="wideDivider"> EXAMPLE DATA SETS
+                <hr class="wideDivider">
+                <strong>EXAMPLE DATA SETS</strong>
                 <p>CSV Example (identification, peak lists, sequences):
                     <a href="examples/PolII_XiVersion1.6.742_PSM_xiFDR1.1.27.csv" target="_blank">CSV</a>
                     <a href="examples/Rappsilber_CLMS_PolII_MGFs.zip" target="_blank">MGFs</a>
@@ -171,19 +172,19 @@
                                 value="peptide, b, y" readonly>
                             <div class="multiSelect_dropdown-content mutliSelect">
                                 <ul>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="peptide" checked id="PeptideIonSubmit" name="ions[]" />Peptide ion</label></li>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="a" id="AIonSubmit" name="ions[]" />A ion</label></li>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="b" checked id="BIonSubmit" name="ions[]" />B ion</label></li>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="c" id="CIonSubmit" name="ions[]" />C ion</label></li>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="x" id="XIonSubmit" name="ions[]" />X ion</label></li>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="y" checked id="YIonSubmit" name="ions[]" />Y ion</label></li>
-                                    <li>
+                                    <li class="ionSelect">
                                         <label><input type="checkbox" class="ionSelectChkboxSubmit" value="z" id="ZIonSubmit" name="ions[]" />Z ion</label></li>
                                 </ul>
                             </div>

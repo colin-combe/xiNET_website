@@ -5,19 +5,10 @@ $(document).ready(function() {
     window.onresize = function() {
         window.trigger('resize')
     };
-    // window.peptide = new AnnotatedSpectrumModel({
-    // 	standalone: false //to use knownModifications from xiAnnotator here. Should probably be changed in the future to unimod?
-    // });
+
 
     //having some problems with firefox
     CLMSUI.mzmlCbChecked = false;
-
-    //ToDo: could be moved to ManualDataInputView
-    $("#addCLModal").easyModal({
-        onClose: function(myModal) {
-            $('#manDataInput-ClSelect').val('');
-        }
-    });
 
     $("#submitDataModal").easyModal({
         overlayClose: false,
@@ -266,38 +257,42 @@ $(document).ready(function() {
                     }
                     if (CLMSUI.mzmlCbChecked == true) {
                         if (resp.modifications.length > 0) {
-							var getMass = function(name, data) {
-								for (var i = 0; i < data.data.length; i ++){
-									var mod = data.data[i];
-									if (mod.mod_name == name) {
-										return mod.mass;
-									}
-								}
-								return 0;
-							}
+                            var getMass = function(name, data) {
+                                for (var i = 0; i < data.data.length; i++) {
+                                    var mod = data.data[i];
+                                    if (mod.mod_name == name) {
+                                        return mod.mass;
+                                    }
+                                }
+                                return 0;
+                            }
 
-							$.ajax({
-								url: "./php/getModifications.php",
-								success: function(data) {
-									data = JSON.parse(data);
-			                        $('#continueToDB').prop('disabled', true);
-			                        $('#modificationsInfo').show();
-			                        $('#modificationsMsg').html("Please provide the mass(es) for the following " + resp.modifications.length + " modification(s):");
-			                        $('#csvModificationsForm').append('<input class="form-control identifier" name="identifier" readonly type="text" value=' + resp.identifier + '>');
+                            $.ajax({
+                                url: "./php/getModifications.php",
+                                success: function(data) {
+                                    data = JSON.parse(data);
+                                    $('#continueToDB').prop('disabled', true);
+                                    $('#modificationsInfo').show();
+                                    $('#modificationsMsg').html("Please provide the mass(es) for the following " + resp.modifications.length + " modification(s):");
+                                    $('#csvModificationsForm').append('<input class="form-control identifier" name="identifier" readonly type="text" value=' + resp.identifier + '>');
 
-			                        resp.modifications.forEach(function(mod) {
-			                            var modNameInput = '<input class="form-control" name="mods[]" readonly type="text" value=' + mod + '>';
-										var value = getMass(mod, data);
-			                            var modMassInput = '<input class="form-control" name="modMasses[]" type="number" step=0.000001 value="'+value+'" required autocomplete=off>';
-			                            $('#csvModificationsForm').append('<div style="margin-bottom: 5px;">' + modNameInput + modMassInput + '</div>');
-			                        })
-			                        $('#csvModificationsForm').append('<input type="submit" value="update modifications" class="btn btn-1a btn-2" id="updateModsSubmit">');
-    							}
-    						}
-    					);
+                                    resp.modifications.forEach(function(mod) {
+                                        var modNameInput = '<input class="form-control" name="mods[]" readonly type="text" value=' + mod + '>';
+                                        var value = getMass(mod, data);
+                                        var modMassInput = '<input class="form-control" name="modMasses[]" type="number" step=0.000001 value="' + value + '" required autocomplete=off>';
+                                        $('#csvModificationsForm').append('<div style="margin-bottom: 5px;">' + modNameInput + modMassInput + '</div>');
+                                    })
+                                    $('#csvModificationsForm').append('<input type="submit" value="update modifications" class="btn btn-1a btn-2" id="updateModsSubmit">');
+                                }
+                            });
                         }
                     }
                 }
+                var dialog = $("#submitDataModal");
+                var ml = -1 * dialog.width() / 2;
+                var mt = -1 * dialog.height() / 2;
+                dialog.css("margin-left", ml).css("margin-top", mt);// relayout?
+                // $("#submitDataModal").dialog("option", "position", {my: "center", at: "center", of: window});
             }
         });
         return false;
