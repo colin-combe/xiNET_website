@@ -64,7 +64,7 @@ footer {
     margin: 2em 0 0;
 }
 b, strong {
-    font-weight: 300;
+    font-weight: bold;
     color: #666;
 }
 em, i {
@@ -269,7 +269,8 @@ article, section {
 }
 .image img, .image.full {
     display: block;
-    width: 100%}
+    width: 250px;
+}
 .image.featured {
     display: block;
     width: 100%;
@@ -666,15 +667,15 @@ img.grayscale:hover {
 .contact-right{
     text-align: right;
 }
-#navlist {
+.navlist {
     position: relative;
 }
-#navlist li {
+.navlist li {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-#navlist a, #navlist li {
+.navlist a, #navlist li {
     height: 200px;
     display: block;
 }

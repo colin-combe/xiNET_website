@@ -3,7 +3,7 @@
     <head>
     <?php
         $pageName = "mzIdentML Support";
-        include("head.php");
+        require "head.php";
     ?>
         <script type="text/javascript" src="./js/accordion.js"></script>
         <script type="text/javascript" src="./js/directURL.js"></script>
@@ -11,7 +11,7 @@
 
     <body>
         <!-- Sidebar -->
-        <?php include("navigation.php");?>
+        <?php require "navigation.php";?>
 
         <!-- Main -->
         <div id="main">
@@ -19,7 +19,7 @@
                 <h1 class="page-header"><?php echo($pageName); ?></h1>
 
                 <p>Crosslinking data is supported in <a href="http://www.psidev.info/mzidentml#mzid12" target="_blank">version 1.2 of the mzIdentML schema</a>.
-                This is the best format to use when uploading data to xiView, for example, it will already contain the information on modification masses.</p>
+                This is the best format to use when uploading data to xiView, for example, it will already contain the information about modification masses.</p>
                 <br/>
                 <p>Please <a href="mailto:colin.combe@ed.ac.uk">contact us</a> if you are having difficulties uploading MzIdentML.</p>
                 <br/>
