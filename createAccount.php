@@ -12,6 +12,7 @@
             <link rel="stylesheet" href="../userGUI/css/login.css" />
 
             <script src="../vendor/js/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="./vendor/jquery.easyModal.js"></script>
             <script src="../vendor/js/hideShowPassword.js"></script>
             <script src="../vendor/js/spin.js"></script>
             <script src="../userGUI/js/forms.js"></script>
