@@ -226,7 +226,7 @@ $(document).ready(function() {
                 resp = JSON.parse(data);
                 $('#submitDataInfo').append('<input class="form-control identifier" name="identifier" class="identifier" readonly type="text" value=' + resp.identifier + '>');
                 $('#ionsForm').append('<input class="form-control identifier" name="identifier" class="identifier" readonly type="text" value=' + resp.identifier + '>');
-                if (resp.errors.length == 0 && resp.modifications.length == 0 && resp.warnings.length == 0)
+                if (resp.errors.length == 0 && (resp.modifications.length == 0 || CLMSUI.mzmlCbChecked) && resp.warnings.length == 0)
                     window.location.href = "../xi3/network.php?upload=" + resp.identifier;
                 else {
                     $('#submitDataInfo').show();
@@ -242,7 +242,7 @@ $(document).ready(function() {
                         $('#errorLog').append('log id: ' + resp.log + ' (include this in the github issue)\n');
 
                         resp.warnings.forEach(function(warn) {
-                            if (warn.type == 'IonParsing') {
+                            if (warn.type == 'IonParsing' && CLMSUI.mzmlCbChecked == true) {
                                 $('#ionsInfo').show();
                                 $('#ionsMsg').html('Your input file did not specify fragment ion types.</br>Select and update ion types below. Then click continue to view your data.');
                             }

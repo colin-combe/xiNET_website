@@ -26,7 +26,7 @@
                         or provide access to others.</li>
                     <li>Cookies are used to record that you have logged in, and, optionally,
                         to store the configuration of the filters in the index page.</li>
-                    <li>You will recieve an email asking you to agree to these uses of your
+                    <li>You will receive an email asking you to agree to these uses of your
                         data when you create your account.</li>
                 </ul>
             </div>

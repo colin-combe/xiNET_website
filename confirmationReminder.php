@@ -32,7 +32,7 @@
                         in.</li>
                     <li>By doing so, you are giving us permission to store your data in accordance
                         with our <a href="./privacy.php"> Privacy Statment</a>.</li>
-                    <li>The privacy statement is also contained in the email you recieved.</li>
+                    <li>The privacy statement is also contained in the email you received.</li>
                 </ul>
                 <br/>
 
