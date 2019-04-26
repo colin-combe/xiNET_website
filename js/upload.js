@@ -226,7 +226,7 @@ $(document).ready(function() {
                 resp = JSON.parse(data);
                 $('#submitDataInfo').append('<input class="form-control identifier" name="identifier" class="identifier" readonly type="text" value=' + resp.identifier + '>');
                 $('#ionsForm').append('<input class="form-control identifier" name="identifier" class="identifier" readonly type="text" value=' + resp.identifier + '>');
-                if (resp.errors.length == 0 && (resp.modifications.length == 0 || CLMSUI.mzmlCbChecked) && resp.warnings.length == 0)
+                if (resp.errors.length == 0 && (resp.modifications.length == 0 || CLMSUI.mzmlCbChecked == false) && resp.warnings.length == 0)
                     window.location.href = "../xi3/network.php?upload=" + resp.identifier;
                 else {
                     $('#submitDataInfo').show();
