@@ -1,4 +1,13 @@
-        <title>xiVIEW | <?php echo $pageName ?></title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43266697-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-43266697-3');
+</script>
+<title>xiVIEW | <?php echo $pageName ?></title>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,3 +23,27 @@
         <link rel="stylesheet" href="./css/responsive.css" />
         <link rel="stylesheet" href="../userGUI/css/login.css" />
         <script type="text/javascript" src="../vendor/js/jquery-3.2.1.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="./vendor/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#333333",
+      "text": "#999999"
+    },
+    "button": {
+      "background": "#750000",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "classic",
+  "position": "bottom-right",
+  "content": {
+    //"href": "cookiepolicy.php"
+  }
+})});
+</script>

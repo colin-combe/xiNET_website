@@ -79,7 +79,7 @@
                     </p>
                 </div>
                 <div>
-                    <hr class="wideDivider"> Citation:
+                    <hr class="wideDivider"> When using XiView please cite:
                     <a target="_blank" href="http://biorxiv.org/cgi/content/short/561829v1">
                 Graham, M., Combe, C. W., Kolbowski, L. &amp; Rappsilber, J. xiView: A common platform for the downstream analysis of
     Crosslinking Mass Spectrometry data. <i>doi: 10.1101/561829 </i>.
