@@ -66,7 +66,7 @@
                 </ul>
                 <div>
                     <hr class="wideDivider">
-                    <p>The <a href="http://rappsilberlab.org/rappsilber-laboratory-home-page/tools/xiview/xiview-videos/"
+                    <p>The <a href="https://rappsilberlab.org/software/xiview/"
                             target="_blank">video tutorials</a> give an overview of xiView's
                         many features.</p>
                 </div>
