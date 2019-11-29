@@ -72,6 +72,12 @@
                 </div>
                 <div>
                     <hr class="wideDivider">
+                    <p><a href="https://edinburgh.onlinesurveys.ac.uk/xiview-usability/"
+                            target="_blank">xiVIEW Questionaire</a> We want your feedback!</p>
+                    <hr class="wideDivider">
+                </div>
+                <div>
+                    <hr class="wideDivider">
                     <p>xiView is an open source project on
                         <a href="https://github.com/Rappsilber-Laboratory/xiView_container" target="_blank">GitHub</a>.
                         Report issues and request features
