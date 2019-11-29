@@ -73,7 +73,7 @@
                 <div>
                     <hr class="wideDivider">
                     <p><a href="https://edinburgh.onlinesurveys.ac.uk/xiview-usability/"
-                            target="_blank">xiVIEW Questionaire</a> We want your feedback!</p>
+                            target="_blank"><img src="./images/image2.png" height="100px"></a></p>
                     <hr class="wideDivider">
                 </div>
                 <div>
