@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/responsive.css" />
         <link rel="stylesheet" href="../userGUI/css/login.css" />
-        <script type="text/javascript" src="../vendor/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../vendor/js/jquery-3.4.1.js"></script>
 
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
