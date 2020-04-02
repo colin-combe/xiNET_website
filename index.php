@@ -70,12 +70,12 @@
                             target="_blank">video tutorials</a> give an overview of xiView's
                         many features.</p>
                 </div>
-                <div>
+                <!-- <div>
                     <hr class="wideDivider">
                     <p><a href="https://edinburgh.onlinesurveys.ac.uk/xiview-usability/"
                             target="_blank"><img  style="background: yellow; padding: 0.3em;" src="./images/image2.png" height="100px"></a></p>
                     <hr class="wideDivider">
-                </div>
+                </div> -->
                 <div>
                     <hr class="wideDivider">
                     <p>xiView is an open source project on
