@@ -1,98 +1,127 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<?php
-		$pageName = "Home";
-		include("head.php");
-		?>
-	</head>
-	<body>
-   	 	<!-- Sidebar -->
-   	 	<?php include("navigation.php");?>
 
-   	 	<!-- Main -->
-   	 	<div id="main">
-	
-   	 	<!-- Intro -->			
-   	 				<div class="container">
-   	 					<h1 class="page-header">A tool for exploring and communicating cross‑linking / mass spectrometry data.</h1>
-   	 					<div class="external-link">
-									<p>xiNET is an <a target="_blank" href="https://github.com/colin-combe/crosslink-viewer">open source</a> visualisation of cross‑linking / mass spectrometry data. It provides an interactive 2D map of the cross‑link network. Below you can see cross&#045;links on the <a href="http://www.nature.com/emboj/journal/v29/n4/full/emboj2009401a.html" target="_blank"> RNA&nbsp;polymerase&nbsp;II&#8209;TFIIF&nbsp;complex</a>. Click node for residue resolution detail.</p>
-							</div><!-- external-link -->
-							
-							<div class="page-header controlsFrontPage skel-panels-fixed center">
-								
-								<div class="controls-box-one">
-									<div id="scoreSlider">
-										<p class="scoreLabel" id="scoreLabel1"></p>
-										<input id="slide" type="range" min="1" max="100" step="1" value="0" oninput="sliderChanged()">
-										<p class="scoreLabel" id="scoreLabel2"></p>
-									</div>
-								</div>
-									
-								<div class="controls-box-two">		
-										<div id="scoreSlider">
-											<p id="cutoffLabel">Score Cut-Off:</p>
-										</div> <!-- outlined scoreSlider -->
-								</div>
-								<div class="controls-box-three">
-										<label>
-												Self-Links
-						     			 		<input checked="checked" 
-													   id="internal" 			
-													   onclick="xlv.hideInternal(!document.getElementById('internal').checked)" 
-													   type="checkbox"
-												/>
-						     	   		</label>
-								</div>
-						
-   	 						</div> <!-- PAGE-HEADER-->
-			 			</div> <!-- CONTAINER -->
-			<div id="networkFrontPage" class="skel-panels-fixed"></div>
-		</div> <!-- MAIN -->
-   	 				<?php include("xiNET_scripts.php"); ?>
+    <head>
+        <?php
+    $pageName = "Home";
+    include("head.php");
+    ?>
 
-   	 				<script>//<![CDATA[
-					window.addEventListener('load', function() {
-   	 				
-						var targetDiv = document.getElementById('networkFrontPage');
-						xlv = new xiNET.Controller(targetDiv);
-						
-						<?php include('./data/polIIdata.php'); ?>
-			
-						document.getElementById('scoreLabel1').innerHTML = xlv.scores.min.toFixed(2);
-						document.getElementById('scoreLabel2').innerHTML = xlv.scores.max.toFixed(2) + '&nbsp;&nbsp;';
-						document.getElementById('cutoffLabel').innerHTML = 'Cut-off:&nbsp;' + xlv.scores.min.toFixed(2);
-					
-						xlv.initLayout();
-						xlv.initProteins();
-						xlv.checkLinks();
-								
-   	 				
-   	 				}, false);
-   	 				//]]>
-   	 				</script>
-   	 				
-   	 			<script type="text/javascript">
-                //<![CDATA[			
-				
-				function sliderChanged(){
-					var slide = document.getElementById('slide');
-					var cut = calcCutOff(slide.value / 100.0);
-					var cutoffLabel = document.getElementById("cutoffLabel");
-					cutoffLabel.innerHTML = 'Cut-off: ' + cut;
-					xlv.setCutOff(cut);
-				}
-				
-				function calcCutOff(v) {
-					var result = (v * (xlv.scores.max - xlv.scores.min)) + xlv.scores.min;
-					result = result.toFixed(2);
-					return result;
-				}				
-				
-                //]]>
-        		</script>
-   	 				
-   	 				
-	</body>
+
+    </head>
+    <script type="text/javascript">
+        // $( document ).ready(function() {
+        //
+        // 	var slideIndex = 0;
+        // 	function showDiv(n) {
+        // 		oldSlide = slideIndex;
+        //
+        // 		if(slideIndex+n >= $('.sliderImg').length)
+        // 			slideIndex = 0;
+        // 		else if(slideIndex+n < 0)
+        // 			slideIndex = $('.sliderImg').length - 1;
+        // 		else
+        // 			slideIndex += n;
+        // 		$('.sliderImg').eq(oldSlide).fadeOut(300, function(){ $('.sliderImg').eq(slideIndex).fadeIn(300); });
+        // 		$('#sliderInfo').text($('.sliderImg').eq(slideIndex).attr('alt'));
+        // 	}
+        //
+        // 	var myTimer = setInterval(function () {showDiv(1)}, 4000);
+        //
+        // 	$('.sliderImg').click(function(){
+        // 		clearInterval(myTimer);
+        // 	})
+        //
+        // 	$('.slider-left').click(function(){
+        // 		showDiv(-1);
+        // 		clearInterval(myTimer);
+        // 		// myTimer = setInterval(function () {showDiv(slideIndex+1)}, 4000);
+        // 	})
+        //
+        // 	$('.slider-right').click(function(){
+        // 		showDiv(1);
+        // 		clearInterval(myTimer);
+        // 		// myTimer = setInterval(function () {showDiv(slideIndex+1)}, 4000);
+        // 	})
+        //
+        // });
+
+    </script>
+
+    <body>
+        <!-- Sidebar -->
+        <?php include("navigation.php");?>
+        <!-- Main -->
+        <div id="main">
+            <div class="container">
+                <h1 class="page-header"><?php echo($pageName); ?></h1>
+                <p>xiView is a web-based visualisation tool for the analysis of cross-linking
+                    / mass spectrometry results, it is independent of the search software
+                    used. It provides multiple, linked views of the data, including:</p>
+                <ul>
+                    <li>2D network (<a href="http://crosslinkviewer.org" target="_blank">xiNET</a>                        or circular)</li>
+                    <li>the supporting annotated spectra using <a href="http://spectrumviewer.org"
+                            target="_blank">xiSPEC</a>.</li>
+                    <li>3D structure view using <a href="http://nglviewer.org/ngl" target="_blank">NGL</a>.</li>
+                </ul>
+                <div>
+                    <hr class="wideDivider">
+                    <p>The <a href="https://rappsilberlab.org/software/xiview/"
+                            target="_blank">video tutorials</a> give an overview of xiView's
+                        many features.</p>
+                </div>
+                <!-- <div>
+                    <hr class="wideDivider">
+                    <p><a href="https://edinburgh.onlinesurveys.ac.uk/xiview-usability/"
+                            target="_blank"><img  style="background: yellow; padding: 0.3em;" src="./images/image2.png" height="100px"></a></p>
+                    <hr class="wideDivider">
+                </div> -->
+                <div>
+                    <hr class="wideDivider">
+                    <p>xiView is an open source project on
+                        <a href="https://github.com/Rappsilber-Laboratory/xiView_container" target="_blank">GitHub</a>.
+                        Report issues and request features
+                        <a href="https://github.com/Rappsilber-Laboratory/xiView_container/issues" target="_blank">here</a>.
+                    </p>
+                </div>
+                <div>
+                    <hr class="wideDivider"> When using XiView please cite:
+                    <a target="_blank" href="http://biorxiv.org/cgi/content/short/561829v1">
+                Graham, M., Combe, C. W., Kolbowski, L. &amp; Rappsilber, J. xiView: A common platform for the downstream analysis of
+    Crosslinking Mass Spectrometry data. <i>doi: 10.1101/561829 </i>.
+                </a>
+                </div>
+                <div>
+                    <div class="login">
+                        <div class="newUserSection" style="display:block;">
+                            <hr class="wideDivider">
+                            <h3>New User?</h3>
+                            <form id="new_user_form" name="new_user_form" action="./createAccount.php">
+                                <input name="Submit" value="Create New Account" type="submit" class="btn btn-1a" />
+                            </form>
+                        </div>
+                    </div>
+                    <br/>
+                    <div>
+                        <img style="display:block;margin:auto;" class="sliderImg" alt="Automatic mapping of links onto 3D structures"
+                            src="images/midScreenshot.png">
+                    </div>
+                    <!-- <div style="text-align: center;">
+    <div class="sliderWrapper">
+    <img class="sliderImg" alt="Measure distances between peaks" src="images/slider/measuringTool.png" style="display:none;">
+    <img class="sliderImg" alt="Change spectrum annotation parameters" src="images/slider/settingsView.png" style="display:none;">
+    <img class="sliderImg" alt="Zoom into spectra" src="images/slider/zoom.png" style="display:none;">
+    <button class="sliderBtn slider-left">&#10094;</button>
+    <button class="sliderBtn slider-right">&#10095;</button>
+    <div id="sliderInfo">Interactive highlighting between all views</div>
+    </div> -->
+                </div>
+
+            </div>
+            <!-- CONTAINER -->
+        </div>
+        <!-- MAIN -->
+
+    </body>
+
 </html>

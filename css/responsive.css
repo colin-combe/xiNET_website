@@ -96,16 +96,27 @@
 #header{
 	display: none;
 }
-
-.menu{
-	display: block;
+.menu-top{
+    display: block;
 }
-
+.menu{
+    cursor: pointer;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background:url('../images/menu/white-red.png') center top no-repeat;
+}
+.menu:hover {
+   background-image: url('../images/menu/red-white.png');
+}
 #main{
 	margin-left: 0px;
 }
 
 #infoPanel{
+	left: 0px;
+}
+#legendPanel{
 	left: 0px;
 }
 .controlsexamplespage{

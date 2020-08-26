@@ -1,408 +1,217 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <?php
-    $pageName = "Home";
-    include("head.php");
+
+    <head>
+        <?php
+        session_start();
+    if (!isset($_SESSION['session_name'])) {
+        header("location:./login.php");
+        exit();
+    }
+        $cacheBuster = '?v='.microtime(true);
+        error_reporting(E_ALL & ~E_NOTICE);
+        $pageName = "Upload";
+        require "head.php";
+        require "./xiSPEC_scripts.php";
     ?>
-</head>
-	<body>
-		<!-- Sidebar -->
-		<?php include("navigation.php");?>
+            <script type="text/javascript" src="./js/upload.js<?php echo $cacheBuster ?>"></script>
+            <script type="text/javascript" src="./vendor/spin.js"></script>
+            <script src="./vendor/jQueryFileUploadMin/jquery.ui.widget.js"></script>
+            <script src="./vendor/jQueryFileUploadMin/jquery.iframe-transport.js"></script>
+            <script src="./vendor/jQueryFileUploadMin/jquery.fileupload.js"></script>
+            <link rel="stylesheet" href="./css/upload.css" />
+    </head>
 
-		<!-- Main -->
-			<div id="main">
-			
-				<!-- Intro -->
-					<section id="top" class="one">
-						<div class="container">
-							<h1 class="page-header">Upload Your Own Data</h1>
-							<form class="fileupload"  action="http://129.215.14.125/xiNET_web/crosslink-viewer/php/fup.php" enctype="multipart/form-data" method="POST">
-							<table>
-								<tr>
-									
-										<td>	
-											<div class="cross-link-csv">
-												<label for="csvFile">Cross-link CSV file:</label>
-												<input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfile" type="file" id="csvFile"/>
-											</div> <!-- CROSS-LINK-CSV -->
-										</td>
-										<td>	
-											<div class="fasta-file">
-												<label for="fastaFile">FASTA file:</label>
-												<input style="margin: 0;padding: 0;" class="file btn btn-1 btn-1a-inputbtn" name="upfasta" type="file" id="fastFile"/> 
-											</div> <!-- FASTA-FILE -->
-										</td>
-										<td>	
-											<div class="annotation-csv-file">
-												<label for="annotFile">Annotation CSV file:</label>
-												<input style="margin: 0;padding: 0;"  class="file btn btn-1 btn-1a-inputbtn" name="upannot" type="file" id="annotFile"/>
-											</div> <!-- ANNOTATION-CSV-FILE -->
-										</td>	
-										
-								</tr>
-							  </table>
-									<div class="custom_file_upload">
-										<div class="file_upload btn btn-1 btn-1a-inverse">
-											<input class="upload" value="Upload" type="submit"/>
-									  	</div> <!-- CUSTOM_FILE_UPLOAD -->
-									</div>
-								<br>	
-								<p class="center" style="margin-bottom:-40px;top:-50px;position:relative;">You will be redirected to a unique URL for your data which you can share with others.</p>				
-			            		</form>
-						
-								<h4>Getting Started</h4>
-								<a title="Click here to view larger." class="image-link" href="images/diagrams/workflow.svg"><img class="image full" src="images/diagrams/workflow.svg"></a>	<div class="external-link">
-								<p>You can view your results by uploading <a href="#crosslinkCSV">cross-link data</a> in a Comma Separated Values (CSV) file. Optionally, this can be accompanied by a <a href="http://en.wikipedia.org/wiki/FASTA_format" target="_blank">FASTA file</a> giving the protein sequences and/or a CSV file containing <a href="#annotCSV">annotations</a>. If the FASTA file is omitted then protein sequences are retrieved by looking up accession numbers via the <a href="http://www.biodas.org/wiki/Main_Page" target="_blank">Distributed Annotation System</a>. This assumes that the sequences used in the search correspond exactly with those of valid, current UniprotKB accession numbers. 	</div></p>
-						
-							
-							<div class="columnNames">
-								<h4>Column Names in CSV files</h4>
-								<ul style="list-style-type:square;">
-									<li>Column names are required as the first line of the CSV file.</li>
-									<li>Column names are case-sensitive.</li>
-									<li>The order of the columns is unspecified.</li>
-								</ul>
-							</div>
+    <body>
+        <!-- Sidebar -->
+        <?php require "navigation.php";?>
+        <!-- Main -->
+        <div id="main">
+            <div class="container">
+                <h1 class="page-header"><?php echo($pageName); ?></h1>
+                <!-- Intro -->
+                <a href="https://player.vimeo.com/video/298348184" target="_blank">Data upload video tutorial</a>
+                <hr class="wideDivider">
+                <div id="jquery-fileupload">
+                    <div id="fileUploadWrapper">
+                        <input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.ms2,.zip,.gz,.fasta"
+                            multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
+                        <label for="fileupload"><span class="uploadbox"></span><span class="btn">Choose file(s)</span></label>
+                        <div id="uploadProgress">
+                            <div class="file_upload_bar" style="width: 0%;">
+                                <div class="file_upload_percent"></div>
+                            </div>
+                        </div>
+                        <button id="startParsing" disabled="true" class="btn btn-2">Submit Data</button>
+                    </div>
+                    <div class="fileupload_info">
+                        <table>
+                            <tr id="mzid_fileBox">
+                                <td style="text-align: center;">Identification file:</td>
+                                <td>
+                                    <span class="fileName">Select a mzIdentML or csv file to upload</span>
+                                    <span class="statusBox" data-filetype="mzid"></span>
+                                    <input class="uploadCheckbox" type="checkbox" id="mzid_checkbox" style="visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr id="mzml_fileBox">
+                                <td style="text-align: center;">Peak list file(s):</td>
+                                <td>
+                                    <span class="fileName">No peak list file(s) selected - spectra will be unavailable</span>
+                                    <span class="statusBox" data-filetype="mzml"></span>
+                                    <input class="uploadCheckbox" type="checkbox" id="mzml_checkbox" style="visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr id="fasta_fileBox">
+                                <td style="text-align: center;">Sequence file:</td>
+                                <td>
+                                    <span class="fileName">No FASTA file selected, protein identifiers must be UniprotKB accession numbers</span>
+                                    <span class="statusBox" data-filetype="fasta"></span>
+                                    <input class="uploadCheckbox" type="checkbox" id="fasta_checkbox" style="visibility: hidden;">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
 
-				            <div class="protIds" >
-								<h4>Protein Identifiers</h4>
-								<h6>If a FASTA file is provided:</h6>
-									
-								<p>	then the protein identifiers 
-									(columns 'Protein1' and 'Protein2') must match identifiers in the
-									FASTA file. In a FASTA file, the word following the 
-									"&gt;" symbol is the identifier of the sequence, 
-									and the rest of the line is the description.</p>
-									<div class="external-link">
-								<h6>If a FASTA file is not provided:</h6> protein identifiers are  
-									assumed to be six character <a href="http://www.uniprot.org/manual/accession_numbers">UniprotKB</a> accession numbers. SwissProt style identifiers of the format: <code>sp|accession|name</code> are also accepted and in this case 'name' will be used for the protein labels.</div>
-								</p>
-				            </div>
-						</div> <!-- CONTAINER -->
-					</section>
-						<section class="two">
-							<div class="container">
-								<h3 id="crosslinkCSV">Cross-link CSV File format</h3>
-<!--
-								<div class="link-arrow">
--->
-					            <p>Download example files: <a href="./crosslink-viewer/data/Pol2.csv" target="_blank">Pol II</a>, <a href="./crosslink-viewer/data/Herzog.csv" target="_blank">PP2A</a></p>
-<!--
-					            </div>
--->
-					
-					<p>xiNET can display data either with or without information on the sequences of the linked peptides. The fields PepSeq1, LinkPos1, PepSeq2 and LinkPos2 are only used when peptide sequence information is being supplied.</p>
+                <hr class="wideDivider">
+                <div class="image-link"><img alt="xiView workflow" class="image full" src="images/workflow.svg"></div>
 
-					            <table width=642 cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
-					                <col width=121>
-					                <col width=88>
-					                <col width=390>
-					                <tr>
-					                    <td width=121 height=3>
-					                        <h6>COLUMN NAME</h6>
-					                    </td>
-					                    <td width=88>
-					                        <h6>REQUIRED?</sh6>
-					                    </td>
-					                    <td width=390>
-					                        <h6>NOTES</h6>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>Protein1</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>Yes</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Identifier for protein 1</p>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>PepPos1</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>No</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>One-based residue number for peptide 1 start position in protein 1.</p>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td>
-					                        <p>PepSeq1</p>
-					                    </td>
-					                    <td>
-					                        <p>No</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Sequence for peptide 1,  lowercase characters ignored.</p>
-					                    </td>
-					                </tr>
-					                
-					                <tr>
-					                    <td>
-					                        <p>LinkPos1</p>
-					                    </td>
-					                    <td>
-					                        <p>If PepSeq1 is present </p>
-					                    </td>
-					                    <td width=390>
-					                        <p>One-based residue number for linkage site in peptide 1, or absolute position for
-					                        link in Protein 1 if peptide position is ommitted.</p>
-					                    </td>
-					                </tr>
-					                
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>Protein2</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>See note</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Identifier for protein 2. 
-					This value is omitted for a linker modified peptide or an internally cross-linked peptide. 
-					</p>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td>
-					                        <p>PepPos2</p>
-					                    </td>
-					                    <td>
-					                        <p>No</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>One-based residue number for peptide 2 start position in protein 2.</p>
-					                    </td>
-					                </tr>
+                <p>xiView accepts three types of input data:</p>
+                <ol>
+                    <li><strong>Peptide Identifications (required)</strong>
+                        <br/> Supported file formats:
+                        <a title="HUPO-PSI: mzidentML" href="mzIdentML.php" target="blank">mzIdentML</a>
+                        (file extension must be '.mzid') and
+                        <a title="CSV formats" href="csvFormats.php" target="blank">Comma Seperated Values</a>
+                        (file extension '.csv').
+                    </li>
+                    <li><strong>Peak Lists (optional)</strong><br/> Supported file formats:
+                        <a title="HUPO-PSI: mzML" href="http://www.psidev.info/mzml" target="blank">mzML</a>,
+                        <a title="Mascot Generic Format" href="http://www.matrixscience.com/help/data_file_help.html#GEN">mgf</a>,
+                        and <a href="https://www.ncbi.nlm.nih.gov/pubmed/15317041" target="blank"> ms2</a>
+                        (&amp; zip/gz archives of these). File extension must be '.mzML',
+                        '.mgf', '.ms2' or '.zip'.
+                        </br>
+
+                        <div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
+                            If peak list data is uploaded then it must be complete, i.e. all spectra identified must
+                            be present, or the upload process will result in an error.<br>
+                            mzML tip: Filter out MS1 spectra to reduce file size and upload/parsing
+                            time. (e.g. 'MS level 2-' in <a title="Proteowizard download link"
+                                href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br>
+                        </div>
+                        <!-- mzML: Make sure to use centroided MS2 data! (e.g. use 'Peak picking' for profile data in <a title="Proteowizard download link" href="http://proteowizard.sourceforge.net/downloads.shtml">MSconvert</a>)</br> -->
+                    </li>
+                    <li><strong>Protein Sequences (optional)</strong><br/> Supported file
+                        formats:
+                        <a title="FASTA" href="https://en.wikipedia.org/wiki/FASTA_format" target="blank">FASTA</a>
+                        (file extension must be '.fasta'), sequences can also be contained
+                        in mzIdentML files.</br>
+                        <div style="font-size: 0.8em; line-height: 1.7em; margin-top:0.5em;">
+                            If you do not provide a FASTA file, then your protein IDs must be valid UniProtKB accession
+                            numbers.
+                            </br>
+                            If you do provide a FASTA file, then your protein IDs must all match identifiers in the
+                            FASTA file.
+                        </div>
+                    </li>
+                </ol>
+
+                <br/>
+                <ul>
+                    <li>
+                        <strong>Only the peptide identifications file is required</strong>,
+                        but without uploading peak lists you won't be able to inspect
+                        the supporting spectra using
+                        <a href="http://spectrumviewer.org" target="_blank">xiSPEC</a>.
+                    </li>
+                    <li>
+                        There is a 1GB size limit on uploaded files.
+                    </li>
+                    <!-- <li>
+                    For mzIdentML files, the DBSequence elements must include their sequence within their Seq child element. FASTA files uploaded alongside mzIdentML files are currently ignored.
+                    </li> -->
+                </ul>
+                <br/>
+                <hr class="wideDivider">
+                <strong>EXAMPLE DATA SETS</strong>
+                <p>CSV Example (identification, peak lists, sequences):
+                    <a href="examples/PolII_XiVersion1.6.742_PSM_xiFDR1.1.27.csv" target="_blank">CSV</a>
+                    <a href="examples/Rappsilber_CLMS_PolII_MGFs.zip" target="_blank">MGFs</a>
+                    <a href="examples/polII-uniprot.fasta" target="_blank">FASTA</a>
+                    <!-- <a href="examples/test_HSA.csv" target="_blank">CSV</a>
+                    <a href="examples/E180510_02_Orbi2_TD_IN_160_HSA_10kDa_10p.mzML" target="_blank">MZML</a>
+                    <a href="examples/HSA-Active.FASTA" target="_blank">FASTA</a> -->
+                </p>
+                <p><a href="examples/SIM-XL_example.mzid" target="_blank">MzIdentML Example </a>(generated
+                    by <a href="http://patternlabforproteomics.org/sim-xl/" target="_blank">SIM-XL</a>,
+                    no peak list associated with this example).
+                </p>
+            </div>
+        </div>
 
 
-		
-					                 <tr>
-					                    <td>
-					                        <p>PepSeq2</p>
-					                    </td>
-					                    <td>
-					                        <p>No</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Sequence for peptide 2,  lowercase characters ignored.</p>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td>
-					                        <p>LinkPos2</p>
-					                    </td>
-					                    <td>
-					                        <p>If PepSeq2 is present </p>
-					                    </td>
-					                    <td width=390>
-					                        <p>One-based residue number for linkage site in peptide 2, or absolute position for
-					                        link in Protein 2 if peptide position is ommitted.</p>
-					                        <p>Ommitted for linked modified peptides (mono-links).</p>
-					                    </td>
-					                </tr>              
 
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>Score</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>No
-					                        </p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Confidence score – used by cut-off slider.</p>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>Id</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>No
-					                        </p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Id for link</p>
-					                    </td>
-					                </tr>
-					            </table>
-							</div><!-- CONTAINER -->
-						</section>
-						<section class="one">
-							<div class="container">
-								
-									<h4>Ambiguous Linkage Sites</h4>
-								
-									<p>Ambiguous links are represented by listing the alternative linkage sites separated 
-									by commas or semi-colons in the protein and position fields. For example:</p>
-									<table cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="position:relative;border:1px solid #000;background-color:#eee;">
-						            <tr >
 
-										<td width=150>
-											<p>Protein1</p>
-										</td>
-										<td width=150>
-											<p>LinkPos1</p>
-										</td>
-										<td width=150>
-											<p>Protein2</p>
-										</td>
-										<td width=124>
-											<p>LinkPos2</p>
-										</td>
 
-						            </tr>
-						            <tr>
-						                <td width=150>
-						                    <p>O43815; Q13033</p>
-						                </td>
-						                <td width=150>
-						                    <p>89; 105</p>
-						                </td>
-						                <td width=150>
-						                    <p>O43815; Q13033</p>
-						                </td>
-						                <td width=124>
-						                    <p>96; 112</p>
-						                </td>
-						            </tr>
-						        </table>
-						        <p>would result in these four ambiguous links being displayed:</p> from O43815, residue 89	to O43815, residue 96 <br/> from O43815, residue 89	to Q13033, residue 112<br/> from Q13033, residue 105 to O43815, residue 96 <br/>from Q13033, residue 105 to Q13033, residue 112<br/></p>
-						</section>
-						<section class="two">
-							<div class="container">
-				
-							<h4>Product types</h4>
+        <!-- Modals -->
+        <div id="submitDataModal" role="dialog" class="modal" style="display: none;">
+            <div id=submitDataInfo>
+                <div id="submitDataTop">
+                    <div id="errorInfo" style="display: none;">
+                        <div id="errorMsg"></div>
+                        <textarea class="form-control" id="errorLog" readonly></textarea>
+                    </div>
+                </div>
+                <div id="ionsInfo" style="display: none;">
+                    <div id="ionsMsg"></div>
+                    <form id="ionsForm" method="post" action="php/updateIons.php">
+                        <div class="multiSelect_dropdown" style="margin-right:2%;">
+                            <input type="text" class="form-control btn-drop" id="ionSelectionSubmit" title="fragment ion types"
+                                value="peptide, b, y" readonly>
+                            <div class="multiSelect_dropdown-content mutliSelect">
+                                <ul>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="peptide" checked id="PeptideIonSubmit" name="ions[]" />Peptide ion</label></li>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="a" id="AIonSubmit" name="ions[]" />A ion</label></li>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="b" checked id="BIonSubmit" name="ions[]" />B ion</label></li>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="c" id="CIonSubmit" name="ions[]" />C ion</label></li>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="x" id="XIonSubmit" name="ions[]" />X ion</label></li>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="y" checked id="YIonSubmit" name="ions[]" />Y ion</label></li>
+                                    <li class="ionSelect">
+                                        <label><input type="checkbox" class="ionSelectChkboxSubmit" value="z" id="ZIonSubmit" name="ions[]" />Z ion</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button type="submit" id="ionsFormSubmit" class="btn btn-2">update ions</button>
+                        <div id="ionsUpdateMsg" style="font-size: 0.8em;display: inline;"></div>
+                    </form>
+                </div>
+                <div id="modificationsInfo" style="display: none;">
+                    <div id="modificationsMsg"></div>
+                    <form id="csvModificationsForm" method="post" action="php/submitModDataForCSV.php"></form>
+                </div>
+                <div id="submitDataControls">
+                    <button id="cancelUpload" class="btn btn-2" href="#">Cancel</button>
+                    <a id="gitHubIssue" class="btn btn-1a" style="display:none;" href='https://github.com/Rappsilber-Laboratory/xiView_container/issues'>
+                        <i class="fa fa-github" aria-hidden="true"></i>Create issue
+                    </a>
+                    <button id="continueToDB" class="btn btn-2" href="#">Continue</button>
+                </div>
+            </div>
+            <div id="processDataInfo">
+                <div class="spinnerWrapper"></div>
+                <div id="processText" style="text-align: center; padding-top: 140px; margin:10px;"></div>
+            </div>
+        </div>
+        <div class="overlay" style="z-index: -1; visibility: hidden;"></div>
 
-							<p>The figures below show the representation of different product types.
-							These are: (a) linker modified peptides; (b) internally linked peptides; and, (c) cross-linked peptides.
-							The product type is indicated by the presence or absence of information for the second protein and second link position. 
-							We also identify a subset of cross-linked peptides, (d), in which the peptides overlap in the protein sequence.
-						    </p>
-							<table class="productTypeFigs">
-								<tr>
-						   	<td><div class="productTypeFigLeft">
-							  <h6><u>(a) Linker modified peptides</u></h6>
-						      <a title="Click to view larger." href="images/diagrams/f4a.svg"><img class="image featured full" src="images/diagrams/f4a.svg"></img></a>
-							  <p>&nbsp;</p>
-						    </div></td>
-						   <td> <div class="productTypeFigRight">
-								<h6><u>(b) Internally linked peptides</u></h6>
-								<a title="Click to view larger." href="images/diagrams/f4b.svg"><img class="image featured full" src="images/diagrams/f4b.svg"></img></a>
-								<p>&nbsp;</p>
-						    </div></td>
-								</tr>
-								<tr>
-						  <td>  <div class="productTypeFigLeft">
-								<h6><u>(c) Cross-linked peptides.</u></h6>
-								<a title="Click to view larger." href="images/diagrams/f4c.svg"><img class="image featured full" src="images/diagrams/f4c.svg"></img></a>
-								<p>&nbsp;</p>
-							</div></td>
-						  <td>  <div class="productTypeFigRight">
-								<h6><u>(d) Homomultimers (cross-links in which peptide sequences overlap)</u></h6>
-								<a title="Click to view larger." href="images/diagrams/f4d.svg"><img class="image featured full" src="images/diagrams/f4d.svg"></img></a>
-								<p>&nbsp;</p>
-							</div></td>
-								</tr>
-								</table>
-							</div>
-						</section>
-						<section class="one">
-							<div class="container">
-								<h3 id="annotCSV">Annotations CSV File format</h3>
-<!--
-								<div class="link-arrow">
--->
-					          	  	<p>Download example files: <a href="./crosslink-viewer/data/tfiif_annot.csv" target="_blank">TFIIF annotations</a></p>
-<!--
- 								</div>
--->
+    </body>
 
-					            <table width=642 cellpadding=7 cellspacing=0 class="hor-minimalist-a" style="border:1px solid #000;background-color:#eee;">
-					                <col width=121>
-					                <col width=88>
-					                <col width=390>
-					                <tr>
-					                    <td width=121 height=3>
-					                        <h6>COLUMN NAME</h6>
-					                    </td>
-					                    <td width=88>
-					                        <h6>REQUIRED?</sh6>
-					                    </td>
-					                    <td width=390>
-					                        <h6>NOTES</h6>
-					                    </td>
-					                </tr>
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>ProteinId</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>Yes</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Identifier for protein to annotate.</p>
-					                    </td>
-					                </tr>               
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>Name</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>Yes</p>
-					                    </td>
-					                    <td width=390>
-					                        <p>Name of annotation.</p>
-					                    </td>
-					                </tr>               
-					                <tr>
-					                    <td width=121 height=4>
-					                        <p>StartResidue</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>Yes</p>
-					                    </td>
-					 <!--                   <td width=390 rowspan=2>
-					
-					                        <p>If StartResidue and EndResidue are ommitted 
-					                        then the annotation is assumed to be non-positional (i.e. a keyword): 
-					                        the circle will be colored according to it but it will not be represented on the bar.  
-											</p>
-
-					                    </td>					-->
-					                </tr>
-									<tr>
-					                    <td width=121 height=4>
-					                        <p>EndResidue</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>Yes</p>
-					                    </td>
-
-					                </tr>
-									<tr>
-					                    <td width=121 height=4>
-					                        <p>Color</p>
-					                    </td>
-					                    <td width=88>
-					                        <p>No</p>
-					                    </td>
-					                    <td width=390 rows=2>
-					                        <p>If omitted then a color is chosen automatically.
-					                         In this case annotations with the same name are always assigned the same color.</p>
-					                    </td>
-					                </tr>
-
-					            </table>
-							</div> <!--CONTAINER-->
-						</section>
-			</div>
-	</body>
 </html>
