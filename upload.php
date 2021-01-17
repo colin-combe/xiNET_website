@@ -29,52 +29,58 @@
         <div id="main">
             <div class="container">
                 <h1 class="page-header"><?php echo($pageName); ?></h1>
+
+
+                <p><b>Maintenance News: </b> xiVIEW is not accepting new uploads for the week 18th to 25th January 2021. We are migrating to a new server, you will still be able to view uploaded data for most of the week.</p>
+                <br/>
+
+
                 <!-- Intro -->
                 <a href="https://player.vimeo.com/video/298348184" target="_blank">Data upload video tutorial</a>
                 <hr class="wideDivider">
-                <div id="jquery-fileupload">
-                    <div id="fileUploadWrapper">
-                        <input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.ms2,.zip,.gz,.fasta"
-                            multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">
-                        <label for="fileupload"><span class="uploadbox"></span><span class="btn">Choose file(s)</span></label>
-                        <div id="uploadProgress">
-                            <div class="file_upload_bar" style="width: 0%;">
-                                <div class="file_upload_percent"></div>
-                            </div>
-                        </div>
-                        <button id="startParsing" disabled="true" class="btn btn-2">Submit Data</button>
-                    </div>
-                    <div class="fileupload_info">
-                        <table>
-                            <tr id="mzid_fileBox">
-                                <td style="text-align: center;">Identification file:</td>
-                                <td>
-                                    <span class="fileName">Select a mzIdentML or csv file to upload</span>
-                                    <span class="statusBox" data-filetype="mzid"></span>
-                                    <input class="uploadCheckbox" type="checkbox" id="mzid_checkbox" style="visibility: hidden;">
-                                </td>
-                            </tr>
-                            <tr id="mzml_fileBox">
-                                <td style="text-align: center;">Peak list file(s):</td>
-                                <td>
-                                    <span class="fileName">No peak list file(s) selected - spectra will be unavailable</span>
-                                    <span class="statusBox" data-filetype="mzml"></span>
-                                    <input class="uploadCheckbox" type="checkbox" id="mzml_checkbox" style="visibility: hidden;">
-                                </td>
-                            </tr>
-                            <tr id="fasta_fileBox">
-                                <td style="text-align: center;">Sequence file:</td>
-                                <td>
-                                    <span class="fileName">No FASTA file selected, protein identifiers must be UniprotKB accession numbers</span>
-                                    <span class="statusBox" data-filetype="fasta"></span>
-                                    <input class="uploadCheckbox" type="checkbox" id="fasta_checkbox" style="visibility: hidden;">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-
-                <hr class="wideDivider">
+<!--                <div id="jquery-fileupload">-->
+<!--                    <div id="fileUploadWrapper">-->
+<!--                        <input id="fileupload" type="file" name="files[]" accept=".mzid,.csv,.mzml,.mgf,.ms2,.zip,.gz,.fasta"-->
+<!--                            multiple data-url="vendor/jQueryFileUploadMin/fileUpload.php">-->
+<!--                        <label for="fileupload"><span class="uploadbox"></span><span class="btn">Choose file(s)</span></label>-->
+<!--                        <div id="uploadProgress">-->
+<!--                            <div class="file_upload_bar" style="width: 0%;">-->
+<!--                                <div class="file_upload_percent"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <button id="startParsing" disabled="true" class="btn btn-2">Submit Data</button>-->
+<!--                    </div>-->
+<!--                    <div class="fileupload_info">-->
+<!--                        <table>-->
+<!--                            <tr id="mzid_fileBox">-->
+<!--                                <td style="text-align: center;">Identification file:</td>-->
+<!--                                <td>-->
+<!--                                    <span class="fileName">Select a mzIdentML or csv file to upload</span>-->
+<!--                                    <span class="statusBox" data-filetype="mzid"></span>-->
+<!--                                    <input class="uploadCheckbox" type="checkbox" id="mzid_checkbox" style="visibility: hidden;">-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr id="mzml_fileBox">-->
+<!--                                <td style="text-align: center;">Peak list file(s):</td>-->
+<!--                                <td>-->
+<!--                                    <span class="fileName">No peak list file(s) selected - spectra will be unavailable</span>-->
+<!--                                    <span class="statusBox" data-filetype="mzml"></span>-->
+<!--                                    <input class="uploadCheckbox" type="checkbox" id="mzml_checkbox" style="visibility: hidden;">-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            <tr id="fasta_fileBox">-->
+<!--                                <td style="text-align: center;">Sequence file:</td>-->
+<!--                                <td>-->
+<!--                                    <span class="fileName">No FASTA file selected, protein identifiers must be UniprotKB accession numbers</span>-->
+<!--                                    <span class="statusBox" data-filetype="fasta"></span>-->
+<!--                                    <input class="uploadCheckbox" type="checkbox" id="fasta_checkbox" style="visibility: hidden;">-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!--                <hr class="wideDivider">-->
                 <div class="image-link"><img alt="xiView workflow" class="image full" src="images/workflow.svg"></div>
 
                 <p>xiView accepts three types of input data:</p>

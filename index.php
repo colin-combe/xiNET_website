@@ -55,9 +55,13 @@
         <div id="main">
             <div class="container">
                 <h1 class="page-header"><?php echo($pageName); ?></h1>
+
+                <p><b>Maintenance News: </b> xiVIEW is not accepting new uploads for the week 18th to 25th January 2021. We are migrating to a new server, you will still be able to view uploaded data for most of the week.</p>
+            <br/>
+
                 <p>xiView is a web-based visualisation tool for the analysis of cross-linking
-                    / mass spectrometry results, it is independent of the search software
-                    used. It provides multiple, linked views of the data, including:</p>
+                / mass spectrometry results, it is independent of the search software
+                used. It provides multiple, linked views of the data, including:</p>
                 <ul>
                     <li>2D network (<a href="http://crosslinkviewer.org" target="_blank">xiNET</a>                        or circular)</li>
                     <li>the supporting annotated spectra using <a href="http://spectrumviewer.org"
