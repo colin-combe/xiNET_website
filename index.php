@@ -57,8 +57,8 @@
                 <h1 class="page-header"><?php echo($pageName); ?></h1>
 
                 <p><b>Maintenance News: </b> xiVIEW is not accepting new uploads for the week 18th to 25th January 2021. We are migrating to a new server, you will still be able to view uploaded data for most of the week.</p>
-                <p><b>Update 26/01/20: </b> New server not ready yet - try back end of week (29/01/20).</p>
-                 <br/>
+               <p><b>Update 26/01/20: </b> New server not ready yet - for new uploads try again end of week (29/01/20).</p>
+                <br/>
 
                 <p>xiView is a web-based visualisation tool for the analysis of cross-linking
                 / mass spectrometry results, it is independent of the search software
