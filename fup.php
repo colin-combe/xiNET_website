@@ -36,10 +36,13 @@
         }
         //~ echo $annotData;
 
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$country = trim(file_get_contents("http://ipinfo.io/{$ip}/country"));
+
          $dbconn = mysqli_connect($server,$user,$password) or die('Could not connect: ' . mysqli_error($dbconn));
          mysqli_select_db($dbconn, $db) or die("Could not select database.");
-         $query = "INSERT INTO upload (rand, links, fileName, fasta, annot) "
-                . "VALUES ('".$rand."','".$linkData."','".$fileName."','".$fastaData."','".$annotData."');";
+         $query = "INSERT INTO upload (rand, links, fileName, fasta, annot, ip, country) "
+                . "VALUES ('".$rand."','".$linkData."','".$fileName."','".$fastaData."','".$annotData."','".$ip."','".$country."');";
         //echo $query;
         $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
         // Free resultset
