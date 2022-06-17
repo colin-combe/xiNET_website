@@ -44,7 +44,7 @@
     $ip = $_SERVER['REMOTE_ADDR'];
     $country = trim(file_get_contents("http://ipinfo.io/{$ip}/country"));
 
-    $conn = mysqli_connect($servername, $username, $password, $db);
+    $conn = mysqli_connect($server, $user, $password, $db);
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
