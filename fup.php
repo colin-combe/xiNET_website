@@ -48,15 +48,11 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    //    $query = "INSERT INTO upload (rand, links, fileName, fasta, annot, ip, country) "
-    //        . "VALUES ('" . $rand . "','" . $linkData . "','" . $fileName . "','" . $fastaData . "','" . $annotData . "','" . $ip . "','" . $country . "');";
 
     $query = "INSERT INTO upload (rand, links, fileName, fasta, annot, ip, country) VALUES(?, ?, ?, ?, ?, ?, ?)";
     $insertStatement = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($insertStatement, "sssssss", $rand, $linkData, $fileName, $fastaData, $annotData, $ip, $country);
 
-    //$name = "John";
-    //$city = "New York";
     if (mysqli_stmt_execute($insertStatement)) {
         //redirect to page with unique url
         header('Location: ./uploaded.php?uid=' . $rand);
