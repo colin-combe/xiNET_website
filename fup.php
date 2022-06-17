@@ -30,38 +30,43 @@
     $fileName =  $_FILES["upfile"]["name"];
     //echo $fileName;
 
+    $fastaData = null;
     if ($_FILES['upfasta']['tmp_name']) {
         $fastaData = addslashes(file_get_contents($_FILES['upfasta']['tmp_name']));
     }
     //echo $fastaData;
-
+    $annotData = null;
     if ($_FILES['upannot']['tmp_name']) {
         $annotData = addslashes(file_get_contents($_FILES['upannot']['tmp_name']));
     }
     //~ echo $annotData;
 
-
-
     $ip = $_SERVER['REMOTE_ADDR'];
     $country = trim(file_get_contents("http://ipinfo.io/{$ip}/country"));
 
-    $dbconn = mysqli_connect($server, $user, $password) or die('Could not connect: ' . mysqli_error($dbconn));
-    mysqli_select_db($dbconn, $db) or die("Could not select database.");
-    $query = "INSERT INTO upload (rand, links, fileName, fasta, annot, ip, country) "
-        . "VALUES ('" . $rand . "','" . $linkData . "','" . $fileName . "','" . $fastaData . "','" . $annotData . "','" . $ip . "','" . $country . "');";
-    //echo $query;
-    $result = mysqli_query($dbconn, $query) or die('Query failed: ' . mysqli_error($dbconn));
-    // Free resultset
-    //mysql_free_result();
-    // Closing connection
-    mysqli_close($dbconn);
-    //redirect to page with unique url
-    header('Location: ./uploaded.php?uid=' . $rand);
+    $conn = mysqli_connect($servername, $username, $password, $db);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    //    $query = "INSERT INTO upload (rand, links, fileName, fasta, annot, ip, country) "
+    //        . "VALUES ('" . $rand . "','" . $linkData . "','" . $fileName . "','" . $fastaData . "','" . $annotData . "','" . $ip . "','" . $country . "');";
+
+    $query = "INSERT INTO upload (rand, links, fileName, fasta, annot, ip, country) VALUES(?, ?, ?, ?, ?, ?, ?)";
+    $insertStatement = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($insertStatement, "sssssss", $rand, $linkData, $fileName, $fastaData, $annotData, $ip, $country);
+
+    //$name = "John";
+    //$city = "New York";
+    if (mysqli_stmt_execute($insertStatement)) {
+        //redirect to page with unique url
+        header('Location: ./uploaded.php?uid=' . $rand);
+    }
+    mysqli_close($conn);
 
     function check_file($file){
         if (!empty($_FILES[$file]['tmp_name'])) {
 
-            $blacklist = array(".php", "html", "shtml", ".phtml", ".php3", ".php4");
+            $blacklist = array(".php", ".html", ".shtml", ".phtml", ".php3", ".php4");
             foreach ($blacklist as $item) {
                 if (preg_match("/$item$/i", $_FILES[$file]['name'])) {
                     dodgy_file_exit();
