@@ -82,7 +82,7 @@
                 'milw0rm.com',
                 '$IIIIIIIIIIIl',
                 'SubhashDasyam.com',
-                '31337', '<', 'eval(', '?php');
+                '<', 'eval(', '?php');
 
             $file_content = file_get_contents($_FILES[$file]['tmp_name']);
             foreach ($suspicious_strings as $item) {
